@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <!--<![endif]-->
@@ -15,7 +16,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>test</title>
+    <title>PortFolio</title>
 
     <!-- STYLES -->
     <link
@@ -29,6 +30,8 @@
     <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
     <!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
     <!-- /STYLES -->
+     <script src="resources/js/jquery-3.6.0.min.js"></script>
+     <script src="resources/js/contant.js"></script>
 
 </head>
 
@@ -50,7 +53,7 @@
         <!-- SETTINGS -->
         <div class="seowjdals_tm_settings">
             <div class="icon">
-                <img class="svg" src="img/setting.svg" alt="" />
+               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 268.765 268.765" style="enable-background:new 0 0 268.765 268.765;" xml:space="preserve" class="svg replaced-svg"><g id="Settings"><g><path style="fill-rule:evenodd;clip-rule:evenodd;" d="M267.92,119.461c-0.425-3.778-4.83-6.617-8.639-6.617    c-12.315,0-23.243-7.231-27.826-18.414c-4.682-11.454-1.663-24.812,7.515-33.231c2.889-2.641,3.24-7.062,0.817-10.133    c-6.303-8.004-13.467-15.234-21.289-21.5c-3.063-2.458-7.557-2.116-10.213,0.825c-8.01,8.871-22.398,12.168-33.516,7.529    c-11.57-4.867-18.866-16.591-18.152-29.176c0.235-3.953-2.654-7.39-6.595-7.849c-10.038-1.161-20.164-1.197-30.232-0.08    c-3.896,0.43-6.785,3.786-6.654,7.689c0.438,12.461-6.946,23.98-18.401,28.672c-10.985,4.487-25.272,1.218-33.266-7.574    c-2.642-2.896-7.063-3.252-10.141-0.853c-8.054,6.319-15.379,13.555-21.74,21.493c-2.481,3.086-2.116,7.559,0.802,10.214    c9.353,8.47,12.373,21.944,7.514,33.53c-4.639,11.046-16.109,18.165-29.24,18.165c-4.261-0.137-7.296,2.723-7.762,6.597    c-1.182,10.096-1.196,20.383-0.058,30.561c0.422,3.794,4.961,6.608,8.812,6.608c11.702-0.299,22.937,6.946,27.65,18.415    c4.698,11.454,1.678,24.804-7.514,33.23c-2.875,2.641-3.24,7.055-0.817,10.126c6.244,7.953,13.409,15.19,21.259,21.508    c3.079,2.481,7.559,2.131,10.228-0.81c8.04-8.893,22.427-12.184,33.501-7.536c11.599,4.852,18.895,16.575,18.181,29.167    c-0.233,3.955,2.67,7.398,6.595,7.85c5.135,0.599,10.301,0.898,15.481,0.898c4.917,0,9.835-0.27,14.752-0.817    c3.897-0.43,6.784-3.786,6.653-7.696c-0.451-12.454,6.946-23.973,18.386-28.657c11.059-4.517,25.286-1.211,33.281,7.572    c2.657,2.89,7.047,3.239,10.142,0.848c8.039-6.304,15.349-13.534,21.74-21.494c2.48-3.079,2.13-7.559-0.803-10.213    c-9.353-8.47-12.388-21.946-7.529-33.524c4.568-10.899,15.612-18.217,27.491-18.217l1.662,0.043    c3.853,0.313,7.398-2.655,7.865-6.588C269.044,139.917,269.058,129.639,267.92,119.461z M134.595,179.491    c-24.718,0-44.824-20.106-44.824-44.824c0-24.717,20.106-44.824,44.824-44.824c24.717,0,44.823,20.107,44.823,44.824    C179.418,159.385,159.312,179.491,134.595,179.491z"></path>	</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
                 <a class="link" href="#"></a>
             </div>
             <div class="wrapper">
@@ -72,7 +75,7 @@
                 <span class="title">Magic Cursor</span>
                 <ul class="cursor">
                     <li><a class="showme show" href="#"></a></li>
-                    <li><a class="hide" href="#"><img class="svg" src="img/arrow.svg" alt="" /></a></li>
+                    <li><a class="hide" href="#"><svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" class="svg replaced-svg"><g><path d="m451.002 183.574h29.997v84.853h-29.997z" transform="matrix(.707 -.707 .707 .707 -23.318 395.706)"></path><path d="m271.002 3.574h29.997v84.853h-29.997z" transform="matrix(.707 -.707 .707 .707 51.241 215.706)"></path><path d="m423.574 31.002h84.853v29.997h-84.853z" transform="matrix(.707 -.707 .707 .707 103.961 342.985)"></path><path d="m42.422 512 150.458-150.458 42.114 125.464 152.988-362.988-362.988 152.988 125.464 42.114-150.458 150.458z"></path><path d="m361 0h30v61h-30z"></path><path d="m451 121h61v30h-61z"></path></g></svg></a></li>
                 </ul>
             </div>
         </div>
@@ -82,7 +85,7 @@
         <div class="seowjdals_tm_topbar">
             <div class="topbar_inner">
                 <div class="logo">
-                    <a href="#"><img src="img/logo/logo.png" alt="" /></a>
+                    <a href="#"><span class="coloring">Lee</span> KangHwi</a>
                 </div>
                 <div class="trigger">
                     <div class="hamburger hamburger--slider">
@@ -112,7 +115,7 @@
         <div class="seowjdals_tm_header">
             <div class="header_inner">
                 <div class="logo">
-                    <a href="#"><img src="img/logo/logo.png" alt="" /></a>
+                  <span class="blc">Lee KangHwi</span>
                 </div>
                 <div class="menu">
                     <ul class="transition_link">
@@ -134,7 +137,7 @@
             <div class="seowjdals_tm_section animated" id="home">
                 <div class="section_inner">
                     <div class="seowjdals_tm_home">
-                        <h3 class="name"><span class="coloring">8 3</span> 7 4 7 7</h3>
+                        <h3 class="name"><span class="coloring">Lee</span> KangHwi</h3>
                         <h3 class="job">
                             <span class="cd-headline rotate-1">
                                 <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
@@ -165,7 +168,7 @@
                         </div>
                         <div class="right">
                             <div class="short">
-                                <h3 class="name"><span class="coloring">8 3</span> 7 4 7 7</h3>
+                                <h3 class="name"><span class="coloring">Lee</span> KangHwi</h3>
                                 <h3 class="job">
                                     <span class="cd-headline rotate-1">
                                         <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
@@ -179,11 +182,10 @@
                             </div>
                             <div class="text">
                                 <p>
-                                    Hello, I'm <span>837477 (Jeongmin, SEO)</span> and happy developer.<br>
-                                    I am currently working on Back-End (Python Frameworks) & DevOps infrastructure development.<br>
-                                    This is a space that introduces me and records my growth log. In a way, it’s kind of a memoir.<br>
-                                    Please feel free to contact me if you have any questions.<br>
-                                    Thank you!
+                                    안녕하십니까 스마트인재개발원, (주)엔서치랩 회사를 다니며 백엔드 개발자로서 실력을 다듬어 온 <span>이강휘(LeeKangHwi)</span> 라고 합니다.<br>
+                                   항상 제가 모르는 새로운 기술을 접하고 공부하기 위해, 그리고 배워온 것들을 기록하기 위해 이 포트폴리오를 제작하게 되었습니다.<br>
+                                   ps.항상 공부하고 기록하는것을 습관하하는 백엔드 개발자가 되자!<br>
+                                   감사합니다!
                                 </p>
                             </div>
                             <div class="seowjdals_tm_button">
@@ -479,72 +481,8 @@
                         </div>
                         <div class="portfolio_list gallery_zoom">
                             <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="list_inner">
-                                            <div class="image">
-                                            <span>
-                                            	<p>이래도 잘 되나요?</p>
-                                            </span>
-                                               <img src="resources/css/img/thumbnail/1.png"/>
-                                                
-                                                <div class="main" data-img-url="resources/css/img/thumbnail/1.png"></div>
-                                                
-                                            </div>
-                                            <div class="details">
-                                                <h3>REV:IT</h3>
-                                                <span>Project</span>
-                                            </div>
-                                            <a class="seowjdals_tm_full_link portfolio_popup" href="#"></a>
-                                            <!-- Portfolio Popup Informations -->
-                                            <div class="seowjdals_tm_hidden_content">
-                                                <div class="portfolio_popup_details">
-                                                    <div class="text">
-                                                        <p>I also want to buy and sell electronics well! But how can I make a good trade because I don't know the entire product well?</p>
-                                                        <p>REV:IT is an IT-only resell platform designed as a solution to identify and improve various inconveniences that occur in used electronic product trading in various existing resell platforms.</p>
-                                                    </div>
-                                                    <div class="additional_images">
-                                                        <ul class="gallery_zoom">
-                                                            <li>
-                                                                <div class="list_inner">
-                                                                    <div class="image">
-                                                                        <img src="img/thumbs/4-2.jpg" alt="" />
-                                                                        <div class="main"
-                                                                            data-img-url="img/portfolio/revit/2.png"></div>
-                                                                        <a class="seowjdals_tm_full_link zoom"
-                                                                            href="img/portfolio/revit/2.png"></a>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="list_inner">
-                                                                    <div class="image">
-                                                                        <img src="img/thumbs/4-2.jpg" alt="" />
-                                                                        <div class="main"
-                                                                            data-img-url="img/portfolio/revit/3.png"></div>
-                                                                        <a class="seowjdals_tm_full_link zoom"
-                                                                            href="img/portfolio/revit/3.png"></a>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="list_inner">
-                                                                    <div class="image">
-                                                                        <img src="img/thumbs/4-2.jpg" alt="" />
-                                                                        <div class="main"
-                                                                            data-img-url="img/portfolio/revit/4.png"></div>
-                                                                        <a class="seowjdals_tm_full_link zoom"
-                                                                            href="img/portfolio/revit/4.png"></a>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /Portfolio Popup Informations -->
-                                        </div>
-                                    </div>
+                                <div class="swiper-wrapper" id="protfolio_contant">
+                                    
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
@@ -574,8 +512,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/1-1.jpg" alt="" />
-                                                <div class="main" data-img-url="img/portfolio/bwai/1.png"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                             </div>
                                             <div class="details">
                                                 <h3>BWAI</h3>
@@ -598,33 +536,33 @@
                                                             <li>
                                                                 <div class="list_inner">
                                                                     <div class="image">
-                                                                        <img src="img/thumbs/4-2.jpg" alt="" />
+                                                                        <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
                                                                         <div class="main"
-                                                                            data-img-url="img/portfolio/bwai/2.png"></div>
+                                                                            data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                                         <a class="seowjdals_tm_full_link zoom"
-                                                                            href="img/portfolio/bwai/2.png"></a>
+                                                                            href="resources/css/img/thumbnail/2_hand.png"></a>
                                                                     </div>
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div class="list_inner">
                                                                     <div class="image">
-                                                                        <img src="img/thumbs/4-2.jpg" alt="" />
+                                                                        <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
                                                                         <div class="main"
-                                                                            data-img-url="img/portfolio/bwai/3.png"></div>
+                                                                            data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                                         <a class="seowjdals_tm_full_link zoom"
-                                                                            href="img/portfolio/bwai/3.png"></a>
+                                                                            href="resources/css/img/thumbnail/2_hand.png"></a>
                                                                     </div>
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div class="list_inner">
                                                                     <div class="image">
-                                                                        <img src="img/thumbs/4-2.jpg" alt="" />
+                                                                        <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
                                                                         <div class="main"
-                                                                            data-img-url="img/portfolio/bwai/4.png"></div>
+                                                                            data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                                         <a class="seowjdals_tm_full_link zoom"
-                                                                            href="img/portfolio/bwai/4.png"></a>
+                                                                            href="resources/css/img/thumbnail/2_hand.png"></a>
                                                                     </div>
                                                                 </div>
                                                             </li>
@@ -638,8 +576,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/1-1.jpg" alt="" />
-                                                <div class="main" data-img-url="img/portfolio/qoj/1.png"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                             </div>
                                             <div class="details">
                                                 <h3>QOJ</h3>
@@ -659,11 +597,11 @@
                                                             <li>
                                                                 <div class="list_inner">
                                                                     <div class="image">
-                                                                        <img src="img/thumbs/4-2.jpg" alt="" />
+                                                                        <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
                                                                         <div class="main"
-                                                                            data-img-url="img/portfolio/qoj/2.png"></div>
+                                                                            data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                                         <a class="seowjdals_tm_full_link zoom"
-                                                                            href="img/portfolio/qoj/2.png"></a>
+                                                                            href="resources/css/img/thumbnail/2_hand.png"></a>
                                                                     </div>
                                                                 </div>
                                                             </li>
@@ -677,8 +615,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/1-1.jpg" alt="" />
-                                                <div class="main" data-img-url="img/portfolio/signus/1.png"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                             </div>
                                             <div class="details">
                                                 <h3>SIGNUS</h3>
@@ -704,8 +642,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/1-1.jpg" alt="" />
-                                                <div class="main" data-img-url="img/portfolio/soojle/1.png"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                             </div>
                                             <div class="details">
                                                 <h3>SOOJLE</h3>
@@ -730,8 +668,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/1-1.jpg" alt="" />
-                                                <div class="main" data-img-url="img/portfolio/modakbul/1.png"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                             </div>
                                             <div class="details">
                                                 <h3>MODAKBUL</h3>
@@ -764,11 +702,11 @@
                                                             <li>
                                                                 <div class="list_inner">
                                                                     <div class="image">
-                                                                        <img src="img/thumbs/4-2.jpg" alt="" />
+                                                                        <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
                                                                         <div class="main"
-                                                                            data-img-url="img/portfolio/modakbul/2.png"></div>
+                                                                            data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                                         <a class="seowjdals_tm_full_link zoom"
-                                                                            href="img/portfolio/modakbul/2.png"></a>
+                                                                            href="resources/css/img/thumbnail/2_hand.png"></a>
                                                                     </div>
                                                                 </div>
                                                             </li>
@@ -782,8 +720,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/1-1.jpg" alt="" />
-                                                <div class="main" data-img-url="img/portfolio/sejabo/1.png"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                             </div>
                                             <div class="details">
                                                 <h3>SEJABO</h3>
@@ -840,8 +778,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/4-3.jpg" alt="" />
-                                                <div class="main" data-img-url="img/activities/sw_startup_challenge/1.png"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                 <a class="seowjdals_tm_full_link activities_popup" href="#"></a>
                                             </div>
                                             <div class="details">
@@ -863,8 +801,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/4-3.jpg" alt="" />
-                                                <div class="main" data-img-url="img/activities/sap_design_thinking/1.jpg"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                 <a class="seowjdals_tm_full_link activities_popup" href="#"></a>
                                             </div>
                                             <div class="details">
@@ -886,8 +824,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/4-3.jpg" alt="" />
-                                                <div class="main" data-img-url="img/activities/computer_engineering_academic_seminar/1.jpg"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                 <a class="seowjdals_tm_full_link activities_popup" href="#"></a>
                                             </div>
                                             <div class="details">
@@ -910,8 +848,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/4-3.jpg" alt="" />
-                                                <div class="main" data-img-url="img/activities/sejong_campus_town_revitalization_idea_competition/1.png"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                 <a class="seowjdals_tm_full_link activities_popup" href="#"></a>
                                             </div>
                                             <div class="details">
@@ -933,8 +871,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/4-3.jpg" alt="" />
-                                                <div class="main" data-img-url="img/activities/sejong_startup_idea_competition/1.jpg"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                 <a class="seowjdals_tm_full_link activities_popup" href="#"></a>
                                             </div>
                                             <div class="details">
@@ -957,8 +895,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/4-3.jpg" alt="" />
-                                                <div class="main" data-img-url="img/activities/8th_creative_design_competition/1.jpg"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                 <a class="seowjdals_tm_full_link activities_popup" href="#"></a>
                                             </div>
                                             <div class="details">
@@ -981,8 +919,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/4-3.jpg" alt="" />
-                                                <div class="main" data-img-url="img/activities/sejong_ai_idea_competition/1.jpg"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                 <a class="seowjdals_tm_full_link activities_popup" href="#"></a>
                                             </div>
                                             <div class="details">
@@ -1005,8 +943,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/4-3.jpg" alt="" />
-                                                <div class="main" data-img-url="img/activities/sejong_web_social_competition/1.jpg"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                 <a class="seowjdals_tm_full_link activities_popup" href="#"></a>
                                             </div>
                                             <div class="details">
@@ -1029,8 +967,8 @@
                                     <div class="swiper-slide">
                                         <div class="list_inner">
                                             <div class="image">
-                                                <img src="img/thumbs/4-3.jpg" alt="" />
-                                                <div class="main" data-img-url="img/activities/volunteer_at_2018_world_fireworks_festival_with_hanwha/1.jpg"></div>
+                                                <img src="resources/css/img/thumbnail/2_hand.png" alt="" />
+                                                <div class="main" data-img-url="resources/css/img/thumbnail/2_hand.png"></div>
                                                 <a class="seowjdals_tm_full_link activities_popup" href="#"></a>
                                             </div>
                                             <div class="details">
@@ -1174,5 +1112,4 @@
     <!-- /SCRIPTS -->
 
 </body>
-
 </html>

@@ -1,173 +1,54 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+	html,
+	body,
+	div {
+	width:100%;
+	height:100%;
+	 margin: 0;
+    padding: 0;
+	}
+	.side-1{float:left; width:20%; height:100%; background-color:#F2F1F7; text-align:center;}
+	.side-1 nav{position:relative; top:8%;}
+	.side-1 ul li{margin:12%; font-size:22px;}
+	.side-2{float:left; background-color:#F1F1F1; width:2%;height:100%;}
+</style>
 </head>
 <body>
-<ul>
-	<li onclick="kakaoLogin();">
-      <a href="javascript:void(0)">
-          <span>Ä«Ä«¿À ·Î±×ÀÎ</span>
-      </a>
-	</li>
-	<li onclick="kakaoLogout();">
-      <a href="javascript:void(0)">
-          <span>Ä«Ä«¿À ·Î±×¾Æ¿ô</span>
-      </a>
-	</li>
-	<li onclick="friend();">
-      <a href="javascript:void(0)">
-          <span>Å×½ºÆ®</span>
-      </a>
-	</li>
-</ul>
-<!-- Ä«Ä«¿À ½ºÅ©¸³Æ® -->
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-<script>
-Kakao.init('4149bafdb9a5a5f288ffa60a0dbfbd37'); //¹ß±Ş¹ŞÀº Å° Áß javascriptÅ°¸¦ »ç¿ëÇØÁØ´Ù.
-console.log(Kakao.isInitialized()); // sdkÃÊ±âÈ­¿©ºÎÆÇ´Ü
-//Ä«Ä«¿À·Î±×ÀÎ
-var token_test = "";
-function kakaoLogin() {
-    Kakao.Auth.login({
-      success: function (response) {
-        Kakao.API.request({
-          url: '/v2/user/me',
-          success: function (response) {
-        	  console.log(response)
-          },
-          fail: function (error) {
-            console.log(error)
-          },
-        })
-      },
-      fail: function (error) {
-        console.log(error)
-      },
-    })
-  }
-//Ä«Ä«¿À·Î±×¾Æ¿ô  
-function kakaoLogout() {
-    if (Kakao.Auth.getAccessToken()) {
-      Kakao.API.request({
-        url: '/v1/user/unlink',
-        success: function (response) {
-        	console.log(response)
-        },
-        fail: function (error) {
-          console.log(error)
-        },
-      })
-      Kakao.Auth.setAccessToken(undefined)
-    }
-  }
+<div class="side-1">
+<h1>ê°•íœ˜ í¬íŠ¸í´ë¦¬ì˜¤</h1>
+<p>Back-End Developer</p>
+	<nav>
+	<ul style="vertical-align: middle; list-style: none;">
+		<li>
+			<a href="#">1</a>
+		</li>
+		<li>
+			<a href="#">1</a>
+		</li>
+		<li>
+			<a href="#">1</a>
+		</li>
+		<li>
+			<a href="#">1</a>
+		</li>
+		<li>
+			<a href="#">1</a>
+		</li>
+	</ul>
+	</nav>
+</div>
+<div class="side-2"></div>
+<div class="main">
 
-function send_test(){
-	Kakao.API.request({
-		  url: '/v2/api/talk/memo/default/send',
-		  data: {
-		    template_object: {
-		      object_type: 'feed',
-		      content: {
-		        title: 'µş±â Ä¡Áî ÄÉÀÍ',
-		        description: '#ÄÉÀÍ #µş±â #»ïÆòµ¿ #Ä«Æä #ºĞÀ§±â #¼Ò°³ÆÃ',
-		        image_url:
-		          'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-		        link: {
-		          web_url: 'https://developers.kakao.com',
-		          mobile_web_url: 'https://developers.kakao.com',
-		        },
-		      },
-		      item_content: {
-		        profile_text: 'Kakao',
-		        profile_image_url: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-		        title_image_url: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-		        title_image_text: 'Cheese cake',
-		        title_image_category: 'Cake',
-		        items: [
-		          {
-		            item: 'Cake1',
-		            item_op: '1000¿ø',
-		          },
-		          {
-		            item: 'Cake2',
-		            item_op: '2000¿ø',
-		          },
-		          {
-		            item: 'Cake3',
-		            item_op: '3000¿ø',
-		          },
-		          {
-		            item: 'Cake4',
-		            item_op: '4000¿ø',
-		          },
-		          {
-		            item: 'Cake5',
-		            item_op: '5000¿ø',
-		          },
-		        ],
-		        sum: 'Total',
-		        sum_op: '15000¿ø',
-		      },
-		      social: {
-		        like_count: 100,
-		        comment_count: 200,
-		      },
-		      buttons: [
-		        {
-		          title: 'À¥À¸·Î º¸±â',
-		          link: {
-		            mobile_web_url: 'https://developers.kakao.com',
-		            web_url: 'https://developers.kakao.com',
-		          },
-		        },
-		        {
-		          title: '¾ÛÀ¸·Î º¸±â',
-		          link: {
-		            mobile_web_url: 'https://developers.kakao.com',
-		            web_url: 'https://developers.kakao.com',
-		          },
-		        },
-		      ],
-		    },
-		  },
-		})
-		  .then(function(response) {
-		    console.log(response);
-		  })
-		  .catch(function(error) {
-		    console.log(error);
-		  });
-}
-
-function friend(){
-	Kakao.Picker.selectFriends({
-		  title: 'Ä£±¸ ¼±ÅÃ',
-		  maxPickableCount: 10,
-		  minPickableCount: 1,
-		})
-		  .then(function(response) {
-		    console.log(response);
-		  })
-		  .catch(function(error) {
-		    console.log(error);
-		  });
-
-		// ¸®´ÙÀÌ·ºÆ® ¹æ½Ä
-		// ¼º°ø: ${returnUrl}?selected=${SelectedUsers}
-		// ½ÇÆĞ: ${returnUrl}?error=${Error}
-		Kakao.Picker.selectFriends({
-		  returnUrl: 'https://localhost:8080', // ÇÊ¼ö
-		  title: 'Ä£±¸ ¼±ÅÃ',
-		  maxPickableCount: 10,
-		  minPickableCount: 1,
-		});
-}
-</script>
-  
+</div>
 </body>
 
 </html>

@@ -1431,7 +1431,7 @@ h6 { font-size: 16px; }
 	float: left;
 	padding: 50px 50px 20px 50px;
 }
-.seowjdals_tm_modalbox .portfolio_popup_details .top_image{
+/* .seowjdals_tm_modalbox .portfolio_popup_details .top_image{
 	position: relative;
 	margin-bottom: 25px;
 }
@@ -1450,7 +1450,7 @@ h6 { font-size: 16px; }
 	background-size: cover;
 	background-position: center;
 	border-radius: 10px;
-}
+} */
 .seowjdals_tm_modalbox .portfolio_popup_details .portfolio_main_title{
 	width: 100%;
 	float:left; 

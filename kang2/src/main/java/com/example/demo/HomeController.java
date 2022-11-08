@@ -34,4 +34,9 @@ public class HomeController {
 		return "ppt";
 	}
 	
+	@GetMapping("/ppt_contant_test")
+	public String ppt_contant_test() {
+		return "ppt_contant/contant_list";
+	}
+	
 }
