@@ -144,7 +144,7 @@ function ppt_write(){
 		Type : "get",
 		dataType : "html",
 		success : function(data){
-			$(".main").html(data);
+			$(".container").html(data);
 		}
 	})
 }
