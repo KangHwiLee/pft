@@ -86,4 +86,13 @@ public class ContantController {
 		model.addAttribute("list", list);
 		return "paging_test/paging_table";
 	}
+	
+	@GetMapping("main_contant")
+	public String main_contant() {
+		return "ppt_contant/test1";
+	}
+	@GetMapping("ppt_write")
+	public String ppt_write() {
+		return "common/ppt_write";
+	}
 }
