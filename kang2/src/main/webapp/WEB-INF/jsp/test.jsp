@@ -20,7 +20,7 @@
 	}
 	html, body{overflow:hidden;min-height: 100%;}
 	div .left{width:22%;height:95%;float:left;}
-	div .right{width:78%;height:95%;float:left;overflow:scroll; overflow-x:hidden;}
+	div .right{width:78%;height:95%;float:right;overflow:scroll; overflow-x:hidden;}
 	.wrap{width:100%;height:100%;padding:0;margin:0;padding-bottom:80px;}
 	.side-1{float:left;width:380px;height:100%; background-color:#F2F1F7; text-align:center;position:absolute;}
 	.side-1 nav{position:relative; top:8%; width:320px; align:center;}
