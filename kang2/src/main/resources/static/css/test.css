@@ -1,0 +1,5 @@
+.mat{display:flex}
+.mat-left{width:22%;border:1px solid #586273;border-radius:2px;height:calc(100vh - 120px);margin-right:5px;background:#323b48}
+.mat-right{width:78%;background-color:black}
+
+.mat-right .cont{display:flex;height:calc((100vh - 120px) / 3 - 3px);margin-bottom:5px !important;}
