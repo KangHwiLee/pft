@@ -1,39 +1,47 @@
-	html,
-	body
-	{
-	width:100%;
-	height:100%;
-	 margin: 0;
-    padding: 0;
-	}
-	html, body{overflow:hidden;min-height: 100%;}
-	.left{width:22%;height:95%;float:left;margin:0;padding:0;}
-	.right{width:78%;}
-	.wrap{width:100%;height:100%;padding:0;margin:0;padding-bottom:80px;display:flex;}
-	.side-1{float:left;width:100%;height:100%; background-color:#F2F1F7; text-align:center;}
-	.side-1 nav{position:relative; top:8%; width:320px; align:center;}
-	.side-1 ul{vertical-align: middle; list-style: none;}
-	.side-1 ul li{margin:12%; font-size:22px;}
-	
-	.main{float:left; width:100%;height:100%;padding-left:4%;background-color:yellow;position:relative;flex:1;z-index:-1;}
-	
-	.main_cont{height:100%; width:100%;background-color:transparent;}
-	
-	.sub_title{margin:0;padding-top:2%;color:#B7B7B7;}
-	.section{padding-right:4%;width:94%;height:100%;}
-	.container{margin-top:50px;width:100%;height:100%;}
-	.container_contant{width:100%;height:400px;}
-	.contant{background-color:black; width:150px; height:200px;float:left;margin-left:20px;margin-right:20px;margin-bottom:120px;}
-	
-	.title_img{background-color:white;border:solid 1px; width:100%;height:70%;}
-	.title{color:white;font-size:22px;}
-	
-	.footer {
-    width: 100%;
-    height: 48px; /* footer의 높이 */
-    position: absolute;  
-    bottom: 0;
-    left: 0;
-    background-color:black;
-    z-index:0;
-}
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;}
+				html,
+				body{width:100%;height:100%;margin: 0;padding: 0;overflow:hidden;font-family:'S-CoreDream-3Light'}
+			.wrap{width:100%;height:100%;display: flex;flex-wrap: wrap;}
+			 .left{background-color:yellow;width:22%;height:100%;text-align:center;}
+			 .right{width:78%;height:100%;overflow:auto;}
+			 h1{padding:0;margin:0;margin-top:20px;}
+			 h2{padding:0;margin:0;margin-top:20px;}
+			 
+			.right h1{padding:20px 0 25px 70px;margin:0;}
+			.right h2{padding:17px 70px;margin:0;position:relative}
+			.menu h2{padding:10px 30px;margin:0;position:relative}
+			.right h2::after{content:"";position:absolute;bottom:0;left:0;width:74%;height:1px;background:#ddd}
+			.right h3{padding:20px 0 0 20px;margin:0;}
+			 
+			 .side_menu{list-style:none;}
+			 .side_menu:first-child{padding:0;}
+			 .side_menu li{padding:30px 0 30px}
+			 
+			 .right_wrap{background-color:white;width:100%;height:15%;}
+			
+			 .contant_list{height:auto;}
+			 .contant{width:100%;height:200px;margin-bottom:30px;}
+			
+			 .menu{width:90%;margin-left:5%;height:100%;background-color:gray;overflow:hidden;}
+			 .menu img{float:right; width:220px; height:100%;}
+			 .menu span{white-space: normal;
+    line-height: 1.2;
+    height: 4.6em;
+    text-align: left;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    padding: 0 30px;
+    overflow: hidden;font-size: 17px;}
+			 .content_wrap{width:75%;height:100%;}
+			 .content_img{float:right;width:10%;height:100%;background-color:blue;}
+			 .contant:nth-last-child(1){margin-bottom:50px;}
+			 
+			 .footer{width:100%;height:200px;background-color:white;text-align:center;}
+			 .write{float:right;margin-top:10px;}
+			 .footer a{font-size:20px; margin-top:60px;padding:10px 20px;background:#000;color:#fff;border-radius:5px;display:inline-block;cursor:pointer}
