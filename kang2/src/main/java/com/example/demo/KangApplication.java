@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
-@SpringBootApplication(scanBasePackages = "com.example.demo, contant, common, chat, config")
+@SpringBootApplication(scanBasePackages = "com.example.demo, contant, common, chat, config, model")
 public class KangApplication {
 
 	public static void main(String[] args) {
