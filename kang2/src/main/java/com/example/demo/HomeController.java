@@ -32,10 +32,14 @@ public class HomeController {
 		return "gis";
 	}
 	
-	/*@GetMapping("/chat")
+	@GetMapping("/chat")
 	public String chat() {
 		return "chat";
-	}*/
+	}
+	@GetMapping("/content_write")
+	public String content_write() {
+		return "content/content_write";
+	}
 	
 	@GetMapping("/chat2")
 	public String chat2() {

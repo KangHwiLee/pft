@@ -14,7 +14,7 @@
 		<div class="left">
 			
 		</div>
-<div id="map" style="width:1000px;height:800px;" style="display:flex;"></div>
+<div id="map" style="width:500px;height:500px;" style="display:flex;"></div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4149bafdb9a5a5f288ffa60a0dbfbd37&libraries=services,clusterer,drawing"></script>
 <script>
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});

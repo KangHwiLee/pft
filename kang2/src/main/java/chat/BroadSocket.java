@@ -28,7 +28,6 @@ public class BroadSocket {
 	
 	  private static int onlineCount = 0;
 	  private static Set<Session> clients = Collections.synchronizedSet(new HashSet<Session>());
-	  
 	  @OnOpen
 	  public void onOpen(Session session) {
 	    onlineCount++;
