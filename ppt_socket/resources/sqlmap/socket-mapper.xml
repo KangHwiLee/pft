@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sqlmap.SocketMapper" >
+
+	<select id="last_commu" resultType="model.CctvVO">
+	select field_seq from cctv_info where TIMEDIFF(CURRENT_TIMESTAMP(), last_commu) > '00:30:00'; 
+</select>
+	
+	<select id="commu_update" parameterType="int">
+	update cctv_info set last_commu = CURRENT_TIMESTAMP where field_seq = #{num};
+	</select>
+	
+	<select id="cctv_info" parameterType="int" resultType="model.CctvVO" useCache="false" flushCache="true">
+	select 
+	cctv_name, 
+	rtsp, 
+	directory,
+	hls_url 
+	from m_cctv_m where cctv_no=#{cctv_no};
+	</select>
+	
+	<select id="update_directory" parameterType="hashmap">
+	update m_cctv_m set directory=#{dir}, hls_url=#{hls}, updated_at=CURRENT_TIMESTAMP where cctv_no = #{num};
+	</select>
+
+	<select id="auto_reboot_update" parameterType="hashmap">					<!-- 업데이트 된 디렉토리 예약db 넣기 -->
+	update m_cctv_m set reboot_wait=1, stream_at=CURRENT_TIMESTAMP where cctv_no = #{num};
+	insert into m_cctv_wait_m(cctv_no, directory, hls_url) values(#{num}, #{dir}, #{hls});
+	</select>
+	
+	<select id="reboot_dir_update" parameterType="int" resultType="model.CctvVO">		<!-- 변경된 hls, dir 조회 -->
+	select 
+	cctv_no, 
+	directory, 
+	hls_url 
+	from m_cctv_wait_m where cctv_no=#{num};
+	</select>
+	
+	<select id="auto_reboot_delete" parameterType="hashmap">
+	update m_cctv_m set 
+		directory=#{dir}, 
+		hls_url=#{hls}, 
+		updated_at=CURRENT_TIMESTAMP, 
+		reboot_wait=0 
+	where cctv_no = #{num};
+	
+	delete from m_cctv_wait_m where cctv_no = #{num};
+	</select>
+	<select id="cctv_delete">
+	delete from m_cctv_m where cctv_no = #{cctv_no};
+	</select>
+	
+	<select id="cctv_reboot_list" resultType="int">
+	select cctv_del from m_cctv_m
+	<![CDATA[
+	where stream_at < DATE_FORMAT(now() - interval 3 hour, '%y-%m-%d %T');
+	]]>
+	</select>
+	
+	<select id="test" parameterType="int">
+	update m_cctv_m set cctv_del=#{num};
+	</select>
+	
+	<select id="cctv_del_check" parameterType="int" resultType="int" useCache="false" flushCache="true">
+	select cctv_del from m_cctv_m where cctv_no=#{num};
+	</select>
+	
+	<update id="error_check" parameterType="hashmap">
+	update m_cctv_m set reboot_wait = #{num} where cctv_no = #{cctv_no}
+	</update>
+</mapper>
+
+
+
+

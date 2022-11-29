@@ -9,7 +9,7 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String main() {
-		return "main";
+		return "redirect:/menu_move?num=1";
 	}
 	
 	@GetMapping("/side_include")
@@ -48,6 +48,23 @@ public class HomeController {
 	@GetMapping("/final_chat")
 	public String final_chat() {
 		return "final_chat";
+	}
+	
+	@GetMapping("/menu_move")
+	public String menu_move(int num) {
+		if(num == 1) {
+			return "main";
+		}else if(num == 2) {
+			return "content_";
+		}else if(num == 3) {
+			return "gis";
+		}else if(num == 4) {
+			return "chat";
+		}else if(num == 5) {
+			return "socket/socket_test";
+		}else {
+			return null;
+		}
 	}
 	
 }

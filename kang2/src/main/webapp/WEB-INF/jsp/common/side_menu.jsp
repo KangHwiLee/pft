@@ -6,11 +6,10 @@
 			
 			<nav>
 				<ul class="side_menu">
-					<li><a href="/">자기소개</a></li>
-					<li><a href="/content">Content</a></li>
-					<li><a href="/gis">GIS</a></li>
-					<li><a href="/chat">chat</a></li>
-					<li><a href="/">자기소개</a></li>
-					<li><a href="/">자기소개</a></li>
+					<li><a href="/menu_move?num=1">자기소개</a></li>
+					<li><a href="/menu_move?num=2">Content</a></li>
+					<li><a href="/menu_move?num=3">GIS</a></li>
+					<li><a href="/menu_move?num=4">chat</a></li>
+					<li><a href="/menu_move?num=5">tcp_socket</a></li>
 				</ul>
 			</nav>

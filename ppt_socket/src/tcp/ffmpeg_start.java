@@ -11,7 +11,7 @@ import java.util.HashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import model.CctvService;
+import model.T_SocketService;
 import model.SocketDAO;
 
 
@@ -20,7 +20,7 @@ public class ffmpeg_start{
 	
 	public int ffmpeg_cmd(HashMap<String, Object> map) throws IOException {
 		
-		CctvService dao = new CctvService();
+		T_SocketService dao = new T_SocketService();
 		
 		String rtsp = (String)map.get("rtsp");
 		String DATA_DIRECTORY = (String)map.get("dir");

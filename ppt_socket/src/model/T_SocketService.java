@@ -7,16 +7,16 @@ import org.apache.ibatis.session.SqlSession;
 
 import mybatis.MyBatisConfig;
 
-public class CctvService extends MyBatisConfig {
+public class T_SocketService extends MyBatisConfig {
 	SocketDAO dao = new SocketDAO();
 	
-	public List<CctvVO> last_commu(int num) {
+	/*public List<CctvVO> last_commu(int num) {
 		
 		 try(SqlSession session = MyBatisConfig.getSqlSessionFactory().openSession()){
 		List<CctvVO> list =  dao.last_commu(num);
 		return list;
 		 }
-	}
+	}*/
 
 	public void commu_update(int num) {
 		 try(SqlSession session = MyBatisConfig.getSqlSessionFactory().openSession()){

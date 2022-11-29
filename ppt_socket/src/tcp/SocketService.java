@@ -11,20 +11,20 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import model.CctvService;
+import model.T_SocketService;
 import model.SocketDAO;
 
 public class SocketService {
 	private Logger logger = LoggerFactory.getLogger(SocketService.class);
 	private ServerSocket server;
-	private CctvService dao;
+	private T_SocketService dao;
 	
 	public SocketService(){
 		try {
 			server = new ServerSocket(8888);
 		}catch(Exception e) {
 		}
-		dao = new CctvService();
+		dao = new T_SocketService();
 		
 	}
 	

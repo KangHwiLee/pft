@@ -1,117 +1,62 @@
 package common;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.HashMap;
+import java.util.Scanner;
 
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
+
+import com.google.gson.Gson;
 
 @Service
 public class CommonService {
 
-	public HashMap<String, Integer> paging(HashMap<String, Integer> map) {
-		HashMap<String, Integer> paging = new HashMap<String, Integer>();
-		int total = map.get("total");
-		int status = map.get("status");
-		int now_page = map.get("now_page");
-		int count = map.get("count");
-		if(total%count == 0) { total = total/count;}
-		else {total = total/count+1;}
-		if(status == 0) {
-			now_page = 1;
-			if(total < 11) {
-				paging.put("now_page", now_page);
-				paging.put("start", now_page);
-				paging.put("end", total);
-			}else {
-				
-				paging.put("now_page", now_page);
-				paging.put("start", now_page);
-				paging.put("end", 10);
-			}
-		}else if(status == 1) {
-			if(now_page < 11) {
-				now_page = 1;
-				int end = 10;
-				if(total < 11) {
-					paging.put("now_page", now_page);
-					paging.put("start", now_page);
-					paging.put("end", total);
-				}else {
-					paging.put("now_page", now_page);
-					paging.put("start", now_page);
-					paging.put("end", end);
-				}
-			}else {
-				if(now_page % 10 == 0) {
-					paging.put("now_page", (now_page-1)/10*10);
-					paging.put("start", (now_page/10-2)*10+1);
-					paging.put("end", (now_page/10-1)*10);
-				}else {
-				paging.put("now_page", (now_page/10)*10);
-				paging.put("start", (now_page/10-1)*10+1);
-				if(total - (now_page/10-1)*10+1 < 11) {
-					paging.put("end", total);
-				}else {
-					paging.put("end", now_page/10*10);
-				}
-				}
-			}
-		}else if(status == 2) {
-				if(total%10 != 0) {
-				if((now_page-1)/10*10 == (total/10)*10) {
-					now_page = total;
-					paging.put("now_page", total);
-					paging.put("start", (now_page/10*10+1));
-					paging.put("end", total);
-				}else {
-					if((now_page/10+1)*10 > total/10*10) {
-					paging.put("now_page", ((now_page/10)*10+1));
-					paging.put("start", ((now_page/10)*10+1));
-					paging.put("end", total);
-					}
-					else if((now_page/10)*10 == total/10*10) {
-						paging.put("now_page", ((total/10+1)*10+1));
-						paging.put("start", ((total/10+1)*10+1));
-						paging.put("end", total);
-					}else {
-						
-						if((now_page/10+1)*10 == total/10*10) {
-							paging.put("now_page", ((now_page/10+1)*10+1));
-							paging.put("start", ((now_page/10+1)*10+1));
-							paging.put("end", total);
-						}else if(now_page%10 == 0) {
-							paging.put("now_page", ((now_page/10)*10+1));
-							paging.put("start", ((now_page/10)*10+1));
-							paging.put("end", ((now_page/10+1)*10));
-						}
-						else {
-						paging.put("now_page", ((now_page/10+1)*10+1));
-						paging.put("start", ((now_page/10+1)*10+1));
-						paging.put("end", (now_page/10+2)*10);
-						}
-					}
-					
-				}
-				}else {
-					
-					if((now_page-1)/10*10 == (total/10-1)*10) {		// 10페이지 -> 11페이지 가는경우
-						now_page = total;
-						paging.put("now_page", total);
-						paging.put("start", (now_page/10*10+1));
-						paging.put("end", total);
-					}else {
-						paging.put("now_page", ((now_page/10+1)*10+1));	//7페이지 -> 11페이지 가는경우
-						paging.put("start", ((now_page/10+1)*10+1));
-						paging.put("end", total);
-					}
-				}
-		}else {
-			now_page = total/10*10+1;
-			paging.put("now_page", total);
-			paging.put("start", total/10*10+1);
-			paging.put("end", total);
+	public void cctv_start(int num) throws Exception, IOException  {
+		//java.net.Socket socket = new java.net.Socket("121.179.4.96", 8888);
+		java.net.Socket socket = new java.net.Socket("localhost", 8888);
+
+		while(true) {
+		
+		InputStream input  = socket.getInputStream();
+		OutputStream writer = null;
+		writer = socket.getOutputStream();
+		Gson gson = new Gson();
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		System.out.print("보낼 데이터 입력 : ");
+		Scanner send = new Scanner(System.in);
+		String response = send.next();
+		
+		map.put("room_num", num);
+		map.put("client", response);
+		
+		String jsonStr = gson.toJson(map);
+		System.out.println("보낼 데이터 : " +jsonStr.toString());
+		byte[] byteArr = jsonStr.getBytes("UTF-8");
+		
+		writer.write(byteArr, 0, byteArr.length);
+        writer.flush();
+		
+        if(response.equals("exit")) {
+        	System.out.println("socket종료");
+        	break;
+        }
+        	
+			/*byte[] bt = new byte[1024];
+			int n = input.read(bt);
+			
+			final String data = new String(bt, 0, n);
+			JSONObject json = new JSONObject(data);
+				 
+			System.out.println(json.toString());
+			System.out.println("이게 될까");
+			*/
 		}
-		return paging;
-	
-}
+		
+     //   socket.close();
+	}
 	
 }
