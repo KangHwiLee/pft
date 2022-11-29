@@ -32,36 +32,31 @@
 			<div class="contant_list">
 				<div class="contant">
 					<div class="menu">
-						<img style="background-color:black;">
-						<h2>title</h2><br>
+						<h2>성장과정</h2><br>
 						<span>contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant </span>
 					</div>
 				</div>
 				<div class="contant">
 					<div class="menu">
-						<img style="background-color:black;">
-						<h2>title</h2><br>
+						<h2>성격 및 장단점</h2><br>
 						<span>contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant </span>
 					</div>
 				</div>
 				<div class="contant">
 					<div class="menu">
-						<img style="background-color:black;">
-						<h2>title</h2><br>
+						<h2>경력 및 특기사항</h2><br>
 						<span>contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant </span>
 					</div>
 				</div>
 				<div class="contant">
 					<div class="menu">
-						<img style="background-color:black;">
-						<h2>title</h2><br>
+						<h2>지원동기</h2><br>
 						<span>contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant </span>
 					</div>
 				</div>
 				<div class="contant">
 					<div class="menu">
-						<img style="background-color:black;">
-						<h2>title</h2><br>
+						<h2>입사 후 포부</h2><br>
 						<span>contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant contant </span>
 					</div>
 				</div>
