@@ -6,7 +6,7 @@
 				html,
 				body{width:100%;height:100%;margin: 0;padding: 0;overflow:hidden;font-family:'S-CoreDream-3Light'}
 			.wrap{width:100%;height:100%;display: flex;flex-wrap: wrap;}
-			 .left{background-color:yellow;width:22%;height:100%;text-align:center;}
+			 .left{background-color:#e8e8e8;width:22%;height:100%;text-align:center;}
 			 .right{width:78%;height:100%;overflow:auto;}
 			 h1{padding:0;margin:0;margin-top:20px;}
 			 h2{padding:0;margin:0;margin-top:20px;}
@@ -26,7 +26,7 @@
 			 .contant_list{height:auto;}
 			 .contant{width:100%;height:200px;margin-bottom:30px;}
 			
-			 .menu{width:90%;margin-left:5%;height:100%;background-color:gray;overflow:hidden;}
+			 .menu{width:69%;margin-left:5%;height:100%;background-color:gray;overflow:hidden;}
 			 .menu img{float:right; width:220px; height:100%;}
 			 .menu span{white-space: normal;
     line-height: 1.2;

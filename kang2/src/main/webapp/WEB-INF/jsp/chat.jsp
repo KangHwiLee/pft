@@ -14,15 +14,29 @@
 	<script src="resources/js/common.js" ></script>
 </head>
 <body>
+
+<div class="wrap">
+		<div class="left">
+			
+		</div>
+<div class="right">
+			<div class="right_wrap">
+				<h2>강휘 포트폴리오</h2>
+				<h1>chat</h1>
+			</div>
+			<div id="chat_area" style="padding-left:20px">
         <input type="text" value='<%=session.getId().substring(0, 6)%>'
             id='chat_id' />
     <!--     채팅창 -->
-    <div id="_chatbox">
+    <div id="_chatbox" >
         <fieldset style="width:500px; height:500px; border:1px solid; overflow:auto;">
             <div id="messageWindow" ></div>
             <br /> <input id="inputMessage" type="text" onkeyup="enterkey()" />
             <input type="submit" value="send" onclick="send()" />
         </fieldset>
+        </div>
+    </div>
+    </div>
     </div>
 </body>
 <!-- 말풍선아이콘 클릭시 채팅창 열고 닫기 -->

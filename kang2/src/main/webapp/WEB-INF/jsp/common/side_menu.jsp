@@ -9,7 +9,7 @@
 					<li><a href="/">자기소개</a></li>
 					<li><a href="/content">Content</a></li>
 					<li><a href="/gis">GIS</a></li>
-					<li><a href="/">자기소개</a></li>
+					<li><a href="/chat">chat</a></li>
 					<li><a href="/">자기소개</a></li>
 					<li><a href="/">자기소개</a></li>
 				</ul>
