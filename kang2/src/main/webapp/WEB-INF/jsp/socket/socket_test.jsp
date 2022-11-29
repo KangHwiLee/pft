@@ -20,6 +20,10 @@
 	<span>socket_test</span>
 	<input id="test">
 	<button type="button" onclick="count()">button</button>
+	<button type="button" onclick="login(1)">button</button>
+	<button type="button" onclick="login(2)">button</button>
+	<button type="button" onclick="login(3)">button</button>
+	<button type="button" onclick="login(4)">button</button>
 	</div>
 		
 </div>
@@ -51,7 +55,9 @@ function count(){
 	})
 }
 
-const sse = new EventSource("http://localhost:8081/connect");
+function login(num){
+
+const sse = new EventSource("http://localhost:8081/connect/"+num);
 
 sse.addEventListener('connect', (e) => {
 	const { data: receivedConnectData } = e;
@@ -62,5 +68,6 @@ sse.addEventListener('count', e => {
     const { data: receivedCount } = e;  
     console.log("count event data",receivedCount);  
 });
+}
 </script>
 </html>
