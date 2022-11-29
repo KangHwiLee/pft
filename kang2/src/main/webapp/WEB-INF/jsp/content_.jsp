@@ -31,25 +31,54 @@
 			</div>
 			<div class="contant_list">
 				
+				
+				
 			</div>
 			<div class="footer">
-				<button class="write"> 글쓰기 </button>
-				<a>목록 더보기</a>
+				<button class="write" onclick="content_write()"> 글쓰기 </button>
+				<a onclick="content_list_load()" id="add_list">목록 더보기</a>
 			</div>
 		</div>
 	</div>
 	
 	</body>
 	<script>
-	$(function(){
+	$(document).ready(function(){
+		sessionStorage.setItem("content", 0);
+		$.ajax({
+			url : "content_total",
+			type : "get",
+			success : function(data){
+				sessionStorage.setItem("total", data);
+			}
+		})
+		content_list_load();
+	})
+	
+	function content_list_load(){
+		var num = parseInt(sessionStorage.getItem("content"));
+		var total = parseInt(sessionStorage.getItem("total"));
+		if(num+5 > total){
+			console.log("이거동작")
+			$('#add_list').css('display', 'none');
+		}else{
+		}	
 		$.ajax({
 			url:"/content_list",
 			type:"get",
+			data : {"num" : num},
 			dataType:"html",
 			success:function(data){
-				$(".contant_list").html(data);
+				$(".contant_list").append(data);
+				var num = parseInt(sessionStorage.getItem("content"))+5;
+				console.log(num);
+				sessionStorage.setItem("content", num);
 			}
 		})
-	})
+	}
+	
+	function content_write(){
+		location.href="/content_write";
+	}
 	</script>
 </html>

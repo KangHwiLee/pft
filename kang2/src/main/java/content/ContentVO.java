@@ -6,6 +6,10 @@ public class ContentVO {
 	private int idx, category;
 	
 	
+	@Override
+	public String toString() {
+		return "ContentVO [title=" + title + ", content=" + content + ", idx=" + idx + ", category=" + category + "]";
+	}
 	public String getTitle() {
 		return title;
 	}

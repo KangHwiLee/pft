@@ -27,7 +27,6 @@ public class SseController {
     @GetMapping(value = "/connect/{num}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)  
     public ResponseEntity<SseEmitter> connect(@PathVariable int num) {  
         SseEmitter emitter = new SseEmitter();  
-        HashMap<Integer, emitter> map = new HashMap<Integer, emitter>();
         sseEmitters.add(emitter);
         try {  
             emitter.send(SseEmitter.event()  

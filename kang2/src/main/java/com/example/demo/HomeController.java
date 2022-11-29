@@ -17,11 +17,6 @@ public class HomeController {
 		return "common/side_menu";
 	}
 	
-	@GetMapping("/content_list")
-	public String content_list() {
-		return "content/content_list";
-	}
-	
 	@GetMapping("/content")
 	public String content() {
 		return "content_";
@@ -62,6 +57,8 @@ public class HomeController {
 			return "chat";
 		}else if(num == 5) {
 			return "socket/socket_test";
+		}else if(num == 6) {
+			return "sse_test";
 		}else {
 			return null;
 		}

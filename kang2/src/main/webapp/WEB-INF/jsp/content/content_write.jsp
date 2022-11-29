@@ -12,7 +12,9 @@
 	<script src="resources/js/jquery-3.6.0.min.js" ></script>
 	<script src="resources/js/common.js" ></script>
 <title>board</title>
-<script>
+
+
+<!-- <script>
 	$(document).on('click', '#btnSave', function(e){
 		e.preventDefault();
 		$("#form").submit();
@@ -21,7 +23,9 @@
 		e.preventDefault();
 		location.href="${pageContext.request.contextPath}/board/getBoardList";
 	});
-</script>
+</script> -->
+
+
 </head>
 <body>
 
