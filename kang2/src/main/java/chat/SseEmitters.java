@@ -38,6 +38,12 @@ public class SseEmitters {
         return emitter;  
     }  
     
+    public SseEmitter emitter_test(SseEmitter emitter) {
+    	
+    	return this.emitters.get(0);
+    	
+    }
+    
     public void count() {  
         long count = counter.incrementAndGet();  
         emitters.forEach(emitter -> {  
@@ -51,17 +57,26 @@ public class SseEmitters {
         });  
     }
     
-    public void send_message() {  
-        long count = counter.incrementAndGet();  
-        emitters.forEach(emitter -> {  
-            try {  
-                emitter.send(SseEmitter.event()  
-                        .name("count")  
-                        .data(count));  
-            } catch (IOException e) {  
-                throw new RuntimeException(e);  
-            }  
-        });  
+    public void room_info(List<String> member) {
+    	SseEmitter emitter =  this.emitters.get(0);
+    	if(member!= null) {
+    		try {
+        		emitter.send(SseEmitter.event()
+        				.name("room_info")
+        				.data(member));
+        	} catch (IOException e) {
+        		throw new RuntimeException(e);
+    		}
+    	}else {
+    		try {
+        		emitter.send(SseEmitter.event()
+        				.name("room_info")
+        				.data("방 없음"));
+        	} catch (IOException e) {
+        		throw new RuntimeException(e);
+    		}
+    	}
+    	
     }
     
 }
