@@ -1,0 +1,24 @@
+emitter(서버)
+사용자 최초 접속시 (서버 인원제한 10명)
+최대 서버 6개(총 수용 인원 60명)
+
+첫 사용자 접속 -> emitter 생성
+사용자 방 생성 -> hash<emitter, hash<Integer, List<String> > map 이렇게하면 될듯
+
+hash 최초 키값 = 서버
+hash value hash 의 키값 = 방 순번 (방 갯수)
+hash value hash 의 list = 사용자 명단
+
+서버 1 ,2 ,3  등등 각자 서버에 있는 채팅방 접속 가능
+
+list< hashmap<emitter, hash< Integer, List<String> > > >
+
+1번배열, 서버, 방 순번(갯수), 방 이름
+List<emitter, list<방순번list<방이름>>>
+2번 해쉬맵, key(방이름), list<유저이름>
+3번 배열, list<서버이름>
+
+해쉬맵 안에
+room_list -> list<String>
+room_member -> list<String>
+member -> room_list
