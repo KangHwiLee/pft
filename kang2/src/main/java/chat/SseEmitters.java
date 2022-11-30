@@ -1,6 +1,7 @@
 package chat;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executors;
@@ -18,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j  
 public class SseEmitters {  
   
-    private final List<SseEmitter> emitters = new CopyOnWriteArrayList<>();  
+    private final List<SseEmitter> emitters = new ArrayList<>();  
     private static final AtomicLong counter = new AtomicLong();  
     
     public SseEmitter add(SseEmitter emitter) {  
@@ -37,13 +38,26 @@ public class SseEmitters {
         return emitter;  
     }  
     
-    public void count(String test) {  
+    public void count() {  
         long count = counter.incrementAndGet();  
         emitters.forEach(emitter -> {  
             try {  
                 emitter.send(SseEmitter.event()  
                         .name("count")  
-                        .data(test));  
+                        .data(count));  
+            } catch (IOException e) {  
+                throw new RuntimeException(e);  
+            }  
+        });  
+    }
+    
+    public void send_message() {  
+        long count = counter.incrementAndGet();  
+        emitters.forEach(emitter -> {  
+            try {  
+                emitter.send(SseEmitter.event()  
+                        .name("count")  
+                        .data(count));  
             } catch (IOException e) {  
                 throw new RuntimeException(e);  
             }  
