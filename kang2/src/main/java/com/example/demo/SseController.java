@@ -32,99 +32,53 @@ public class SseController {
         this.sseEmitters = sseEmitters;  
     }  
     
-    @GetMapping(value = "/first_connection")  
+    @GetMapping(value = "/notice_first_connection")  
     @ResponseBody
-    public int first_connection(HttpSession session) {
+    public int notice_first_connection(HttpSession session) {
     	
-    	SseEmitter emitter = (SseEmitter) session.getAttribute("sse");
-    	System.out.println(emitter);
-    	int num = 0;
-    	if(emitter != null) {
-    		num = 1;
-    	}else {
-    		num=0;
+    	int count = sseEmitters.emitter_check();
+    	if(count > 5){
+    		sseEmitters.remove_first();
     	}
+    	int num = 0;
     	return num;  
     }
     
-    @GetMapping(value = "/first", produces = MediaType.TEXT_EVENT_STREAM_VALUE)  
+    @GetMapping(value = "/notice_first", produces = MediaType.TEXT_EVENT_STREAM_VALUE)  
     @ResponseBody
-    public ResponseEntity<SseEmitter> first(HttpSession session) {
+    public ResponseEntity<SseEmitter> notice(HttpSession session) {
     	
-    	SseEmitter emitter = (SseEmitter) session.getAttribute("sse");
+    	SseEmitter emitter = (SseEmitter) session.getAttribute("emitter");
     	System.out.println(emitter);
     	
-        	
-    		HashMap<String, List<String>> server_info = new HashMap<>();
-    		session.setAttribute("server_info", server_info);
+    		emitter = new SseEmitter(60 * 1000L);
     		session.setAttribute("emitter", emitter);
-       	 	
-    		emitter = new SseEmitter(365 * 60 * 60 * 1000L);
-    		session.setAttribute("sse", emitter);
     		sseEmitters.add(emitter);
     		
     	try {  
             emitter.send(SseEmitter.event()  
-                    .name("connect")  
-                    .data("서버를 생성합니다."));  
+                    .name("notice_start")  
+                    .data("sse_test start."));  
         } catch (IOException e) {  
             throw new RuntimeException(e);  
         }
-    	
     	return ResponseEntity.ok(emitter);  
-    	
     }
     
-    @RequestMapping(value="/n_first", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @RequestMapping(value="/n_notice", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     @ResponseBody
-    public ResponseBodyEmitter handle(HttpSession session) {
+    public ResponseBodyEmitter n_notice(HttpSession session) {
               SseEmitter emitter = (SseEmitter) session.getAttribute("emitter");
               // Pass the emitter to another component...
               return sseEmitters.emitter_test(emitter);  
     }
     
-    @GetMapping(value = "/room_info")  
-    public ResponseEntity<Void> connect(HttpSession session, String id) {  
-		System.out.println("id : " + id);
-		HashMap<String, List<String>> server_info = (HashMap<String, List<String>>) session.getAttribute("server_info");
-        // -------------------------
-     	SseEmitter sse = (SseEmitter) session.getAttribute("sse");
-       	 	HashMap<String, List<String>> room_user_list = new HashMap<>();
-       	 	
-       	 	sseEmitters.room_info(server_info.get("member_"+id));			//room_list : 방 목록, room_member : 방 인원, member_'id' : 회원이 들어가있는 방 목록
-        
-       	 return ResponseEntity.ok().build(); 
-    }  
-    
-    @GetMapping("/send")  
-    public ResponseEntity<Void> count() {  
-        sseEmitters.count();  
-        return ResponseEntity.ok().build();  
-    }  
-    
-    @GetMapping("/sse_login")
-    @ResponseBody
-    public List<SseEmitter> sse_test(HttpSession session, String id) {
-    	HashMap<String, List<SseEmitter>> map = new HashMap<String, List<SseEmitter>>();
-    	if((HashMap<String, List<SseEmitter>>) session.getAttribute("list") != null) {
-    		map = (HashMap<String, List<SseEmitter>>) session.getAttribute("list");
-    	}
-    	map.put(id, new ArrayList<SseEmitter>());
-    	session.setAttribute("list", map);
-    	System.out.println(map.toString());
-    	return map.get(id);
+    @GetMapping("/notice_write")
+    public String notice_write(String text) {
+    	sseEmitters.notice_write(text);
+    	return null;
     }
-  
-   
     
-    @GetMapping("/send_message")
-    public String send_message(String id, String message, int index_num, HttpSession session) {
-    	HashMap<String, List<SseEmitter>> map = (HashMap<String, List<SseEmitter>>) session.getAttribute("list");
-    	System.out.println(message);
-    	System.out.println(index_num);
-    	SseEmitter sse = map.get(id).get(index_num);
-    	
-    	return "";
-    }
+    
     
 }

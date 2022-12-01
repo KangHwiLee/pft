@@ -22,6 +22,14 @@ public class SseEmitters {
     private final List<SseEmitter> emitters = new ArrayList<>();  
     private static final AtomicLong counter = new AtomicLong();  
     
+    public void remove_first() {
+    	this.emitters.remove(0);
+    }
+    
+    public int emitter_check() {
+    	return this.emitters.size();
+    }
+    
     public SseEmitter add(SseEmitter emitter) {  
         this.emitters.add(emitter);  
         log.info("new emitter added: {}", emitter);  
@@ -57,26 +65,16 @@ public class SseEmitters {
         });  
     }
     
-    public void room_info(List<String> member) {
-    	SseEmitter emitter =  this.emitters.get(0);
-    	if(member!= null) {
-    		try {
-        		emitter.send(SseEmitter.event()
-        				.name("room_info")
-        				.data(member));
-        	} catch (IOException e) {
-        		throw new RuntimeException(e);
-    		}
-    	}else {
-    		try {
-        		emitter.send(SseEmitter.event()
-        				.name("room_info")
-        				.data("방 없음"));
-        	} catch (IOException e) {
-        		throw new RuntimeException(e);
-    		}
-    	}
-    	
+    public void notice_write(String text) {
+    	  emitters.forEach(emitter -> {  
+              try {  
+            	  emitter.send(SseEmitter.event()
+          				.name("notice_write")
+          				.data(text));
+              } catch (IOException e) {  
+                  throw new RuntimeException(e);  
+              }  
+          });  
     }
     
 }
