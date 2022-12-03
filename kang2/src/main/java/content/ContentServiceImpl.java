@@ -22,5 +22,7 @@ public class ContentServiceImpl {
 	public int content_total() {
 		return dao.content_total();
 	}
-	
+	public List<ContentVO> paging_table(int num){
+		return dao.paging_table(num);
+	}
 }

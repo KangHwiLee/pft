@@ -2,14 +2,24 @@ package content;
 
 public class ContentVO {
 
-	private String title, content;
+	private String title, content, category_name;
 	private int idx, category;
 	
 	
 	@Override
 	public String toString() {
-		return "ContentVO [title=" + title + ", content=" + content + ", idx=" + idx + ", category=" + category + "]";
+		return "ContentVO [title=" + title + ", content=" + content + ", category_name=" + category_name + ", idx="
+				+ idx + ", category=" + category + "]";
 	}
+	
+	public String getCategory_name() {
+		return category_name;
+	}
+
+	public void setCategory_name(String category_name) {
+		this.category_name = category_name;
+	}
+
 	public String getTitle() {
 		return title;
 	}

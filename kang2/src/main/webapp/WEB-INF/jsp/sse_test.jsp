@@ -29,7 +29,10 @@ border:1px solid;
 	</div>
 		
 	<div class="right">
-	<span>sseemitter study</span>
+	<div class="right_wrap">
+				<h2>강휘 포트폴리오</h2>
+				<h1>sseemitter study</h1>
+			</div>
 	<div id="room_list" style="padding-left:20px;">
 		<div class="room" id="admin">
 			<input type="text" id="send_message">

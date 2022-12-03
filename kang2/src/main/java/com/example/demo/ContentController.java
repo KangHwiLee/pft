@@ -8,8 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import common.Criteria;
+import common.PageVO;
 import content.ContentServiceImpl;
 import content.ContentVO;
 
@@ -37,5 +40,30 @@ public class ContentController {
 	public int content_total() {
 		int total = content.content_total();
 		return total;
+	}
+	
+	@GetMapping("/paging_table")
+	public String paging_talbe(int num, Model model) {
+		num = num*5;
+		int end = num+4;
+		int total = content.content_total();
+		List<ContentVO> list = content.paging_table(num);
+		if(num +4 >= total) end=total-1;
+		System.out.println("end : " + end);
+		model.addAttribute("start",num);
+		model.addAttribute("end", end);
+		model.addAttribute("list", list);
+		return "paging/paging_table";
+	}
+	
+	@ResponseBody @GetMapping("/paging")
+	public PageVO authority_paging_one(Criteria cri) {
+		System.out.println("여기도 안와지지?");
+		int total = content.content_total();
+		if(cri.getPageNum() == 0) {
+			cri.setPageNum((int) Math.ceil((total * 1.0) / cri.getAmount()));
+		}
+		PageVO vo = new PageVO(cri, total);
+		return vo;
 	}
 }

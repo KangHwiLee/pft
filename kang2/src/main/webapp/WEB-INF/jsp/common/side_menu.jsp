@@ -12,5 +12,6 @@
 					<li><a href="/menu_move?num=4">chat</a></li>
 					<li><a href="/menu_move?num=5">tcp_socket</a></li>
 					<li><a href="/menu_move?num=6">sse</a></li>
+					<li><a href="/menu_move?num=7">paging</a></li>
 				</ul>
 			</nav>

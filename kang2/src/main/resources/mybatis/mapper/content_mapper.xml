@@ -15,4 +15,8 @@
 		select count(*) from content;
 	</select>
 	
+	<select id="paging_table" resultType="content.ContentVO">
+		select c.title, c.content, g.category_name from content c
+		left join category g on c.category = g.category_no limit #{num}, 5;
+	</select>
 </mapper>

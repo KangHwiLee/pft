@@ -59,7 +59,9 @@ public class HomeController {
 			return "socket/socket_test";
 		}else if(num == 6) {
 			return "sse_test";
-		}else {
+		}else if(num == 7){
+			return "paging";
+		}else{
 			return null;
 		}
 	}
