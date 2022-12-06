@@ -22,8 +22,8 @@ public class ContentDAO {
 	public int content_total() {
 		return sql.selectOne("content.mapper.content_total");
 	}
-	public List<ContentVO> paging_table(int num){
-		return sql.selectList("content.mapper.paging_table", num);
+	public List<ContentVO> paging_table(HashMap<String, Integer> map){
+		return sql.selectList("content.mapper.paging_table", map);
 	}
 	
 }

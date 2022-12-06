@@ -66,4 +66,9 @@ public class HomeController {
 		}
 	}
 	
+	@GetMapping("/new_main")
+	public String new_main() {
+		return "new_main";
+	}
+	
 }

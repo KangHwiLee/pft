@@ -43,12 +43,16 @@ public class ContentController {
 	}
 	
 	@GetMapping("/paging_table")
-	public String paging_talbe(int num, Model model) {
-		num = num*5;
-		int end = num+4;
+	public String paging_talbe(int num, int amount, Model model) {
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		
+		map.put("amount", amount);
+		num = num*amount;
+		int end = num+amount-1;
+		map.put("num", num);
 		int total = content.content_total();
-		List<ContentVO> list = content.paging_table(num);
-		if(num +4 >= total) end=total-1;
+		List<ContentVO> list = content.paging_table(map);
+		if(num +amount-1 >= total) end=total-1;
 		System.out.println("end : " + end);
 		model.addAttribute("start",num);
 		model.addAttribute("end", end);
@@ -58,7 +62,6 @@ public class ContentController {
 	
 	@ResponseBody @GetMapping("/paging")
 	public PageVO authority_paging_one(Criteria cri) {
-		System.out.println("여기도 안와지지?");
 		int total = content.content_total();
 		if(cri.getPageNum() == 0) {
 			cri.setPageNum((int) Math.ceil((total * 1.0) / cri.getAmount()));

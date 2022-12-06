@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="resources/css/main.css" />
 	<script src="resources/js/jquery-3.6.0.min.js" ></script>
 	<script src="resources/js/common.js" ></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <style>
 .pagination{display:block;padding-top:35px;text-align:center;clear: both;}
@@ -32,7 +33,9 @@
 				<h1>paging study</h1>
 			</div>
 			
-			<table>
+			<div style="display:flex; margin-top:30px;">
+		<div class="table-responsive" style="width:33%; padding-left:50px; padding-right:20px;">
+			<table class="table table-striped table-sm">
 				<thead>
 					<tr>
 						<th>No.</th>
@@ -48,17 +51,62 @@
 					</tr>
 				</tbody>
 			</table>
+			<div class="pagination" id="pagination_1">
 			
-			
-			<div class="pagination">
-				
 			</div>
+			</div>
+		<div class="table-responsive" style="width:33%; padding-left:50px; padding-right:20px;">
+			<table class="table table-striped table-sm">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>제목</th>
+						<th>카테고리</th>
+					</tr>
+				</thead>
+				<tbody id="paging_table_2">
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="pagination" id="pagination_2">
+			
+			</div>
+			</div>
+		<div class="table-responsive" style="width:33%; padding-left:50px; padding-right:20px;">
+			<table class="table table-striped table-sm">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>제목</th>
+						<th>카테고리</th>
+					</tr>
+				</thead>
+				<tbody id="paging_table_3">
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="pagination" id="pagination_3">
+			
+			</div>
+			</div>
+			
+		</div>
     </div>
     </div>
 </body>
 <script>
 $(document).ready(function(){
-	paging(1);
+	paging_1(1);
+	paging_2(1);
+	paging_3(1);
 })
 </script>
 </html>
