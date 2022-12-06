@@ -4,7 +4,7 @@
               <div class="card mb-4">
                 <div class="card-header"><strong>Accordion</strong></div>
                 <div class="card-body">
-                  <p class="text-medium-emphasis small">Click the accordions below to expand/collapse the accordion content.</p>
+                  <p class="text-medium-emphasis small">한글써지나</p>
                   <div class="example">
                     <ul class="nav nav-tabs" role="tablist">
                       <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-734" role="tab">

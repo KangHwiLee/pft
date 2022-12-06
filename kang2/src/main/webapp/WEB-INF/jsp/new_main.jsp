@@ -78,11 +78,11 @@
         <!-- 헤더 ajax 인클루드 -->
         
       </header>
-      <div class="body flex-grow-1 px-3" id="body">
+      <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-          <div class="row">
+          <div class="row" id="body">
         <!-- body ajax 인클루드 -->
-          <jsp:include page="/WEB-INF/jsp/new_pft/body_sample.jsp"/>
+          <%-- <jsp:include page="/WEB-INF/jsp/new_pft/body_sample.jsp"/> --%>
         </div>
         </div>
       </div>
@@ -114,28 +114,26 @@
 			  $("#header").html(data);
 		  }
 	  })
-	 // body_sample()
+	 main_body()
   })
   
-  function body_sample(){
+  function main_body(){
 	  $.ajax({
-		  url : "/body_sample",
+		  url : "/main_body",
 		  type : "get",
 		  dataType : "html",
 		  success : function(data){
-			  console.log(data);
-			  $("#body").html("<div><p>test</p></div>");
+			  $("#body").html(data);
 		  }
 	  })
   }
   
-  function accordion(){
+  function stack_menu_move(num){
 	  $.ajax({
-		  url : "/accordion",
+		  url : "/stack_menu_move?num="+num,
 		  type : "get",
 		  dataType : "html",
 		  success : function(data){
-			  console.log(data);
 			  $("#body").html(data);
 		  }
 	  })
