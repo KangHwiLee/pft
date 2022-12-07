@@ -49,4 +49,22 @@ public class NewHomeController {
 		return "";
 	}
 	
+	@GetMapping("/chart_menu_move")
+	public String chart_menu_move(int num) {
+		if(num == 1) {
+			return "chartjs/bar_chart";
+		}else if(num == 2) {
+			return "chartjs/line_chart";
+		}else if(num == 3) {
+			
+		}else if(num == 4) {
+			
+		}else if(num == 5) {
+			
+		}else if(num == 6) {
+			
+		}
+		return "";
+	}
+	
 }

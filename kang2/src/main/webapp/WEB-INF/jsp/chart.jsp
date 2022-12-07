@@ -24,6 +24,7 @@
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
     <title>포트폴리오 뉴 샘플</title>
     <script src="resources/js/jquery-3.6.0.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="resources/core_ui/assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="resources/core_ui/assets/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="resources/core_ui/assets/favicon/apple-icon-72x72.png">
@@ -63,6 +64,8 @@
       // Bootstrap ID
       gtag('config', 'UA-118965717-5');
     </script>
+    <link href="resources/core_ui/vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+    <link href="resources/core_ui/scss/_ltr-rtl.scss" type="text/css">
       </head>
   <body class="dark-theme">
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
@@ -76,14 +79,12 @@
         <!-- 헤더 ajax 인클루드 -->
         
       </header>
-      <div class="body flex-grow-1 px-3">
+      <div class="body flex-grow-1 px-3" id="body">
         <div class="container-lg">
-          <div class="row" id="body">
-        <!-- body ajax 인클루드 -->
-          <%-- <jsp:include page="/WEB-INF/jsp/new_pft/body_sample.jsp"/> --%>
-          <div class="today-wrap">
-                                <canvas id="card-chart1" width="1400" height="270px"></canvas>
-          </div>
+          <div class="row">
+	     	<div>
+			  	<canvas id="myChart"></canvas>
+			</div>
         </div>
         </div>
       </div>
@@ -96,13 +97,13 @@
     <script src="resources/core_ui/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
     <script src="resources/core_ui/vendors/simplebar/js/simplebar.min.js"></script>
     <!-- Plugins and scripts required by this view-->
+    <script src="resources/core_ui/vendors/chart.js/js/chart.min.js"></script>
+    <script src="resources/core_ui/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
     <script src="resources/core_ui/vendors/@coreui/utils/js/coreui-utils.js"></script>
-    <!-- <script src="resources/core_ui/js/main.js"></script> -->
+    <script src="resources/core_ui/js/main.js"></script>
     <script>
     </script>
-  <div id="today_chart">
 
-  </div>
   </body>
   
   <script>
@@ -115,69 +116,29 @@
 			  $("#header").html(data);
 		  }
 	  })
-	 main_body()
+	 // body_sample()
   })
   
-  function main_body(){
+  function body_sample(){
 	  $.ajax({
-		  url : "/main_body",
+		  url : "/body_sample",
 		  type : "get",
 		  dataType : "html",
 		  success : function(data){
-			  $("#body").html(data);
+			  console.log(data);
+			  $("#body").html("<div><p>test</p></div>");
 		  }
 	  })
   }
   
-  function stack_menu_move(num){
+  function accordion(){
 	  $.ajax({
-		  url : "/stack_menu_move?num="+num,
+		  url : "/accordion",
 		  type : "get",
 		  dataType : "html",
 		  success : function(data){
+			  console.log(data);
 			  $("#body").html(data);
-		  }
-	  })
-  }
-
-  function chart_menu_move(num){
-	  $.ajax({
-		  url : "/chart_menu_move?num="+num,
-		  type : "get",
-		  dataType : "html",
-		  success : function(data){
-				var chart_area = document.createElement("canvas")
-				  chart_area.setAttribute("id", "mychart")
-				  chart_area.style.width="1000px";
-				  chart_area.style.height="500px";
-				  $("#body").html(chart_area);
-			  
-			  var chart_config = document.getElementById("today_chart")
-				  chart_config = document.createElement("div")
-				  chart_config.setAttribute("id", "today_chart")
-				  console.log(chart_config);
-			  $("#today_chart").html(data);
-			  
-			 	var randomize = document.createElement("button");
-			 	var jbBtnText = document.createTextNode( 'randomize' );
-			 	randomize.setAttribute("type", "button");
-			 	randomize.setAttribute("onclick", "randomize()");
-			 	randomize.appendChild(jbBtnText);
-			 	$("#body").append(randomize);
-			 	
-			 	var addDataSet = document.createElement("button");
-			 	var jbBtnText = document.createTextNode( 'addDataSet' );
-			 	addDataSet.setAttribute("type", "button")
-			 	addDataSet.setAttribute("onclick", "addDataSet()")
-			 	addDataSet.appendChild(jbBtnText);
-			 	$("#body").append(addDataSet);
-
-			 	var subDataSet = document.createElement("button");
-			 	var jbBtnText = document.createTextNode( 'subDataSet' );
-			 	subDataSet.setAttribute("type", "button")
-			 	subDataSet.setAttribute("onclick", "subDataSet()")
-			 	subDataSet.appendChild(jbBtnText);
-			 	$("#body").append(subDataSet);
 		  }
 	  })
   }

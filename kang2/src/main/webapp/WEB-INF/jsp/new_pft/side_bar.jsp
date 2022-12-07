@@ -35,7 +35,7 @@
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Tooltips</a></li>
           </ul>
         </li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+        <li class="nav-group"><a class="nav-link" href="#">
             <svg class="nav-icon">
               <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-cursor"></use>
             </svg> Buttons</a>
@@ -45,10 +45,17 @@
             <li class="nav-item"><a class="nav-link" href="buttons/dropdowns.html"><span class="nav-icon"></span> Dropdowns</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link" href="charts.html">
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
-              <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-chart-pie"></use>
-            </svg> Charts</a></li>
+               <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-chart-pie"></use>
+            </svg> chart.js</a>
+          <ul class="nav-group-items">
+            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="chart_menu_move(1)"><span class="nav-icon"></span> bar_chart</a></li>
+            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="chart_menu_move(2)"><span class="nav-icon"></span> line_chart</a></li>
+            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Cards</a></li>
+            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Carousel</a></li>
+          </ul>
+        </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-notes"></use>
@@ -126,4 +133,3 @@
           </a></li>
           
 </ul>
-      <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
