@@ -20,7 +20,7 @@
           <ul class="nav-group-items">
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Accordion</a></li>
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(2)"><span class="nav-icon"></span> paging</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Cards</a></li>
+            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(3)"><span class="nav-icon"></span> GIS</a></li>
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Carousel</a></li>
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Collapse</a></li>
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> List group</a></li>

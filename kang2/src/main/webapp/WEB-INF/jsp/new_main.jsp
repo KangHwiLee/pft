@@ -57,6 +57,7 @@
     <script src="resources/codemirror-5.65.10/lib/codemirror.js"></script>
     <script src="resources/codemirror-5.65.10/mode/javascript/javascript.js"></script>
     <script src="resources/js/smtp.js" ></script>
+    <script src="resources/js/main.js" ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
 
@@ -84,12 +85,10 @@
       </header>
       <div class="body flex-grow-1 px-3">
         <div class="container-lg">
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4149bafdb9a5a5f288ffa60a0dbfbd37&libraries=services,clusterer,drawing"></script>
           <div class="row" id="body">
         <!-- body ajax 인클루드 -->
           <%-- <jsp:include page="/WEB-INF/jsp/new_pft/body_sample.jsp"/> --%>
-          <div class="today-wrap">
-                                <canvas id="card-chart1" width="1400" height="270px"></canvas>
-          </div>
         </div>
         </div>
       </div>
@@ -112,106 +111,7 @@
   </body>
   
   <script>
-  $(document).ready(function(){
-	  $.ajax({
-		  url : "/header",
-		  type : "get",
-		  dataType : "html",
-		  success : function(data){
-			  $("#header").html(data);
-		  }
-	  })
-	 main_body()
-  })
-  
-  function main_body(){
-	  $.ajax({
-		  url : "/main_body",
-		  type : "get",
-		  dataType : "html",
-		  success : function(data){
-			  $("#body").html(data);
-		  }
-	  })
-  }
-  
-  function stack_menu_move(num){
-	  $.ajax({
-		  url : "/stack_menu_move?num="+num,
-		  type : "get",
-		  dataType : "html",
-		  success : function(data){
-			  $("#body").html(data);
-		  }
-	  })
-  }
 
-  function chart_menu_move(num){
-	  var codemr = document.createElement("jsp:include")
-	  codemr.setAttribute("page", "/WEB-INF/jsp/base/codemirror_area.jsp");
-	  console.log(codemr)
-	  $.ajax({
-		  url : "/chart_menu_move?num="+num,
-		  type : "get",
-		  dataType : "html",
-		  success : function(data){
-				var chart_area = document.createElement("canvas")
-				  chart_area.setAttribute("id", "mychart")
-				  chart_area.style.width="1000px";
-				  chart_area.style.height="500px";
-				  $("#body").html(chart_area);
-			  
-			  var chart_config = document.getElementById("today_chart")
-				  chart_config = document.createElement("div")
-				  chart_config.setAttribute("id", "today_chart")
-				  console.log(chart_config);
-			  $("#today_chart").html(data);
-			  
-			 	var randomize = document.createElement("button");
-			 	var jbBtnText = document.createTextNode( 'randomize' );
-			 	randomize.setAttribute("type", "button");
-			 	randomize.setAttribute("onclick", "randomize()");
-			 	randomize.appendChild(jbBtnText);
-			 	$("#body").append(randomize);
-			 	
-			 	var addDataSet = document.createElement("button");
-			 	var jbBtnText = document.createTextNode( 'addDataSet' );
-			 	addDataSet.setAttribute("type", "button")
-			 	addDataSet.setAttribute("onclick", "addDataSet()")
-			 	addDataSet.appendChild(jbBtnText);
-			 	$("#body").append(addDataSet);
-
-			 	var subDataSet = document.createElement("button");
-			 	var jbBtnText = document.createTextNode( 'subDataSet' );
-			 	subDataSet.setAttribute("type", "button")
-			 	subDataSet.setAttribute("onclick", "subDataSet()")
-			 	subDataSet.appendChild(jbBtnText);
-			 	$("#body").append(subDataSet);
-			 	
-			 	$.ajax({
-			 		url : "/code_mirror_area",
-			 		data : {"data" : data},
-			 		type : "get",
-			 		dataType : "html",
-			 		success : function(data){
-			 			$("#body").append(data)
-			 		
-			 		}
-			 	})
-		  }
-	  })
-  }
-  
-  function tistory(){
-	  $.ajax({
-		  url : "/tistory",
-		  type : "get",
-		  dataType : "html",
-		  success : function(data){
-			 $("#body").html(data);
-		  }
-	  })
-  }
   
   </script>
   

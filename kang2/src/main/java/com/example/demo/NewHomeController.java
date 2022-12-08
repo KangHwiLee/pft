@@ -30,7 +30,7 @@ public class NewHomeController {
 		}else if(num == 2) {
 			return "stack/paging";
 		}else if(num == 3) {
-			
+			return "base/gis";
 		}else if(num == 4) {
 			
 		}else if(num == 5) {
