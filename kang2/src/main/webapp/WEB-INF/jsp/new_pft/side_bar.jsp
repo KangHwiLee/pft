@@ -24,26 +24,12 @@
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Carousel</a></li>
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Collapse</a></li>
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> List group</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Navs &amp; Tabs</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Pagination</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Placeholders</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Popovers</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Progress</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Scrollspy</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Spinners</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Tables</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Tooltips</a></li>
           </ul>
         </li>
-        <li class="nav-group"><a class="nav-link" href="#">
+        <li class="nav-group"><a class="nav-link"  href="javascript:void(0)" onclick="tistory()">
             <svg class="nav-icon">
               <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-cursor"></use>
-            </svg> Buttons</a>
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="buttons/buttons.html"><span class="nav-icon"></span> Buttons</a></li>
-            <li class="nav-item"><a class="nav-link" href="buttons/button-group.html"><span class="nav-icon"></span> Buttons Group</a></li>
-            <li class="nav-item"><a class="nav-link" href="buttons/dropdowns.html"><span class="nav-icon"></span> Dropdowns</a></li>
-          </ul>
+            </svg> tistory</a>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">

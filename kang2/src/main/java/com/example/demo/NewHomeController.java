@@ -2,6 +2,8 @@ package com.example.demo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class NewHomeController {
@@ -65,6 +67,29 @@ public class NewHomeController {
 			
 		}
 		return "";
+	}
+
+	@PostMapping("/chart_menu_move")
+	public String chart_text_get(int num) {
+		if(num == 1) {
+			return "chartjs/bar_chart";
+		}else if(num == 2) {
+			return "chartjs/line_chart";
+		}else if(num == 3) {
+			
+		}else if(num == 4) {
+			
+		}else if(num == 5) {
+			
+		}else if(num == 6) {
+			
+		}
+		return "";
+	}
+	
+	@GetMapping("/tistory")
+	public String tistory() {
+		return "base/tistory";
 	}
 	
 }

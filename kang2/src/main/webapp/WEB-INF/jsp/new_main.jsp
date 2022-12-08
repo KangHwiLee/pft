@@ -51,6 +51,12 @@
     <link href="resources/core_ui/css/examples.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    
+	<link rel="stylesheet" href="resources/codemirror-5.65.10/lib/codemirror.css"/>
+	<link rel="stylesheet" href="resources/codemirror-5.65.10/theme/darcula.css"/>
+    <script src="resources/codemirror-5.65.10/lib/codemirror.js"></script>
+    <script src="resources/codemirror-5.65.10/mode/javascript/javascript.js"></script>
+    <script src="resources/js/smtp.js" ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
 
@@ -141,6 +147,9 @@
   }
 
   function chart_menu_move(num){
+	  var codemr = document.createElement("jsp:include")
+	  codemr.setAttribute("page", "/WEB-INF/jsp/base/codemirror_area.jsp");
+	  console.log(codemr)
 	  $.ajax({
 		  url : "/chart_menu_move?num="+num,
 		  type : "get",
@@ -178,6 +187,28 @@
 			 	subDataSet.setAttribute("onclick", "subDataSet()")
 			 	subDataSet.appendChild(jbBtnText);
 			 	$("#body").append(subDataSet);
+			 	
+			 	$.ajax({
+			 		url : "/code_mirror_area",
+			 		data : {"data" : data},
+			 		type : "get",
+			 		dataType : "html",
+			 		success : function(data){
+			 			$("#body").append(data)
+			 		
+			 		}
+			 	})
+		  }
+	  })
+  }
+  
+  function tistory(){
+	  $.ajax({
+		  url : "/tistory",
+		  type : "get",
+		  dataType : "html",
+		  success : function(data){
+			 $("#body").html(data);
 		  }
 	  })
   }

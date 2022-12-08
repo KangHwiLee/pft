@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -36,15 +37,6 @@ public class HomeController {
 		return "content/content_write";
 	}
 	
-	@GetMapping("/chat2")
-	public String chat2() {
-		return "chat2";
-	}
-	@GetMapping("/final_chat")
-	public String final_chat() {
-		return "final_chat";
-	}
-	
 	@GetMapping("/menu_move")
 	public String menu_move(int num) {
 		if(num == 1) {
@@ -69,6 +61,12 @@ public class HomeController {
 	@GetMapping("/new_main")
 	public String new_main() {
 		return "new_main";
+	}
+	
+	@GetMapping("/code_mirror_area")
+	public String code_mirror_area(String data, Model model) {
+		model.addAttribute("data", data);
+		return "base/codemirror_area";
 	}
 	
 }

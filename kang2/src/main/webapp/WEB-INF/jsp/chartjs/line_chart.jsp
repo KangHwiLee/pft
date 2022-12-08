@@ -71,6 +71,7 @@ var color = ['rgb(255, 99, 132)',
   }
   
   function addDataSet(){
+	  console.log(config.data.datasets.length)
 	  var add = [];
 	  var addDataSet = {
 			    label: 'My First Dataset',

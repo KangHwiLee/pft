@@ -326,6 +326,37 @@
                       </div>
                       
                     </div>
+                    
+                     <div class="col-12">
+              <div class="card mb-4">
+                <div class="card-header"><strong>Accordion</strong></div>
+                <div class="card-body">
+               <form class="gform" action="https://script.google.com/macros/s/AKfycbx9nExULoj1YDEoy-kfvn_rNNnBBwyvWICCCaRunCH8Xt02N2ZKyI5FjbLi25lUBV5H6w/exec" method="post" data-email="rkdgnl12336@gmail.com" name="send_mail">
+				   이름 :  <input type="text" name="name"><br>
+				   내용 : <textarea name="message" style="width:700px; height:500px;"></textarea>
+				</form>
+				    <button type="button" onclick="send_email()">send_mail</button>
+                </div>
+              </div>
+            </div>
+            <script>
+            function send_email(){
+            var queryString = $("form[name=send_mail]").serialize() ;
+            	console.log(queryString);
+            $.ajax({
+                data: queryString,
+                url: 'https://script.google.com/macros/s/AKfycbx9nExULoj1YDEoy-kfvn_rNNnBBwyvWICCCaRunCH8Xt02N2ZKyI5FjbLi25lUBV5H6w/exec',
+                method: 'post',
+                success: (data) => {
+                    console.log(data)
+                    // parsing = JSON.parse(data.data);
+                },
+                error: (xhr, err) => {
+                    console.log(err);
+                }
+            });
+            }
+            </script>
                     <!-- /.col-->
                   </div>
                   <!-- /.row--><br>
