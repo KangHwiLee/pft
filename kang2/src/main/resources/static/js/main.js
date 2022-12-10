@@ -100,3 +100,15 @@
 		  }
 	  })
   }
+  
+  function chartData(){
+	$.ajax({
+		url : "/chartData",
+		data : {"kospi" : "코스피", "kosdaq" : "코스닥"},
+		dataType : "json",
+		type : "get",
+		success : function(data){
+			console.log(data[0].baseDt);
+		}
+	})
+}

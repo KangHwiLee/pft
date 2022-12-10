@@ -7,68 +7,71 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.stereotype.Service;
+
+import com.google.gson.JsonObject;
 
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 
+@Service
 public class KOSPI {
 
-	private static String key = "BxcWG0ueyR3PlJiksIoqpwFsFQJyLjESYHD0G0HAKVdvre4PLyY04bt73WD3q4Gj0fS4CkStegrF21Ai%2BeDqIw%3D%3D";
-	private static String url = "http://apis.data.go.kr/1160100/service/GetMarketIndexInfoService/getStockMarketIndex";
+	private String key = "BxcWG0ueyR3PlJiksIoqpwFsFQJyLjESYHD0G0HAKVdvre4PLyY04bt73WD3q4Gj0fS4CkStegrF21Ai%2BeDqIw%3D%3D";
+	private String url = "http://apis.data.go.kr/1160100/service/GetMarketIndexInfoService/getStockMarketIndex";
 	
-	public static void main(String[] args) throws IOException{
+	public List<JSONObject> chart_data(String search) throws IOException{
 		// TODO Auto-generated method stub
 		//try {
 			StringBuilder builder = new StringBuilder(url);
 			builder.append("?" + URLEncoder.encode("serviceKey","UTF-8")+"="+key);
 			builder.append("&" + URLEncoder.encode("resultType","UTF-8")+"="+URLEncoder.encode("json","UTF-8"));
-			builder.append("&" + URLEncoder.encode("numOfRows","UTF-8")+"=3");
-			builder.append("&" + URLEncoder.encode("idxNm","UTF-8")+"="+URLEncoder.encode("코스피","UTF-8"));
-			
-			
+			builder.append("&" + URLEncoder.encode("numOfRows","UTF-8")+"=10");
+			builder.append("&" + URLEncoder.encode("idxNm","UTF-8")+"="+URLEncoder.encode(search,"UTF-8"));
+			//builder.append("&" + URLEncoder.encode("basDt","UTF-8")+"=20221206");
 			
 			Object test2 = json_list(builder.toString());
-			System.out.println(test2.toString());
-			
-			/*URL url = new URL(builder.toString());
-			HttpURLConnection conn =  (HttpURLConnection) url.openConnection();
-			conn.setRequestMethod("GET");
-			conn.setRequestProperty("Content-type", "application/json");
-			BufferedReader rd;
-			if(conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
-	            rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-	        } else {
-	            rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
-	        }
-	        StringBuilder sb = new StringBuilder();
-	        String line;
-	        while ((line = rd.readLine()) != null) {
-	            sb.append(line);
-	        }
-	        rd.close();
-	        conn.disconnect();*/
-	        //System.out.println(sb.toString());
-	        
-	        
-	      /*  Object obj = null;
-	        JSONObject jsonObject = new JSONObject(sb.toString());
-	        JSONObject json1 = new JSONObject(jsonObject.get("response").toString());
-	        JSONObject json3 = new JSONObject(json1.get("body").toString());
-	        JSONObject json4 = new JSONObject(json3.get("items").toString());
-	        System.out.println("");
-	        */
-		/*} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+			System.out.println("??");
+			JSONArray array2 = new JSONArray(test2.toString());
+			List<JSONObject> list = new ArrayList<>();
+			for(int i=0; i<10; i++) {
+				int num = 9;
+				num = 9-i;
+				String testjson = "{'baseDt' : '" + array2.getJSONObject(num).get("basDt") + "', 'clpr' : '" + array2.getJSONObject(num).get("clpr") + "'}";
+				JSONObject res = new JSONObject(testjson);
+				
+				list.add(res);
+				//map.put(result, result)
+				System.out.println(res);
+				System.out.println("");
+			}
+			return list;
+	}
+
+	public  Object json_list(String url) {
 		
+		Object obj = null;
+		try {
+			JSONObject json = new JSONObject( data_list(url) );
+			obj = ((JSONObject)((JSONObject)((JSONObject)json.get("response")).get("body")).get("items")).get("item");
+		}catch(Exception e) {
+			log.error("기상청 공공데이터 오류로 인한 JSON 변환 불가:[{}]\n{}", url, e.getMessage());
+		}
+		if( obj==null ) return null;
+		else {
+			if ( obj instanceof JSONArray )	return (JSONArray)obj;
+			else return (JSONObject)obj;
+		}
 	}
 	
-	private static String data_list(String url){
+	private  String data_list(String url){
 		String result = "";
 		
 		try{
@@ -76,9 +79,6 @@ public class KOSPI {
 				= (HttpURLConnection)(new URL( url )).openConnection();
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Content-type", "application/json");
-			System.out.println("??");
-			System.out.println(conn);
-			System.out.println("Response code: " + conn.getResponseCode());
 			BufferedReader reader;
 			if( conn.getResponseCode()>=200 && conn.getResponseCode()<=300){
 				reader = new BufferedReader( new InputStreamReader( conn.getInputStream(), "utf-8" ) );
@@ -99,26 +99,5 @@ public class KOSPI {
 		}
 		return result;
 	}
-	
-	
-	
-	public static Object json_list(String url) {
-		
-		Object obj = null;
-		try {
-			JSONObject json = new JSONObject( data_list(url) );
-			System.out.println("여기까진 와지나요");
-			obj = ((JSONObject)((JSONObject)((JSONObject)json.get("response")).get("body")).get("items")).get("item");
-		}catch(Exception e) {
-			log.error("기상청 공공데이터 오류로 인한 JSON 변환 불가:[{}]\n{}", url, e.getMessage());
-		}
-		if( obj==null ) return null;
-		else {
-			if ( obj instanceof JSONArray )	return (JSONArray)obj;
-			else return (JSONObject)obj;
-		}
-	}
-	
-
 
 }

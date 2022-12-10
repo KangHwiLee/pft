@@ -111,7 +111,9 @@
   </body>
   
   <script>
-
+	$(document).ready(function(){
+		chartData();
+	})
   
   </script>
   

@@ -1,13 +1,26 @@
 package com.example.demo;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import common.KOSPI;
+
 @Controller
 public class NewHomeController {
-
+	
+	private KOSPI kospiController;
+	
+	public NewHomeController(KOSPI kospiController) {
+		this.kospiController = kospiController;
+	}
+	
 	@GetMapping("/index")
 	public String index() {
 		return "index";
@@ -92,4 +105,23 @@ public class NewHomeController {
 		return "base/tistory";
 	}
 	
+	@GetMapping("/chartData")
+	@ResponseBody
+	public List<String> chartData(String kospi, String kosdaq){
+		List<String> list = new ArrayList<>();
+		List<JSONObject> list1 = null;
+		List<JSONObject> list2 = null;
+		try {
+			list1 = kospiController.chart_data(kospi);
+			list2 = kospiController.chart_data(kosdaq);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String test1 = list1.toString().substring(1, list1.toString().length()-1);
+		list.add(test1);
+		System.out.println(test1);
+		System.out.println(list.toString());
+		return list;
+	}
 }
