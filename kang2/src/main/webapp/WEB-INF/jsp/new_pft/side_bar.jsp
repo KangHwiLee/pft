@@ -38,11 +38,11 @@
           <ul class="nav-group-items">
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="chart_menu_move(1)"><span class="nav-icon"></span> bar_chart</a></li>
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="chart_menu_move(2)"><span class="nav-icon"></span> line_chart</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Cards</a></li>
+            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="chart_menu_move(3)"><span class="nav-icon"></span> kospi_chart</a></li>
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="stack_menu_move(1)"><span class="nav-icon"></span> Carousel</a></li>
           </ul>
         </li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+        <!-- <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-notes"></use>
             </svg> Forms</a>
@@ -56,8 +56,8 @@
             <li class="nav-item"><a class="nav-link" href="forms/layout.html"> Layout</a></li>
             <li class="nav-item"><a class="nav-link" href="forms/validation.html"> Validation</a></li>
           </ul>
-        </li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+        </li> -->
+       <!--  <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-star"></use>
             </svg> Icons</a>
@@ -66,8 +66,8 @@
             <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-brand.html"> CoreUI Icons - Brand</a></li>
             <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-flag.html"> CoreUI Icons - Flag</a></li>
           </ul>
-        </li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+        </li> -->
+        <!-- <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
             </svg> Notifications</a>
@@ -77,12 +77,12 @@
             <li class="nav-item"><a class="nav-link" href="notifications/modals.html"><span class="nav-icon"></span> Modals</a></li>
             <li class="nav-item"><a class="nav-link" href="notifications/toasts.html"><span class="nav-icon"></span> Toasts</a></li>
           </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="widgets.html">
+        </li> -->
+        <!-- <li class="nav-item"><a class="nav-link" href="widgets.html">
             <svg class="nav-icon">
               <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-calculator"></use>
-            </svg> Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
-        <li class="nav-divider"></li>
+            </svg> Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li> -->
+        <!-- <li class="nav-divider"></li>
         <li class="nav-title">Extras</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
@@ -106,8 +106,8 @@
                   <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-bug"></use>
                 </svg> Error 500</a></li>
           </ul>
-        </li>
-        <li class="nav-item mt-auto"><a class="nav-link" href="https://coreui.io/docs/templates/installation/" target="_blank">
+        </li> -->
+        <!-- <li class="nav-item mt-auto"><a class="nav-link" href="https://coreui.io/docs/templates/installation/" target="_blank">
             <svg class="nav-icon">
               <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-description"></use>
             </svg> Docs</a></li>
@@ -116,6 +116,6 @@
               <use xlink:href="resources/core_ui/vendors/@coreui/icons/svg/free.svg#cil-layers"></use>
             </svg> Try CoreUI
             <div class="fw-semibold">PRO</div>
-          </a></li>
+          </a></li> -->
           
 </ul>

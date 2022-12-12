@@ -10,7 +10,7 @@ if(this.mychart != null){
 	console.log("차트이미존재 확인")
 	this.mychart.destroy();
 };
-  var ctx = document.getElementById('mychart');
+  var ctx = document.getElementById('myChart');
   
   var data = {
 		  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],

@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.json.JSONObject;
@@ -71,7 +72,7 @@ public class NewHomeController {
 		}else if(num == 2) {
 			return "chartjs/line_chart";
 		}else if(num == 3) {
-			
+			return "chartjs/kospi_chart";
 		}else if(num == 4) {
 			
 		}else if(num == 5) {
@@ -84,12 +85,13 @@ public class NewHomeController {
 
 	@PostMapping("/chart_menu_move")
 	public String chart_text_get(int num) {
+		System.out.println(num);
 		if(num == 1) {
 			return "chartjs/bar_chart";
 		}else if(num == 2) {
 			return "chartjs/line_chart";
 		}else if(num == 3) {
-			
+			return "chartjs/kospi_chart";
 		}else if(num == 4) {
 			
 		}else if(num == 5) {
@@ -107,21 +109,26 @@ public class NewHomeController {
 	
 	@GetMapping("/chartData")
 	@ResponseBody
-	public List<String> chartData(String kospi, String kosdaq){
-		List<String> list = new ArrayList<>();
+	public List<HashMap<String, String>> chartData(String name){
+		List<HashMap<String, String>> list = new ArrayList<>();
 		List<JSONObject> list1 = null;
-		List<JSONObject> list2 = null;
 		try {
-			list1 = kospiController.chart_data(kospi);
-			list2 = kospiController.chart_data(kosdaq);
+			list1 = kospiController.chart_data(name);
+			for(int i=0; i<list1.size(); i++) {
+				HashMap<String, String> map = new HashMap<String, String>();
+				map.put("clpr", list1.get(i).getString("clpr"));
+				map.put("baseDt", list1.get(i).getString("baseDt"));
+				map.put("fltRt", list1.get(i).getString("fltRt"));
+				map.put("vs", list1.get(i).getString("vs"));
+				list.add(map);
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String test1 = list1.toString().substring(1, list1.toString().length()-1);
-		list.add(test1);
-		System.out.println(test1);
-		System.out.println(list.toString());
+		//String test1 = list1.toString().substring(1, list1.toString().length()-1);
+		//String test2 = list2.toString().substring(1, list2.toString().length()-1);
+		//System.out.println(test1);
 		return list;
 	}
 }

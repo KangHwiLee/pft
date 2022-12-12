@@ -33,24 +33,21 @@ public class KOSPI {
 			StringBuilder builder = new StringBuilder(url);
 			builder.append("?" + URLEncoder.encode("serviceKey","UTF-8")+"="+key);
 			builder.append("&" + URLEncoder.encode("resultType","UTF-8")+"="+URLEncoder.encode("json","UTF-8"));
-			builder.append("&" + URLEncoder.encode("numOfRows","UTF-8")+"=10");
+			builder.append("&" + URLEncoder.encode("numOfRows","UTF-8")+"=20");
 			builder.append("&" + URLEncoder.encode("idxNm","UTF-8")+"="+URLEncoder.encode(search,"UTF-8"));
 			//builder.append("&" + URLEncoder.encode("basDt","UTF-8")+"=20221206");
-			
+			System.out.println(builder.toString());
 			Object test2 = json_list(builder.toString());
-			System.out.println("??");
 			JSONArray array2 = new JSONArray(test2.toString());
 			List<JSONObject> list = new ArrayList<>();
-			for(int i=0; i<10; i++) {
-				int num = 9;
-				num = 9-i;
-				String testjson = "{'baseDt' : '" + array2.getJSONObject(num).get("basDt") + "', 'clpr' : '" + array2.getJSONObject(num).get("clpr") + "'}";
+			for(int i=0; i<array2.length(); i++) {
+				int num = array2.length()-1;
+				num = num-i;
+				String testjson = "{'baseDt' : '" + array2.getJSONObject(num).get("basDt") + "', 'clpr' : '" + array2.getJSONObject(num).get("clpr") + "', 'fltRt' : '" + array2.getJSONObject(num).get("fltRt") + "', 'vs' : '"+ array2.getJSONObject(num).get("vs")+"'}";
 				JSONObject res = new JSONObject(testjson);
 				
 				list.add(res);
 				//map.put(result, result)
-				System.out.println(res);
-				System.out.println("");
 			}
 			return list;
 	}
@@ -93,7 +90,6 @@ public class KOSPI {
 			reader.close();
 			conn.disconnect();
 			result = data.toString();
-		
 		}catch(Exception e){
 			log.error("기상청 공공데이터 정보요청중 오류:{}", e.getMessage());
 		}

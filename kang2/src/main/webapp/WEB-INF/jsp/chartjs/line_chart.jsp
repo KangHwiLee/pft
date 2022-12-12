@@ -20,7 +20,7 @@ var color = ['rgb(255, 99, 132)',
 		      'rgb(255, 159, 64)']
 
 
-  var ctx = document.getElementById('mychart');
+  var ctx = document.getElementById('myChart');
   
   var data = {
 		  labels: 'dataset1',

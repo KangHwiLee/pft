@@ -8,9 +8,9 @@
               <use xlink:href="resources/core_ui/assets/brand/coreui.svg#full"></use>
             </svg></a>
           <ul class="header-nav d-none d-md-flex">
-            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+            <li class="nav-item"><a class="nav-link" href="/new_main">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="/new_main">Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="/new_main">Settings</a></li>
           </ul>
           <ul class="header-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="#">

@@ -35,19 +35,36 @@
   }
 
   function chart_menu_move(num){
+	num = parseInt(num);
 	  var codemr = document.createElement("jsp:include")
 	  codemr.setAttribute("page", "/WEB-INF/jsp/base/codemirror_area.jsp");
-	  console.log(codemr)
+	  console.log(num);
 	  $.ajax({
 		  url : "/chart_menu_move?num="+num,
 		  type : "get",
 		  dataType : "html",
 		  success : function(data){
+			if(num == 3){
+				var title = document.createElement("h1")
+				var content = document.createElement("span")
+				var content2 = document.createElement("span")
+				content.setAttribute("id", "span_1");
+				content2.setAttribute("id", "span_2");
+				$("#body").html(title);
+				$("#body").append(content);
+				$("#body").append(content2);
+				$("#body h1").text("20일 코스피 주식 차트")
+				$("#body #span_1").text("test")
+				$("#body #span_2").text("test2")
+			}else{
+				$("#body").empty();
+			}
+			
 				var chart_area = document.createElement("canvas")
-				  chart_area.setAttribute("id", "mychart")
+				  chart_area.setAttribute("id", "myChart")
 				  chart_area.style.width="1000px";
 				  chart_area.style.height="500px";
-				  $("#body").html(chart_area);
+				  $("#body").append(chart_area);
 			  
 			  var chart_config = document.getElementById("today_chart")
 				  chart_config = document.createElement("div")
@@ -101,14 +118,3 @@
 	  })
   }
   
-  function chartData(){
-	$.ajax({
-		url : "/chartData",
-		data : {"kospi" : "코스피", "kosdaq" : "코스닥"},
-		dataType : "json",
-		type : "get",
-		success : function(data){
-			console.log(data[0].baseDt);
-		}
-	})
-}
