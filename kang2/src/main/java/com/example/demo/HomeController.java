@@ -58,15 +58,6 @@ public class HomeController {
 		}
 	}
 	
-	@GetMapping("/new_main")
-	public String new_main() {
-		return "new_main";
-	}
-	
-	@GetMapping("/code_mirror_area")
-	public String code_mirror_area(String data, Model model) {
-		model.addAttribute("data", data);
-		return "base/codemirror_area";
-	}
+
 	
 }

@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,6 +21,17 @@ public class NewHomeController {
 	
 	public NewHomeController(KOSPI kospiController) {
 		this.kospiController = kospiController;
+	}
+	
+	@GetMapping("/new_main")
+	public String new_main() {
+		return "new_main";
+	}
+	
+	@GetMapping("/code_mirror_area")
+	public String code_mirror_area(String data, Model model) {
+		model.addAttribute("data", data);
+		return "base/codemirror_area";
 	}
 	
 	@GetMapping("/index")

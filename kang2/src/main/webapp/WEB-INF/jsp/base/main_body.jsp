@@ -327,12 +327,18 @@
                       
                     </div>
                     
-                     <div class="col-12">
+                     
+                    <!-- /.col-->
+                  </div>
+                  <!-- /.row--><br>
+                </div>
+              </div>
+              <div class="col-12">
               <div class="card mb-4">
                 <div class="card-header"><strong>Accordion</strong></div>
                 <div class="card-body">
                <form class="gform" action="https://script.google.com/macros/s/AKfycbx9nExULoj1YDEoy-kfvn_rNNnBBwyvWICCCaRunCH8Xt02N2ZKyI5FjbLi25lUBV5H6w/exec" method="post" data-email="rkdgnl12336@gmail.com" name="send_mail">
-				   이름 :  <input type="text" name="name"><br>
+				   제목 :  <input type="text" name="name"><br>
 				   내용 : <textarea name="message" style="width:700px; height:500px;"></textarea>
 				</form>
 				    <button type="button" onclick="send_email()">send_mail</button>
@@ -348,7 +354,7 @@
                 url: 'https://script.google.com/macros/s/AKfycbx9nExULoj1YDEoy-kfvn_rNNnBBwyvWICCCaRunCH8Xt02N2ZKyI5FjbLi25lUBV5H6w/exec',
                 method: 'post',
                 success: (data) => {
-                    console.log(data)
+                    alert("성공적으로 메일이 전송되었습니다")
                     // parsing = JSON.parse(data.data);
                 },
                 error: (xhr, err) => {
@@ -357,11 +363,6 @@
             });
             }
             </script>
-                    <!-- /.col-->
-                  </div>
-                  <!-- /.row--><br>
-                </div>
-              </div>
             </div>
             <!-- /.col-->
           </div>
