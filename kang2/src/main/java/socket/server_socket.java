@@ -1,4 +1,4 @@
-package tcp;
+package socket;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -34,18 +34,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.mysql.cj.xdevapi.JsonArray;
 
-import model.T_SocketService;
-import model.CctvVO;
-import model.SocketDAO;
-
-public class ProcessingThread extends Thread {
+public class server_socket extends Thread {
 	private Socket socket;
-	private Logger logger = LoggerFactory.getLogger(ProcessingThread.class);
-	private T_SocketService dao;
+	private Logger logger = LoggerFactory.getLogger(server_socket.class);
 
-	public ProcessingThread(Socket socket, T_SocketService dao) {
+	public server_socket(Socket socket) {
 		this.socket = socket;
-		this.dao = dao;
 	}
 	
 	public void run(){
@@ -53,9 +47,6 @@ public class ProcessingThread extends Thread {
 		int bug_status = 1;
 			
 		BufferedReader reader = null;
-		ffmpeg_start ffm = new ffmpeg_start();
-		
-		
 		
 		try {
 			
