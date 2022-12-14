@@ -1,6 +1,6 @@
 package config;
 
-
+/*
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,3 +15,4 @@ public class TestCommandLineRunner implements CommandLineRunner {
         socket.main(args);
     }
 }
+*/
