@@ -13,7 +13,7 @@
 * Licensed under MIT (https://coreui.io/license)
 -->
 <!-- Breadcrumb-->
-<html lang="en">
+<html>
   <head>
     <base href="./">
     <meta charset="utf-8">
