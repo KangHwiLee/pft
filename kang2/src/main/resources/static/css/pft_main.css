@@ -1,0 +1,108 @@
+body, html {background-color: #000;margin: 0;overflow-x: hidden;padding: 0;}
+a {-webkit-text-decoration-skip: objects;background-color: initial;color: #1890ff;cursor: pointer;outline: none;text-decoration: none;transition: color .3s;}
+#root{min-width: 100%;min-height: 100%;}
+.iHLJes {width: calc(100% - 16px);padding: 40px 0px 16px;display: flex;-webkit-box-pack: center;justify-content: center;position: fixed;background-color: black;z-index: 1;}
+*, :after, :before {
+    box-sizing: border-box;
+}
+img {
+    border-style: none;
+    vertical-align: middle;
+}
+/* 첫번째 영역 */
+.hPYasG {width: 100%;min-height: calc(100vh - 116px);display: flex;flex-direction: column;-webkit-box-pack: center;justify-content: center;-webkit-box-align: center;align-items: center;}
+.jgoPco {margin-top: 64px;display: flex;}
+.odQrW {width: 275px;height: 150px;padding: 16px;box-sizing: border-box;margin-left: 8px;}
+.odQrW h2 {color: white;font-weight: 300;font-size: 2rem;margin: 0px;}
+.odQrW p {color: white;margin: 0px;font-size: 1.5rem;font-weight: lighter;}
+.odQrW ul {padding-left: 24px;margin: 0px;}
+.odQrW li {color: white;font-weight: 300;line-height: 24px;}
+.kqMePW {width: 150px;height: 150px;padding: 16px;box-sizing: border-box;display: flex;flex-direction: column;-webkit-box-pack: center;justify-content: center;-webkit-box-align: center;align-items: center;margin-left: 8px;}
+.kqMePW img {width: 80px;height: 80px;}
+.kqMePW p {color: white;margin: 8px 0px 0px;font-weight: lighter;}
+.euYgVD {color: white;width: 200px;font-family: "IBM Plex Sans KR", sans-serif;font-weight: bold;text-decoration: none;font-size: 1.5rem;}
+.cXbMiq {color: white;text-align: center;margin: 8px;font-size: 2.25rem;}
+.nwVgh {text-decoration: underline 5px;}
+
+.iVMlfj {height: 196px;width: 100%;}
+.kGuwDc {min-height: calc(100vh - 116px);display: flex;flex-direction: column;-webkit-box-align: center;align-items: center;}
+.imKWjV {color: white;font-family: Helvetica, sans-serif;font-weight: 300;font-size: 3rem;margin-bottom: 64px;}
+.dvlodW {display: flex;flex-direction: column;-webkit-box-align: center;align-items: center;}
+.ckLZGN {width: 32px;height: 32px;border: 2px solid rgb(131, 131, 131);border-radius: 50%;}
+.iAXvCK {width: 2px;height: 120px;background-color: rgb(131, 131, 131);}
+.WpVzx {display: flex;width: 600px;height: 100px;padding-left: calc(504px);box-sizing: content-box;}
+.kfQdsZ {width: 96px;height: 96px;border: 2px solid red;border-radius: 50%;display: flex;-webkit-box-pack: center;justify-content: center;-webkit-box-align: center;align-items: center;}
+.kfQdsZ img {width: 56px;object-fit: cover;}
+.WpVzx .tl-title-content {width: 380px;margin-left: 16px;}
+.WpVzx .tl-title-content > h2 {color: white;margin: 0px;font-family: "IBM Plex Sans KR", sans-serif;font-size: 2.125rem;font-weight: bold;}
+.WpVzx .tl-title-content > p {color: rgb(184, 184, 184);font-weight: 300;width: 380px;font-size: 1.125rem;white-space: pre-wrap;}
+.iAXvCK {width: 2px;height: 120px;background-color: rgb(131, 131, 131);}
+.cJTRqB {flex-direction: row-reverse;padding-right: calc(504px);padding-left: 0px;}
+.cJTRqB .tl-title-content > h2 {text-align: right;}
+
+.cJTRqB .tl-title-content > p {text-align: right;}
+.loDBgu {width: 1000px;border: 1px solid white;padding: 24px;display: flex;}
+.cVLLrR {width: 320px;}
+.cVLLrR h3 {color: white;font-family: "IBM Plex Sans KR", sans-serif;font-weight: 200;font-size: 1.5rem; margin: 0px;}
+.cVLLrR h1 {color: white;font-family: "IBM Plex Sans KR", sans-serif;font-size: 3rem;font-weight: 300;margin: 0px;}
+.cVLLrR h1 img {width: 40px;height: 40px;object-fit: cover;}
+.hXGDzK {/* min-height:100vh; */display: flex;flex-direction: column;-webkit-box-align: center;align-items: center;}
+.bHRuhY {flex: 1 1 0%;display: flex;flex-direction: column;}
+.NddZr {display: flex;-webkit-box-pack: justify;justify-content: space-between;}
+.NddZr .selected {border: 4px solid rgb(30, 144, 255);}
+.gqOtqT {width: 120px;height: 120px;background-color: rgb(250, 250, 250);border-radius: 8px;display: flex;-webkit-box-pack: center;justify-content: center;-webkit-box-align: center;align-items: center;flex-direction: column;cursor: pointer;}
+.gqOtqT img {width: 60px;height: 60px;object-fit: contain;}
+.jRgijn {color: white;margin: 16px 0px;font-size: 1.125rem;font-weight: 500;}
+.gLgmnQ {font-size: 1rem;color: rgb(232, 232, 232);font-weight: 300;min-height: 128px;overflow: hidden;}
+.UBKHZ {width: 1140px;display: flex;flex-direction: column;-webkit-box-align: center;align-items: center;}
+.kHopwk {min-height: 400px;display: flex;}
+.kHopwk #one-spfunc {width: 826px;height: 400px;margin-right: 8px;}
+.jFePMf {background-color: white;width: 100%;height: 100%;position: relative;cursor: pointer;}
+.dxCJPt {width: 100%;height: 100%;object-fit: cover;filter: brightness(0.3);}
+.eFTReT {width: 100%;height: 100%;position: absolute;left: 0px;top: 0px;display: flex;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;flex-direction: column;}
+.kbhvos {color: white;margin: 0px;}
+.idCdJv {color: rgb(233, 233, 233);font-weight: 300;text-align: center;}
+.RYzHH {display: flex;-webkit-box-pack: center;justify-content: center;width: 100%;flex: 0 0 auto !important;}
+
+
+/* project page */
+.jPxA-Dt {width: 100%;min-height: 100%;min-width: 326px;display: flex;-webkit-box-pack: center;justify-content: center;-webkit-box-align: center;align-items: center;}
+.dEnbyX {width: 100%;max-width: 710px;min-width: 310px;}
+.hkHCTn {width: 100%;margin: 64px 0px;}
+.hkHCTn img {cursor: pointer;width: 32px;height: 32px;}
+.fqllBl {color: rgb(240, 240, 240);font-size: 40px;font-weight: bold;margin-bottom: 12px;}
+.cMenps {font-size: 16px;color: rgb(240, 240, 240);font-weight: 300;}
+.goNwMg {
+    width: 100%;
+}
+.goNwMg h2 {
+    font-size: 1.75rem;
+    color: white;
+    margin: 0px 0px 8px;
+}
+.goNwMg p {
+    color: rgb(236, 236, 236);
+    margin-bottom: 8px;
+    display: flex;
+    font-size: 16px;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 1.75rem;
+}
+.itocFK {
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+    line-height: 2rem;
+}
+.swiper-slide img {
+    display: block;
+    object-fit: contain;
+    width: 450px;
+}
+@media screen and (max-width: 1024px){
+	.iHLJes {flex-direction: column;-webkit-box-align: center;align-items: center;text-align: center;position: relative;}
+}
+@media screen and (min-width: 1024px){
+	.hPYasG {height: calc(100vh - 225px);}
+}

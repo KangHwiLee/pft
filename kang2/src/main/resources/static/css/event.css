@@ -1,0 +1,7 @@
+a:active, a:focus, a:hover {
+    outline: 0;
+    text-decoration: none;
+}
+a:hover {
+    color: #40a9ff;
+}

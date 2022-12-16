@@ -58,6 +58,13 @@ public class HomeController {
 		}
 	}
 	
-
+	@GetMapping("/new_portfolio")
+	public String new_portfolio() {
+		return "new_portfolio";
+	}
+	@GetMapping("/new_pft_project")
+	public String new_pft_project() {
+		return "new_pft_project/new_pft_project";
+	}
 	
 }
