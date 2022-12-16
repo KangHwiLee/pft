@@ -33,35 +33,60 @@
 					  서버는 이 코드를 바탕으로 HTTP 요청을 받을 수 있는 형태의 Docker Image로 빌드 합니다.
 					   빌드가 완료되면 미리 설정된 HTTP Endpoint를 호출하여 함수를 실행하고, 응답 값을 받을 수 있습니다.</p>
 					   <br>
-					 <div class="swiper-container">
-				        <div class="swiper-wrapper">
-				            <div class="swiper-slide"><img src="resources/css/img/common/back.png" alt="Back"></div>
-				            <div class="swiper-slide"><img src="resources/css/img/common/gitpng.png" alt="Github"></div>
-				            <div class="swiper-slide"><img src="resources/css/img/common/gitpng.png" alt="Github"></div>
-				        </div>
-				        <div class="swiper-pagination"></div>
-				        <div class="swiper-prev"></div>
-				        <div class="swiper-next"></div>
-				
-				        <div class="swiper-scrollbar"></div>
-				    </div>
+					<div class="swiper-container" style="color:white">
+					    <div class="swiper-wrapper">
+					      <div class="swiper-slide">
+					          1번 슬라이드입니다.<br>마우스로 움직여보세요.
+					      </div>
+					      <div class="swiper-slide">
+					          2번 슬라이드입니다.<br>
+					          레이아웃만 제대로 설정되어 있다면 슬라이드에 어떤 것이든 넣을 수 있습니다.
+					      </div>
+					      <div class="swiper-slide">
+					          <img src="resources/css/img/common/back.png" alt=""><br>
+					          이렇게 이미지도 넣을 수 있습니다.
+					      </div>
+					       
+					    </div>
+					      <!-- If we need pagination -->
+					
+					      <!-- If we need navigation buttons -->
+					      
+					      
+					  </div>
 				</div>
 			</div>
 		</div>
 	
 	</div>
+	 <div class="swiper-button-prev"></div>
+					      <div class="swiper-button-next"></div>
 </body>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-        const swiper = new Swiper('.swiper-container', {
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination'
-                },
-                navigation: {
-                    nextEl: '.swiper-next',
-                    prevEl: '.swiper-prev'
-                }
-            })
+var mySwiper = new Swiper('.swiper-container', {
+	// 슬라이드를 버튼으로 움직일 수 있습니다.
+	  navigation: {
+	    nextEl: '.swiper-button-next',
+	    prevEl: '.swiper-button-prev',
+	  },
+	    
+	// 현재 페이지를 나타내는 점이 생깁니다. 클릭하면 이동합니다.
+	  pagination: {
+	    el: '.swiper-pagination',
+	    type: 'bullets',
+	  },
+
+	// 현재 페이지를 나타내는 스크롤이 생깁니다. 클릭하면 이동합니다.
+	  scrollbar: {
+	    el: '.swiper-scrollbar',
+	    draggable: true,
+	  },
+	    
+	// 3초마다 자동으로 슬라이드가 넘어갑니다. 1초 = 1000
+	  autoplay: {
+	    delay: 3000,
+	  },
+	});
     </script>
 </html>

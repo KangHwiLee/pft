@@ -158,9 +158,28 @@
 			</div>
 			
 			<div class="sc-idiyUo iVMlfj"></div>
-			<div id="career" class="sc-bjUoiL hXGDzK">
-			
+			<div id="career" class="sc-bjUoiL hXGDzK" style="min-height: 100vh;">
+				<h1 class="sc-fEOsli imKWjV">Career_</h1>
+				<div class="sc-cCsOjp dPPBxn">
+					<div class="sc-ciZhAO cBnBVm">
+						<p id="date">2021. 12. 28 ~</p>
+						<h3>넛지헬스케어</h3>
+						<p id="position">타임스프레드 백엔드 팀</p>
+					</div>
+					<div class="sc-jdAMXn iHLPLD">
+						<h4>타임스프레드 백엔드 팀에 합류하여 장애 조치, 코드 마이그레이션, 비용 최적화 업무를 담당했습니다.</h4>
+						<p id="work">주요 업무</p>
+							<ul>	
+								<li>서비스 수익과 직결된 분당 <b>1,500 Request</b> 를 받는 퀴즈 서비스를 NestJS 로 구현하기 </li>
+								<li>다운 타임 <b>1시간 이내로 19억개</b>(240GB)의 값이 저장된 디비 테이블을 마이그레이션 하기 </li>
+								<li>한달 수 천만원에 달하는 AWS 비용 줄이기</li>
+								<li>메모리 누수로 <b>32GB 이상의 메모리</b>를 먹는 서버 다이어트 시키기</li>
+							</ul>
+						</div>
+					</div>
 			</div>
+			
+			<footer class="sc-bZnhIo cRiJBb"><p>Copyright 2015-2022 Ballbot, All rights reserved.</p></footer>
 			
 		</div>
 	</div>
