@@ -9,6 +9,7 @@
 <link href="resources/css/pft_main.css" rel="stylesheet">
 <link href="resources/css/pft_root.css" rel="stylesheet">
 <link href="resources/css/event.css" rel="stylesheet">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
 <style data-styled="active" data-styled-version="5.3.5"></style>
 </head>
 <body>
@@ -81,6 +82,7 @@
 						<div class="tl-title-content">
 							<h2>2022.02~04</h2>
 							<p>앞으로 사용하게 될 linux 테스트 서버 구축<br> mysql, tomcat, apache 등을 설치하며 기본적인 리눅스 사용법 습득</p>
+							<p>퍼블리셔가 만들어 준 페이지에 기능 부여<br>(로그인, 차트, 페이징, 테이블 등)</p>
 						</div>
 					</div>
 					
@@ -88,8 +90,27 @@
 					<div class="sc-evZas WpVzx">
 						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(253, 184, 31);"><img src="resources/css/img/common/gitpng.png" alt="Linux"></div>
 						<div class="tl-title-content">
-							<h2>2022.01</h2>
-							<p>첫 회사에 취업하여 sts4, mysql linux등 본인의 개발환경 구축</p>
+							<h2>2022.04~07</h2>
+							<p>공공데이터포털 날씨 api를 이용해 날씨 정보 구현</p>
+							<p>TcpSocket을 이용한 실시간 IOT 장비 통신 구현</p>
+						</div>
+					</div>
+					
+					<div class="sc-crXcEl iAXvCK"></div>
+					<div class="sc-evZas sc-breuTD WpVzx cJTRqB">
+						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(0, 122, 255);"><img src="resources/css/img/common/gitpng.png" alt="Linux"></div>
+						<div class="tl-title-content">
+							<h2>2022.08~10</h2>
+							<p>실시간 cctv영상 스트리밍 송출을 위한 CCTV서버 구축 및 웹 페이지 기능 구현</p>
+						</div>
+					</div>
+					
+					<div class="sc-crXcEl iAXvCK"></div>
+					<div class="sc-evZas WpVzx">
+						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(253, 184, 31);"><img src="resources/css/img/common/gitpng.png" alt="Linux"></div>
+						<div class="tl-title-content">
+							<h2>2022.11~</h2>
+							<p>본인이 만든 웹페이지 서비스 시작</p>
 						</div>
 					</div>
 					
@@ -109,19 +130,24 @@
 					</div>
 					<div class="sc-kgflAQ bHRuhY">
 					<div class="sc-fLlhyt NddZr" style="width: 632px;">
-						<div class="sc-cxabCf gqOtqT selected"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>NodeJS</p></div>
-						<div class="sc-cxabCf gqOtqT"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>NodeJS</p></div>
-						<div class="sc-cxabCf gqOtqT"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>NodeJS</p></div>
+						<div class="sc-cxabCf gqOtqT selected" onclick="back(1)"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>Srping</p></div>
+						<div class="sc-cxabCf gqOtqT"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>Java</p></div>
+						<div class="sc-cxabCf gqOtqT"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>MySQL</p></div>
 					</div>
-					<p class="sc-bBrHrO jRgijn">Learning At: 2019년 11월</p>
-					<p class="sc-ivTmOn gLgmnQ">&nbsp;&nbsp;게임이나 앱을 만들면 로그인과 같은 기능을 구현해야 했고, 
-					정보를 저장할 공간이 필요했습니다. 따라서 서버 프로그램은 프로젝트에서 반드시 필요했습니다. 
-					예전에는 PHP를 이용해 구현했지만, 너무 오래된 기술이라는 느낌을 받았고, 
-					무엇보다 새로운 기술을 배우고 싶었습니다.<br>
-					&nbsp;&nbsp;마침 학교에서 공부한 자바스크립트로 서버도 만들 수 있다고 들어 NodeJS 와 Express 기반의 HTTP 서버를 구현했고, 제가 NodeJS를 접하게 된 계기가 되었습니다.</p>
+					<p class="sc-bBrHrO jRgijn" id="back_learn">Learning At: 2019년 11월</p>
+					<p class="sc-ivTmOn gLgmnQ" id="back_content">&nbsp;&nbsp;
+					<br>
+					&nbsp;&nbsp;처음으로 SPRING을 배웠을때, 어렵기만 했던 코딩공부가 처음으로 쉽고 재밋게 느껴졌습니다.
+					개발자가 되는것이 맞는지 의문이 들던 때 SPRING이 있기에 계속 공부를 이어나갈 수 있었다 생각합니다.</p>
 				</div>
 				</div>
-				
+				<script>
+				function back(num){
+					if(num == 1){
+						$("#back_learn").text("Learning At: 2021년 7월")
+					}
+				}
+				</script>
 			</div>
 			
 			<div class="sc-idiyUo iVMlfj"></div>

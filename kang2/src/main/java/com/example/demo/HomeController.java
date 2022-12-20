@@ -10,7 +10,7 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String main() {
-		return "redirect:/new_main";
+		return "new_portfolio";
 	}
 	
 	@GetMapping("/side_include")
