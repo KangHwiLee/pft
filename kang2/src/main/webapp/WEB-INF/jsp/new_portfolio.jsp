@@ -34,14 +34,14 @@
 				<div class="sc-jSMfEi jgoPco">
 				<div class="sc-iBkjds odQrW" style="background-color: rgb(238, 82, 83);">
 					<h2>Birth</h2>
-					<p>2002년 06월 06일</p>
+					<p>1998년 09월 14일</p>
 				</div>
 				<div class="sc-ftvSup hZAJwI"></div>
 				<div class="sc-iBkjds odQrW" style="background-color: rgb(230, 126, 34);">
 					<h2>Education</h2>
 						<ul>
-							<li>선린인터넷고등학교 졸업</li>
-							<li>강원대학교 컴퓨터공학과 재학</li>
+							<li>한국폴리텍 반도체캠퍼스 졸업</li>
+							<li>스마트인재개발원 개발자과정 수료</li>
 						</ul>
 				</div>
 				<div class="sc-ftvSup hZAJwI"></div>
@@ -81,8 +81,7 @@
 						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(0, 122, 255);"><img src="resources/css/img/common/gitpng.png" alt="Linux"></div>
 						<div class="tl-title-content">
 							<h2>2022.02~04</h2>
-							<p>앞으로 사용하게 될 linux 테스트 서버 구축<br> mysql, tomcat, apache 등을 설치하며 기본적인 리눅스 사용법 습득</p>
-							<p>퍼블리셔가 만들어 준 페이지에 기능 부여<br>(로그인, 차트, 페이징, 테이블 등)</p>
+							<p>앞으로 사용하게 될 linux 테스트 서버 구축, mysql, tomcat, apache 등을 설치하며 기본적인 리눅스 사용법 습득</p>
 						</div>
 					</div>
 					
@@ -91,8 +90,7 @@
 						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(253, 184, 31);"><img src="resources/css/img/common/gitpng.png" alt="Linux"></div>
 						<div class="tl-title-content">
 							<h2>2022.04~07</h2>
-							<p>공공데이터포털 날씨 api를 이용해 날씨 정보 구현</p>
-							<p>TcpSocket을 이용한 실시간 IOT 장비 통신 구현</p>
+							<p>공공데이터포털 날씨 api를 이용해 날씨 정보 구현<br>TcpSocket을 이용한 실시간 IOT 장비 통신 구현</p>
 						</div>
 					</div>
 					
@@ -101,7 +99,7 @@
 						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(0, 122, 255);"><img src="resources/css/img/common/gitpng.png" alt="Linux"></div>
 						<div class="tl-title-content">
 							<h2>2022.08~10</h2>
-							<p>실시간 cctv영상 스트리밍 송출을 위한 CCTV서버 구축 및 웹 페이지 기능 구현</p>
+							<p>실시간 cctv영상 스트리밍 송출을 위한 CCTV서버 구축 및 웹 페이지 스트리밍 기능 구현</p>
 						</div>
 					</div>
 					
@@ -130,15 +128,14 @@
 					</div>
 					<div class="sc-kgflAQ bHRuhY">
 					<div class="sc-fLlhyt NddZr" style="width: 632px;">
-						<div class="sc-cxabCf gqOtqT selected" onclick="back(1)"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>Srping</p></div>
+						<div class="sc-cxabCf gqOtqT selected" onclick="back(1)"><img src="resources/css/img/common/Spring.png" alt="NodeJS"><p>Srping</p></div>
 						<div class="sc-cxabCf gqOtqT"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>Java</p></div>
 						<div class="sc-cxabCf gqOtqT"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>MySQL</p></div>
 					</div>
 					<p class="sc-bBrHrO jRgijn" id="back_learn">Learning At: 2019년 11월</p>
 					<p class="sc-ivTmOn gLgmnQ" id="back_content">&nbsp;&nbsp;
 					<br>
-					&nbsp;&nbsp;처음으로 SPRING을 배웠을때, 어렵기만 했던 코딩공부가 처음으로 쉽고 재밋게 느껴졌습니다.
-					개발자가 되는것이 맞는지 의문이 들던 때 SPRING이 있기에 계속 공부를 이어나갈 수 있었다 생각합니다.</p>
+					&nbsp;&nbsp;제 모든 언어와 구조에대한 공부의 시작은 스마트인재개발원이라는 학원이였습니다. 공부를 시작하고 개발자과정이 제게 맞지 않다는 생각이 들고 좌절하고 있을때 Spring이라는 구조는 제게 한줄기 구원같았습니다 MVC구조를 통해 웹페이지 제작에 대한 자신감이 붙고 지금 이자리까지 올 수 있게 해준 구조라 생각합니다.</p>
 				</div>
 				</div>
 				<script>
