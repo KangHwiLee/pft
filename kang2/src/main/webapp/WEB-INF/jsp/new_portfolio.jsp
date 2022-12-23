@@ -48,8 +48,8 @@
 				<div class="sc-iBkjds odQrW" style="background-color: rgb(16, 172, 132);">
 					<h2>Contact</h2>
 						<ul>
-							<li>5252bb@daum.net</li>
-							<li>010-4917-4155</li>
+							<li>rkdgnl12336@gmail.com</li>
+							<li>010-2815-2658</li>
 						</ul>
 					</div>
 				<div class="sc-ftvSup hZAJwI"></div>
@@ -128,20 +128,101 @@
 					</div>
 					<div class="sc-kgflAQ bHRuhY">
 					<div class="sc-fLlhyt NddZr" style="width: 632px;">
-						<div class="sc-cxabCf gqOtqT selected" onclick="back(1)"><img src="resources/css/img/common/Spring.png" alt="NodeJS"><p>Srping</p></div>
-						<div class="sc-cxabCf gqOtqT"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>Java</p></div>
-						<div class="sc-cxabCf gqOtqT"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>MySQL</p></div>
+						<div class="sc-cxabCf gqOtqT selected" onclick="back(1)" id="skill1"><img src="resources/css/img/common/Spring.png" alt="NodeJS"><p>Srping</p></div>
+						<div class="sc-cxabCf gqOtqT" onclick="back(2)" id="skill2"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>Java</p></div>
+						<div class="sc-cxabCf gqOtqT" onclick="back(3)" id="skill3"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>MySQL</p></div>
 					</div>
 					<p class="sc-bBrHrO jRgijn" id="back_learn">Learning At: 2019년 11월</p>
 					<p class="sc-ivTmOn gLgmnQ" id="back_content">&nbsp;&nbsp;
 					<br>
-					&nbsp;&nbsp;제 모든 언어와 구조에대한 공부의 시작은 스마트인재개발원이라는 학원이였습니다. 공부를 시작하고 개발자과정이 제게 맞지 않다는 생각이 들고 좌절하고 있을때 Spring이라는 구조는 제게 한줄기 구원같았습니다 MVC구조를 통해 웹페이지 제작에 대한 자신감이 붙고 지금 이자리까지 올 수 있게 해준 구조라 생각합니다.</p>
+					</p>
 				</div>
 				</div>
 				<script>
+				$(document).ready(function(){
+					back(1);
+				})
 				function back(num){
 					if(num == 1){
-						$("#back_learn").text("Learning At: 2021년 7월")
+						$("#back_learn").text("Learning At: 2021년 11월")
+						view = "제 모든 언어와 구조에대한 공부의 시작은 스마트인재개발원이라는 학원이였습니다."
+						view += " 공부를 시작하고 개발자과정이 제게 맞지 않다는 생각이 들고 흥미를 잃고 있을 때 Spring을 접했습니다."
+						view += " MVC구조를 통해 웹페이지 제작에 대한 자신감이 붙고 지금 이자리까지 올 수 있게 해준 구조라 생각합니다."
+						$("#back_content").text(view)
+						document.getElementById("skill1").classList.add('selected');
+						document.getElementById("skill2").classList.remove('selected');
+						document.getElementById("skill3").classList.remove('selected');
+					}else if(num == 2){
+						$("#back_learn").text("Learning At: 2021년 8월")
+						view = "Java는 저에게 장난감같은 언어라 생각합니다."
+						view += " 소켓통신, CMD 명령어 전송, 만들어둔 프로그램이 알아서 오류를 감지 및 검토하는 기능 등 ,"
+						view += " 다양한 코드를 만들며 회사 업무를 즐겁게 해주는 언어입니다."
+							$("#back_content").text(view)
+							document.getElementById("skill2").classList.add('selected');
+						document.getElementById("skill1").classList.remove('selected');
+						document.getElementById("skill3").classList.remove('selected');
+					}else{
+						$("#back_learn").text("Learning At: 2021년 8월")
+						view = "실시간 데이터 처리업무를 맡으며 수백만의 데이터를 다루는 경험을 했습니다."
+						view += " 설계, 설정이 매우 중요하며 코드 하나하나가 웹서비스의 성능을 좌지우지 한다는 걸 알 수 있었습니다."
+							$("#back_content").text(view)
+							document.getElementById("skill3").classList.add('selected');
+						document.getElementById("skill2").classList.remove('selected');
+						document.getElementById("skill1").classList.remove('selected');
+					}
+				}
+				</script>
+				
+				<div class="sc-dIouRR fbbklv"></div>
+				
+				<div class="sc-hHLeRK loDBgu">
+					<div class="sc-dmRaPn cVLLrR">
+						<h3>Skillset of</h3>
+						<h1><img src="resources/css/img/common/gitpng.png" alt="set icon"> Frontend</h1>
+					</div>
+					<div class="sc-kgflAQ bHRuhY">
+					<div class="sc-fLlhyt NddZr" style="width: 632px;">
+						<div class="sc-cxabCf gqOtqT selected" onclick="front(1)" id="front1"><img src="resources/css/img/common/Spring.png" alt="NodeJS"><p>Srping</p></div>
+						<div class="sc-cxabCf gqOtqT" onclick="front(2)" id="front2"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>Java</p></div>
+						<div class="sc-cxabCf gqOtqT" onclick="front(3)" id="front3"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>MySQL</p></div>
+					</div>
+					<p class="sc-bBrHrO jRgijn" id="front_learn">Learning At: 2019년 11월</p>
+					<p class="sc-ivTmOn gLgmnQ" id="front_content">&nbsp;&nbsp;
+					<br>
+					</p>
+				</div>
+				</div>
+				<script>
+				$(document).ready(function(){
+					front(1);
+				})
+				function front(num){
+					if(num == 1){
+						$("#front_learn").text("Learning At: 2021년 11월")
+						view = "제 모든 언어와 구조에대한 공부의 시작은 스마트인재개발원이라는 학원이였습니다."
+						view += " 공부를 시작하고 개발자과정이 제게 맞지 않다는 생각이 들고 흥미를 잃고 있을 때 Spring을 접했습니다."
+						view += " MVC구조를 통해 웹페이지 제작에 대한 자신감이 붙고 지금 이자리까지 올 수 있게 해준 구조라 생각합니다."
+						$("#front_content").text(view)
+						document.getElementById("front1").classList.add('selected');
+						document.getElementById("front2").classList.remove('selected');
+						document.getElementById("front3").classList.remove('selected');
+					}else if(num == 2){
+						$("#front_learn").text("Learning At: 2021년 8월")
+						view = "Java는 저에게 장난감같은 언어라 생각합니다."
+						view += " 소켓통신, CMD 명령어 전송, 만들어둔 프로그램이 알아서 오류를 감지 및 검토하는 기능 등 ,"
+						view += " 다양한 코드를 만들며 회사 업무를 즐겁게 해주는 언어입니다."
+							$("#front_content").text(view)
+							document.getElementById("front2").classList.add('selected');
+						document.getElementById("front1").classList.remove('selected');
+						document.getElementById("front3").classList.remove('selected');
+					}else{
+						$("#front_learn").text("Learning At: 2021년 8월")
+						view = "실시간 데이터 처리업무를 맡으며 수백만의 데이터를 다루는 경험을 했습니다."
+						view += " 설계, 설정이 매우 중요하며 코드 하나하나가 웹서비스의 성능을 좌지우지 한다는 걸 알 수 있었습니다."
+							$("#front_content").text(view)
+							document.getElementById("front3").classList.add('selected');
+						document.getElementById("front2").classList.remove('selected');
+						document.getElementById("front1").classList.remove('selected');
 					}
 				}
 				</script>
