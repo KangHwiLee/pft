@@ -129,8 +129,8 @@
 					<div class="sc-kgflAQ bHRuhY">
 					<div class="sc-fLlhyt NddZr" style="width: 632px;">
 						<div class="sc-cxabCf gqOtqT selected" onclick="back(1)" id="skill1"><img src="resources/css/img/common/Spring.png" alt="NodeJS"><p>Srping</p></div>
-						<div class="sc-cxabCf gqOtqT" onclick="back(2)" id="skill2"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>Java</p></div>
-						<div class="sc-cxabCf gqOtqT" onclick="back(3)" id="skill3"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>MySQL</p></div>
+						<div class="sc-cxabCf gqOtqT" onclick="back(2)" id="skill2"><img src="resources/css/img/common/java.png" alt="NodeJS"><p>Java</p></div>
+						<div class="sc-cxabCf gqOtqT" onclick="back(3)" id="skill3"><img src="resources/css/img/common/mysql.png" alt="NodeJS"><p>MySQL</p></div>
 					</div>
 					<p class="sc-bBrHrO jRgijn" id="back_learn">Learning At: 2019년 11월</p>
 					<p class="sc-ivTmOn gLgmnQ" id="back_content">&nbsp;&nbsp;
@@ -182,8 +182,8 @@
 					</div>
 					<div class="sc-kgflAQ bHRuhY">
 					<div class="sc-fLlhyt NddZr" style="width: 632px;">
-						<div class="sc-cxabCf gqOtqT selected" onclick="front(1)" id="front1"><img src="resources/css/img/common/Spring.png" alt="NodeJS"><p>Srping</p></div>
-						<div class="sc-cxabCf gqOtqT" onclick="front(2)" id="front2"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>Java</p></div>
+						<div class="sc-cxabCf gqOtqT selected" onclick="front(1)" id="front1"><img src="resources/css/img/common/javascript.png" alt="NodeJS"><p>JavaScript</p></div>
+						<div class="sc-cxabCf gqOtqT" onclick="front(2)" id="front2"><img src="resources/css/img/common/jsp.png" alt="NodeJS"><p>JSP</p></div>
 						<div class="sc-cxabCf gqOtqT" onclick="front(3)" id="front3"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>MySQL</p></div>
 					</div>
 					<p class="sc-bBrHrO jRgijn" id="front_learn">Learning At: 2019년 11월</p>
@@ -199,8 +199,8 @@
 				function front(num){
 					if(num == 1){
 						$("#front_learn").text("Learning At: 2021년 11월")
-						view = "제 모든 언어와 구조에대한 공부의 시작은 스마트인재개발원이라는 학원이였습니다."
-						view += " 공부를 시작하고 개발자과정이 제게 맞지 않다는 생각이 들고 흥미를 잃고 있을 때 Spring을 접했습니다."
+						view = "페이지를 동적으로 자연스럽게 움직이게 만들 과제가 주어졌습니다."
+						view += " Ajax와 세션, 쿠키 등등 여러가지 방법을 가지고 동적 움직"
 						view += " MVC구조를 통해 웹페이지 제작에 대한 자신감이 붙고 지금 이자리까지 올 수 있게 해준 구조라 생각합니다."
 						$("#front_content").text(view)
 						document.getElementById("front1").classList.add('selected');
@@ -208,9 +208,9 @@
 						document.getElementById("front3").classList.remove('selected');
 					}else if(num == 2){
 						$("#front_learn").text("Learning At: 2021년 8월")
-						view = "Java는 저에게 장난감같은 언어라 생각합니다."
-						view += " 소켓통신, CMD 명령어 전송, 만들어둔 프로그램이 알아서 오류를 감지 및 검토하는 기능 등 ,"
-						view += " 다양한 코드를 만들며 회사 업무를 즐겁게 해주는 언어입니다."
+						view = "JSP를 처음 다루기 전까지는 데이터를 표현하는 것에 어려움을 느끼고 있었습니다."
+						view += " 하지만 처음 el태그를 배우고 코딩이 생각보다 단순하다는 것을 알게 되었을 때"
+						view += " 코딩의 재미를 가르쳐준 것이 JSP라 생각합니다."
 							$("#front_content").text(view)
 							document.getElementById("front2").classList.add('selected');
 						document.getElementById("front1").classList.remove('selected');
@@ -235,11 +235,11 @@
 					<div class="sc-iIPllB kHopwk">
 						<div id="one-spfunc">
 							<div class="sc-bZkfAO jFePMf">
-								<img src="resources/css/img/common/gitpng.png" class="sc-kLLXSd dxCJPt">
+								<img src="resources/css/img/common/snow1.png" class="sc-kLLXSd dxCJPt">
 								<div class="sc-ikZpkk eFTReT">
-									<h1 class="sc-jIZahH kbhvos" style="font-size: 2.5rem;">SPECIAL.FUNCTION</h1>
-									<p class="sc-himrzO idCdJv" style="font-size: 1.5rem;">준비된 컴퓨팅 리소스에서 코드를 실행하고 용량을
-									<br>관리하는 서버리스 컴퓨팅 서비스 템플릿</p>
+									<h1 class="sc-jIZahH kbhvos" style="font-size: 2.5rem;">스노우멜팅 모니터링 서비스</h1>
+									<p class="sc-himrzO idCdJv" style="font-size: 1.5rem;">PC와 모바일 웹 페이지를 이용해 장비와의 실시간
+									<br>IOT 통신을 지원하는 웹 서비스</p>
 									<div class="sc-gXmSlM RYzHH" style="height: 32px;">
 										<span class="ant-avatar ant-avatar-circle ant-avatar-image" style="background-color: rgb(236, 240, 241); padding: 4px; margin-left: 2px; margin-right: 2px; border: 2px solid rgb(224, 35, 78);">
 											<img src="resources/css/img/common/gitpng.png" alt="NodeJS">
@@ -266,18 +266,18 @@
 				<h1 class="sc-fEOsli imKWjV">Career_</h1>
 				<div class="sc-cCsOjp dPPBxn">
 					<div class="sc-ciZhAO cBnBVm">
-						<p id="date">2021. 12. 28 ~</p>
+						<p id="date">2022. 01. 17 ~</p>
 						<h3>넛지헬스케어</h3>
-						<p id="position">타임스프레드 백엔드 팀</p>
+						<p id="position">스노우멜트 팀</p>
 					</div>
 					<div class="sc-jdAMXn iHLPLD">
-						<h4>타임스프레드 백엔드 팀에 합류하여 장애 조치, 코드 마이그레이션, 비용 최적화 업무를 담당했습니다.</h4>
+						<h4>스노우멜팅 프로젝트를 맡아 백엔드 및 프론트엔드의 업무를 담당했습니다.</h4>
 						<p id="work">주요 업무</p>
 							<ul>	
-								<li>서비스 수익과 직결된 분당 <b>1,500 Request</b> 를 받는 퀴즈 서비스를 NestJS 로 구현하기 </li>
-								<li>다운 타임 <b>1시간 이내로 19억개</b>(240GB)의 값이 저장된 디비 테이블을 마이그레이션 하기 </li>
-								<li>한달 수 천만원에 달하는 AWS 비용 줄이기</li>
-								<li>메모리 누수로 <b>32GB 이상의 메모리</b>를 먹는 서버 다이어트 시키기</li>
+								<li>실 서버에 올리기 전 테스트해볼 수 있는 테스트서버 구축</li>
+								<li>퍼블리셔가 준 페이지의 기본적인 기능 부여하기 </li>
+								<li>TCP Socket을 이용해 장비와 실시간 IOT 통신 기능 구현하기 </li>
+								<li>실시간 CCTV스트리밍을 지원하기 위해 RTSP -> M3U8 변경 후 실시간 스트리밍 기능 구현하기</li>
 							</ul>
 						</div>
 					</div>
