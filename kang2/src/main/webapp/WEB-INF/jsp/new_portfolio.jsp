@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>강휘 포트폴리오</title>
 <link href="resources/css/pft_css.css" rel="stylesheet">
 <link href="resources/css/pft_main.css" rel="stylesheet">
 <link href="resources/css/pft_root.css" rel="stylesheet">
@@ -58,6 +58,11 @@
 				<img src="resources/css/img/common/gitpng.png" alt="Github"><p>Github</p>
 				</div>
 				</a>
+				<a href="https://eight-letter.tistory.com/" target="_blank" rel="noreferrer">
+				<div class="sc-gKXOVf kqMePW" style="background-color: rgb(45, 52, 54);">
+				<img src="resources/css/img/common/tistory.png" alt="Github"><p>Tistory</p>
+				</div>
+				</a>
 				</div>
 			</div>
 			
@@ -69,7 +74,7 @@
 					<div class="sc-iqcoie ckLZGN"></div>
 					<div class="sc-crXcEl iAXvCK"></div>
 					<div class="sc-evZas WpVzx">
-						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(253, 184, 31);"><img src="resources/css/img/common/gitpng.png" alt="Linux"></div>
+						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(253, 184, 31);"><img src="resources/css/img/common/byung.png" alt="Linux"></div>
 						<div class="tl-title-content">
 							<h2>2022.01</h2>
 							<p>첫 회사에 취업하여 JAVA, mysql linux등 본인의 개발환경 구축</p>
@@ -78,7 +83,7 @@
 					
 					<div class="sc-crXcEl iAXvCK"></div>
 					<div class="sc-evZas sc-breuTD WpVzx cJTRqB">
-						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(0, 122, 255);"><img src="resources/css/img/common/gitpng.png" alt="Linux"></div>
+						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(0, 122, 255);"><img src="resources/css/img/common/linux.png" alt="Linux"></div>
 						<div class="tl-title-content">
 							<h2>2022.02~04</h2>
 							<p>앞으로 사용하게 될 linux 테스트 서버 구축, mysql, tomcat, apache 등을 설치하며 기본적인 리눅스 사용법 습득</p>
@@ -87,7 +92,7 @@
 					
 					<div class="sc-crXcEl iAXvCK"></div>
 					<div class="sc-evZas WpVzx">
-						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(253, 184, 31);"><img src="resources/css/img/common/gitpng.png" alt="Linux"></div>
+						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(253, 184, 31);"><img src="resources/css/img/common/java.png" alt="Linux"></div>
 						<div class="tl-title-content">
 							<h2>2022.04~07</h2>
 							<p>공공데이터포털 날씨 api를 이용해 날씨 정보 구현<br>TcpSocket을 이용한 실시간 IOT 장비 통신 구현</p>
@@ -96,7 +101,7 @@
 					
 					<div class="sc-crXcEl iAXvCK"></div>
 					<div class="sc-evZas sc-breuTD WpVzx cJTRqB">
-						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(0, 122, 255);"><img src="resources/css/img/common/gitpng.png" alt="Linux"></div>
+						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(0, 122, 255);"><img src="resources/css/img/common/cctv.png" alt="Linux"></div>
 						<div class="tl-title-content">
 							<h2>2022.08~10</h2>
 							<p>실시간 cctv영상 스트리밍 송출을 위한 CCTV서버 구축 및 웹 페이지 스트리밍 기능 구현</p>
@@ -124,7 +129,7 @@
 				<div class="sc-hHLeRK loDBgu">
 					<div class="sc-dmRaPn cVLLrR">
 						<h3>Skillset of</h3>
-						<h1><img src="resources/css/img/common/gitpng.png" alt="set icon"> Backend</h1>
+						<h1><img src="resources/css/img/common/backend.png" alt="set icon"> Backend</h1>
 					</div>
 					<div class="sc-kgflAQ bHRuhY">
 					<div class="sc-fLlhyt NddZr" style="width: 632px;">
@@ -178,7 +183,7 @@
 				<div class="sc-hHLeRK loDBgu">
 					<div class="sc-dmRaPn cVLLrR">
 						<h3>Skillset of</h3>
-						<h1><img src="resources/css/img/common/gitpng.png" alt="set icon"> Frontend</h1>
+						<h1><img src="resources/css/img/common/frontend.png" alt="set icon"> Frontend</h1>
 					</div>
 					<div class="sc-kgflAQ bHRuhY">
 					<div class="sc-fLlhyt NddZr" style="width: 632px;">
@@ -234,7 +239,7 @@
 					<div class="sc-iIPllB kHopwk">
 						<div id="one-spfunc">
 							<div class="sc-bZkfAO jFePMf" onclick="project(1)">
-								<img src="resources/css/img/common/snow1.png" class="sc-kLLXSd dxCJPt">
+								<img src="resources/css/img/common/cctv_img.png" class="sc-kLLXSd dxCJPt">
 								<div class="sc-ikZpkk eFTReT">
 									<h1 class="sc-jIZahH kbhvos" style="font-size: 2.5rem;">CCTV 스트리밍 서비스</h1>
 									<p class="sc-himrzO idCdJv" style="font-size: 1.5rem;">CCTV 녹화 영상을 웹페이지에 실시간 스트리밍 기능 구현

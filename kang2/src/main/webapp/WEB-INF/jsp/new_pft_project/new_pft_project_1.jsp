@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>강휘 포트폴리오</title>
 <link href="resources/css/pft_css.css" rel="stylesheet">
 <link href="resources/css/pft_main.css" rel="stylesheet">
 <link href="resources/css/pft_root.css" rel="stylesheet">
