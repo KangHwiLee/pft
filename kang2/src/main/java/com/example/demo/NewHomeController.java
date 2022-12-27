@@ -143,4 +143,10 @@ public class NewHomeController {
 		//System.out.println(test1);
 		return list;
 	}
+	
+	@GetMapping("/project_move")
+	public String project_move(int num) {
+		
+		return "new_pft_project/new_pft_project_"+num;
+	}
 }

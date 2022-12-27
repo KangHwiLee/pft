@@ -53,7 +53,7 @@
 						</ul>
 					</div>
 				<div class="sc-ftvSup hZAJwI"></div>
-				<a href="https://www.github.com/bb2002" target="_blank" rel="noreferrer">
+				<a href="https://github.com/KangHwiLee" target="_blank" rel="noreferrer">
 				<div class="sc-gKXOVf kqMePW" style="background-color: rgb(45, 52, 54);">
 				<img src="resources/css/img/common/gitpng.png" alt="Github"><p>Github</p>
 				</div>
@@ -72,7 +72,7 @@
 						<div class="sc-ksZaOG kfQdsZ" style="border-color: rgb(253, 184, 31);"><img src="resources/css/img/common/gitpng.png" alt="Linux"></div>
 						<div class="tl-title-content">
 							<h2>2022.01</h2>
-							<p>첫 회사에 취업하여 sts4, mysql linux등 본인의 개발환경 구축</p>
+							<p>첫 회사에 취업하여 JAVA, mysql linux등 본인의 개발환경 구축</p>
 						</div>
 					</div>
 					
@@ -184,7 +184,6 @@
 					<div class="sc-fLlhyt NddZr" style="width: 632px;">
 						<div class="sc-cxabCf gqOtqT selected" onclick="front(1)" id="front1"><img src="resources/css/img/common/javascript.png" alt="NodeJS"><p>JavaScript</p></div>
 						<div class="sc-cxabCf gqOtqT" onclick="front(2)" id="front2"><img src="resources/css/img/common/jsp.png" alt="NodeJS"><p>JSP</p></div>
-						<div class="sc-cxabCf gqOtqT" onclick="front(3)" id="front3"><img src="resources/css/img/common/gitpng.png" alt="NodeJS"><p>MySQL</p></div>
 					</div>
 					<p class="sc-bBrHrO jRgijn" id="front_learn">Learning At: 2019년 11월</p>
 					<p class="sc-ivTmOn gLgmnQ" id="front_content">&nbsp;&nbsp;
@@ -234,7 +233,35 @@
 				<div class="sc-llJcti UBKHZ">
 					<div class="sc-iIPllB kHopwk">
 						<div id="one-spfunc">
-							<div class="sc-bZkfAO jFePMf">
+							<div class="sc-bZkfAO jFePMf" onclick="project(1)">
+								<img src="resources/css/img/common/snow1.png" class="sc-kLLXSd dxCJPt">
+								<div class="sc-ikZpkk eFTReT">
+									<h1 class="sc-jIZahH kbhvos" style="font-size: 2.5rem;">CCTV 스트리밍 서비스</h1>
+									<p class="sc-himrzO idCdJv" style="font-size: 1.5rem;">CCTV 녹화 영상을 웹페이지에 실시간 스트리밍 기능 구현
+									<div class="sc-gXmSlM RYzHH" style="height: 32px;">
+										<span class="ant-avatar ant-avatar-circle ant-avatar-image" style="background-color: rgb(236, 240, 241); padding: 4px; margin-left: 2px; margin-right: 2px; border: 2px solid rgb(224, 35, 78);">
+											<img src="resources/css/img/common/gitpng.png" alt="NodeJS">
+										</span>
+										<span class="ant-avatar ant-avatar-circle ant-avatar-image" style="background-color: rgb(13, 177, 230); padding: 4px; margin-left: 2px; margin-right: 2px; border: 2px solid rgb(224, 35, 78);">
+											<img src="resources/css/img/common/gitpng.png" alt="NodeJS">
+										</span>
+										<span class="ant-avatar ant-avatar-circle ant-avatar-image" style="background-color: rgb(97, 218, 251); padding: 4px; margin-left: 2px; margin-right: 2px; border: 2px solid rgb(224, 35, 78);">
+											<img src="resources/css/img/common/gitpng.png" alt="NodeJS">
+										</span>
+										<span class="ant-avatar ant-avatar-circle ant-avatar-image" style="background-color: rgb(51, 51, 51); padding: 4px; margin-left: 2px; margin-right: 2px; border: 2px solid rgb(224, 35, 78);">
+											<img src="resources/css/img/common/gitpng.png" alt="NodeJS">
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sc-idiyUo iVMlfj_1"></div>
+				<div class="sc-llJcti UBKHZ">
+					<div class="sc-iIPllB kHopwk">
+						<div id="one-spfunc">
+							<div class="sc-bZkfAO jFePMf" onclick="project(2)">
 								<img src="resources/css/img/common/snow1.png" class="sc-kLLXSd dxCJPt">
 								<div class="sc-ikZpkk eFTReT">
 									<h1 class="sc-jIZahH kbhvos" style="font-size: 2.5rem;">스노우멜팅 모니터링 서비스</h1>
@@ -259,7 +286,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
 			
 			<div class="sc-idiyUo iVMlfj"></div>
 			<div id="career" class="sc-bjUoiL hXGDzK" style="min-height: 100vh;">
@@ -288,4 +314,9 @@
 		</div>
 	</div>
 </body>
+<script>
+function project(num){
+	location.href="project_move?num="+num;
+}
+</script>
 </html>
