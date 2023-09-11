@@ -32,6 +32,11 @@ dependencies {
 	implementation 'javax.servlet:jstl'
 	implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+// https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+	implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+	// https://mvnrepository.com/artifact/org.json/json
+	implementation group: 'org.json', name: 'json', version: '20230227'
+
 
 	compileOnly("org.springframework.boot:spring-boot-devtools")
 }

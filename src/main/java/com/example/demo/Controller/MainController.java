@@ -15,10 +15,6 @@ public class MainController {
     public String home(){
         return "index";
     }
-    @GetMapping("/test")
-    public String test(){
-        return "test";
-    }
 
     @ResponseBody
     @PostMapping("/chart_data")
@@ -26,7 +22,10 @@ public class MainController {
         HashMap<String, Object> map = new HashMap<>();
         OperatingSystemMXBean osBean = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
         double cpuUsage = osBean.getSystemCpuLoad() * 100;
-        map.put("chart1" , cpuUsage);
+        Runtime.getRuntime().gc();
+        long usedMemory = Runtime.getRuntime().freeMemory() * 100 / Runtime.getRuntime().totalMemory();
+        map.put("chart1" , (int) cpuUsage);
+        map.put("chart2" , usedMemory);
         return map;
     }
 
