@@ -11,10 +11,18 @@ import java.util.HashMap;
 
 @Controller
 public class MainController {
+
     @GetMapping("/")
     public String home(){
+        System.out.println("test1");
         return "index";
     }
+
+//    @GetMapping("/")
+//    public String home(){
+//        System.out.println("test");
+//        return "index";
+//    }
 
     @ResponseBody
     @PostMapping("/chart_data")

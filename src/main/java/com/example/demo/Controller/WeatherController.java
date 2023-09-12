@@ -81,7 +81,7 @@ public class WeatherController {
                 "serviceKey=" + ServiceKey +
                 "&numOfRows=10" +
                 "&pageNo=1" +
-                "&base_date=20230911" +
+                "&base_date=20230912" +
                 "&base_time=0600" +
                 "&nx=" + nx +
                 "&ny=" + ny +
