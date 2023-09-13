@@ -20,7 +20,10 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 @Controller
@@ -28,6 +31,12 @@ public class WeatherController {
 
     private String ServiceKey = "BxcWG0ueyR3PlJiksIoqpwFsFQJyLjESYHD0G0HAKVdvre4PLyY04bt73WD3q4Gj0fS4CkStegrF21Ai%2BeDqIw%3D%3D";
     private String weather_url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0";
+    public String today_date(){
+        Date date = new Date();
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
+        System.out.println(format1.format(date));
+        return format1.format(date);
+    }
     @ResponseBody
     @PostMapping("/now_weather")
     public ArrayList<HashMap<String, Object>> now_weather() throws Exception {
@@ -59,10 +68,11 @@ public class WeatherController {
 
     public ArrayList<HashMap<String, Object>> now_weather(String url) throws Exception{
         JSONParser parser = new JSONParser();
+        ArrayList<HashMap<String, Object>> list = new ArrayList<>();
         Object obj = parser.parse(urlRedirect(url));
         JSONObject json = (JSONObject) obj;
         JSONArray arr = (JSONArray) ((JSONObject)((JSONObject)((JSONObject)json.get("response")).get("body")).get("items")).get("item");
-        ArrayList<HashMap<String, Object>> list = new ArrayList<>();
+
         ObjectMapper objectMapper = new ObjectMapper();
         TypeReference<HashMap<String, Object>> typeReference = new TypeReference<HashMap<String,Object>>() {};
         for(int i=0; i<arr.size(); i++){
@@ -81,7 +91,7 @@ public class WeatherController {
                 "serviceKey=" + ServiceKey +
                 "&numOfRows=10" +
                 "&pageNo=1" +
-                "&base_date=20230912" +
+                "&base_date=" + today_date() +
                 "&base_time=0600" +
                 "&nx=" + nx +
                 "&ny=" + ny +
