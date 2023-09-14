@@ -31,10 +31,13 @@ public class WeatherController {
 
     private String ServiceKey = "BxcWG0ueyR3PlJiksIoqpwFsFQJyLjESYHD0G0HAKVdvre4PLyY04bt73WD3q4Gj0fS4CkStegrF21Ai%2BeDqIw%3D%3D";
     private String weather_url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0";
+    private Date date = new Date();
+    private SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
     public String today_date(){
         Date date = new Date();
-        SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
-        System.out.println(format1.format(date));
+        format1 = new SimpleDateFormat("yyyyMMddHHmm");
+        System.out.println(format1.format(date).substring(0,8));
+        System.out.println(format1.format(date).substring(8));
         return format1.format(date);
     }
     @ResponseBody
@@ -91,8 +94,8 @@ public class WeatherController {
                 "serviceKey=" + ServiceKey +
                 "&numOfRows=10" +
                 "&pageNo=1" +
-                "&base_date=" + today_date() +
-                "&base_time=0600" +
+                "&base_date=" + today_date().substring(0,8) +
+                "&base_time=" + today_date().substring(8) +
                 "&nx=" + nx +
                 "&ny=" + ny +
                 "&dataType=json";
