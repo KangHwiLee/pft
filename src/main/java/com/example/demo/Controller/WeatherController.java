@@ -22,9 +22,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 
 @Controller
 public class WeatherController {
@@ -34,11 +32,10 @@ public class WeatherController {
     private Date date = new Date();
     private SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
     public String today_date(){
-        Date date = new Date();
+        Calendar c = Calendar.getInstance(Locale.KOREA);
+        if( c.get(Calendar.MINUTE)<30 ) c.add(Calendar.HOUR, -1);
         format1 = new SimpleDateFormat("yyyyMMddHHmm");
-        System.out.println(format1.format(date).substring(0,8));
-        System.out.println(format1.format(date).substring(8));
-        return format1.format(date);
+        return format1.format(c.getTime());
     }
     @ResponseBody
     @PostMapping("/now_weather")
@@ -70,6 +67,7 @@ public class WeatherController {
     }
 
     public ArrayList<HashMap<String, Object>> now_weather(String url) throws Exception{
+
         JSONParser parser = new JSONParser();
         ArrayList<HashMap<String, Object>> list = new ArrayList<>();
         Object obj = parser.parse(urlRedirect(url));
@@ -95,10 +93,11 @@ public class WeatherController {
                 "&numOfRows=10" +
                 "&pageNo=1" +
                 "&base_date=" + today_date().substring(0,8) +
-                "&base_time=" + today_date().substring(8) +
+                "&base_time=" + (Integer.parseInt(today_date().substring(8))-30) +
                 "&nx=" + nx +
                 "&ny=" + ny +
                 "&dataType=json";
+        System.out.println(text);
         return text;
     }
     public String urlRedirect(String url) throws IOException, ParseException{

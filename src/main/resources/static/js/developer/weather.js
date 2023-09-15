@@ -33,20 +33,20 @@ function town_weather(){
                 view += "</div>"
                 $(".town-weather").append(view)
             })
-            now_weather()
         }
     })
+    now_weather()
 }
 
 function now_weather(){
+var date = new Date()
     $.ajax({
         url : "/now_weather",
         type : "post",
         success : function(data){
-                $(".w-today h6").text(data[0].baseTime.substring(0,2) + "시")
+                $(".w-today h6").text(date.getHours() + "시")
                 var view = "";
             data.forEach(function(a){
-                console.log(a)
                 if(a.category == 'PTY'){
                 var sky = t_date.sky == 1 ? '맑음' : t_date.sky == 3 ? ' 구름많음' : '흐림'
                 var pty = a.obsrValue == 0 ? sky :
@@ -55,11 +55,9 @@ function now_weather(){
                           a.obsrValue == 3 ? '눈' :
                           a.obsrValue == 5 ? '빗방울' :
                           a.obsrValue == 6 ? '빗방울눈날림' : '눈날림'
-                var img_ck = a.obsrValue == 0 ? 'sky' + t_date.sky: 'pty' + a.obsrValue + ".png"
-                          console.log("/img/weather/" + img_ck)
+                var img_ck = a.obsrValue == 0 ? 'sky' + t_date.sky: 'pty' + a.obsrValue
                 $("#now-weather img").attr("src", "/img/weather/" + img_ck + ".png")
                 $("#now-weather span").eq(0).text(pty)
-                    console.log(a.obsrValue)
                 }else if(a.category == 'REH'){
                     view+="<p>습도 : "+a.obsrValue+"%</p>"
                 }else if(a.category == 'RN1'){
@@ -67,15 +65,11 @@ function now_weather(){
                     view+="<p>강수없음</p>"
                     }else
                     view+="<p>강수량 : "+a.obsrValue+"mm</p>"
-                }else if(a.category == 'T1H'){
-                    console.log(a.obsrValue)
-                }else if(a.category == 'UUU'){
-                    console.log(a.obsrValue)
-                }else if(a.category == 'VEC'){
-                    console.log(a.obsrValue)
-                }else if(a.category == 'VVV'){
-                    console.log(a.obsrValue)
-                }else{
+                }else if(a.category == 'T1H'){}
+                else if(a.category == 'UUU'){}
+                else if(a.category == 'VEC'){}
+                else if(a.category == 'VVV'){}
+                else{
                     view+="<p>풍속 : "+a.obsrValue+"m/s</p>"
                 }
             })

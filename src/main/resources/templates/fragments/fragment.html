@@ -18,10 +18,9 @@
     <!-- Custom styles for this template-->
     <link th:href="@{/css/sb-admin-2.min.css}" rel="stylesheet">
     <link th:href="@{/css/main.css}" rel="stylesheet">
-
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script th:src="@{/js/developer/weather.js}"></script>
+    <script th:src="@{/js/developer/main.js}"></script>
 </head>
 <body>
 <nav th:fragment="top" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" >
@@ -46,7 +45,7 @@
     </form>
 
     <!-- Topbar Navbar -->
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto" id="side-nav">
 
         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
         <li class="nav-item dropdown no-arrow d-sm-none">
@@ -139,7 +138,7 @@
                 </h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="dropdown-list-image mr-3">
-                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                        <img class="rounded-circle" th:src="@{/img/undraw_profile_1.svg}"
                              alt="...">
                         <div class="status-indicator bg-success"></div>
                     </div>
@@ -151,7 +150,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="dropdown-list-image mr-3">
-                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                        <img class="rounded-circle" th:src="@{/img/undraw_profile_2.svg}"
                              alt="...">
                         <div class="status-indicator"></div>
                     </div>
@@ -163,7 +162,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="dropdown-list-image mr-3">
-                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                        <img class="rounded-circle" th:src="@{/img/undraw_profile_3.svg}"
                              alt="...">
                         <div class="status-indicator bg-warning"></div>
                     </div>
@@ -197,7 +196,7 @@
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                 <img class="img-profile rounded-circle"
-                     src="img/undraw_profile.svg">
+                     th:src="@{/img/undraw_profile.svg}">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -241,9 +240,14 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" th:href="@{/}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" th:href="@{/board}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>게시판</span></a>
     </li>
 
     <!-- Divider -->
@@ -342,7 +346,7 @@
 
     <!-- Sidebar Message -->
     <div class="sidebar-card d-none d-lg-flex">
-        <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
+        <img class="sidebar-card-illustration mb-2" th:src="@{/img/undraw_rocket.svg}" alt="...">
         <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
         <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
     </div>

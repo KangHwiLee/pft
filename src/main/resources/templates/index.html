@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<header th:replace="fragments/fragment::head">
+<head th:replace="fragments/fragment::head">
+  <script th:src="@{/js/developer/weather.js}"></script>
   <meta charset="UTF-8">
   <title>Title</title>
-</header>
+</head>
 <!--<jsp:include page="/WEB-INF/views/include/head.jsp"/>-->
-
+<script th:src="@{/js/developer/weather.js}"></script>
 <body id="page-top">
 
 <!-- Page Wrapper -->
@@ -16,7 +17,7 @@
   &lt;!&ndash; End of Sidebar &ndash;&gt;
   </ul>
   <!-- Content Wrapper -->
-  <div id="content-wrapper" class="d-flex flex-column">
+  <div id="content-wrapper" class="d-flex flex-column e-h-100">
 
     <!-- Main Content -->
     <div id="content">
@@ -28,7 +29,8 @@
       <!-- End of Topbar -->
 
       <!-- Begin Page Content -->
-      <div class="container-fluid">
+      <div class="overflow-auto e-h-83">
+      <div class="container-fluid e-h-100">
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -343,6 +345,7 @@
       <!-- /.container-fluid -->
 
     </div>
+        </div>
     <!-- End of Main Content -->
 
     <!-- Footer -->
@@ -396,16 +399,16 @@
 <!-- Custom scripts for all pages-->
 <script src="js/sb-admin-2.min.js"></script>
 
-<!-- Page level plugins -->
+<!-- Page level plugins
 <script src="vendor/chart.js/Chart.min.js"></script>
 
-<!-- Page level custom scripts -->
+&lt;!&ndash; Page level custom scripts &ndash;&gt;
 <script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>-->
 
 <!-- 차트 데이터 js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="/resources/js/developer/main.js"></script>
+<script th:src="@{/js/developer/chart.js}"></script>
 </body>
 
 </html>
