@@ -259,7 +259,7 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item" th:classappend="${#strings.contains(#httpServletRequest.requestURI,'/pft')} ? 'active' : '' ">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
            aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
@@ -268,9 +268,13 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" th:href="@{/pft/snow}" th:classappend="${#strings.contains(#httpServletRequest.requestURI,'snow')} ? 'active' : '' ">Buttons</a>
-                <a class="collapse-item" th:href="@{/pft/cctv}">Cards</a>
-                <a class="collapse-item" th:href="@{/pft/cctv}">Cards</a>
+                <a class="collapse-item" th:text="스노우멜트" th:href="@{/pft/snow}" th:classappend="${#strings.contains(#httpServletRequest.requestURI,'snow')} ? 'active' : '' ">Buttons</a>
+                <a class="collapse-item" th:text="CCTV" th:href="@{/pft/cctv}">Cards</a>
+                <a class="collapse-item" th:text="미세먼지" th:href="@{/pft/air}">Cards</a>
+                <a class="collapse-item" th:text="캘린더" th:href="@{/pft/calendar}">Cards</a>
+                <a class="collapse-item" th:text="안전점검일지" th:href="@{/pft/report}">Cards</a>
+                <a class="collapse-item" th:text="|마이홈계산기(모바일)|" th:href="@{/pft/m_myhome}">Cards</a>
+                <a class="collapse-item" th:text="|마이홈계산기(웹)|" th:href="@{/pft/w_myhome}">Cards</a>
             </div>
         </div>
     </li>
