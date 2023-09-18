@@ -34,6 +34,7 @@ public class WeatherController {
     public String today_date(){
         Calendar c = Calendar.getInstance(Locale.KOREA);
         if( c.get(Calendar.MINUTE)<30 ) c.add(Calendar.HOUR, -1);
+        c.add(Calendar.MINUTE, -30);
         format1 = new SimpleDateFormat("yyyyMMddHHmm");
         return format1.format(c.getTime());
     }
@@ -93,7 +94,7 @@ public class WeatherController {
                 "&numOfRows=10" +
                 "&pageNo=1" +
                 "&base_date=" + today_date().substring(0,8) +
-                "&base_time=" + (Integer.parseInt(today_date().substring(8))-30) +
+                "&base_time=" + today_date().substring(8) +
                 "&nx=" + nx +
                 "&ny=" + ny +
                 "&dataType=json";

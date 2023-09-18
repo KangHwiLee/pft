@@ -44,7 +44,7 @@
           <div class="full-board">
             <div class="card shadow mb-4 e-h-100">
               <!-- Card Header - Dropdown -->
-              <div시글 아래로 부드럽게
+              <div
                       class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">글쓰기</h6>
                 <div class="dropdown no-arrow">
@@ -65,17 +65,19 @@
               <!-- Card Body -->
               <div class="card-body">
                 <div class="board">
-                  <form method="post" th:action="@{/board/write}"></form>
+                  <form method="post" th:action action="/board/write" id="write" th:object="${BoardVO}">
                   <table class="table table-hover">
                     <tbody>
                     <tr>
-                      <td><input name="title" type="text" class="form-control" placeholder="글 제목" maxlength="40"></td>
+                      <td><input th:field="*{title}" type="text" class="form-control" placeholder="글 제목" maxlength="40"></td>
                     </tr>
                     <tr>
-                      <td><textarea name="content" type="text" class="form-control" placeholder="글 내용을 작성하세요" maxlength="1024" style="height: 400px;"></textarea></td>
+                      <td><textarea th:field="*{content}" type="text" class="form-control" placeholder="글 내용을 작성하세요" maxlength="1024" style="height: 400px;"></textarea></td>
                     </tr>
                     </tbody>
                   </table>
+                  </form>
+                  <button class="board-button" type="submit" form="write">test</button>
               </div>
             </div>
           </div>

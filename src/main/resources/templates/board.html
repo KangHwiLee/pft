@@ -33,7 +33,7 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
           <h1 class="h3 mb-0 text-gray-800">게시판</h1>
-          <input placeholder="검색"/>
+          <input placeholder="검색" th:value="${param.searchText}"/>
         </div>
 
         <!-- Content Row -->
@@ -65,103 +65,9 @@
               <!-- Card Body -->
               <div class="card-body">
                 <div class="board">
-                  <table class="table board-table">
-                    <colgroup>
-                      <col width="2%">
-                      <col width="60%">
-                      <col width="18%">
-                      <col width="10%">
-                      <col width="10%">
-                    </colgroup>
-                    <thead>
-                      <th>No</th>
-                      <th>제목</th>
-                      <th>글쓴이</th>
-                      <th>등록일</th>
-                      <th>수정일</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    </ul>
-                  </nav>
+                  <div class="table-list">
+
+                  </div>
                 </div>
                   <a th:href="@{/board/write}"><button class="board-button">test</button></a>
               </div>
@@ -228,5 +134,33 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!--<script src="/resources/js/developer/chart.js"></script>-->
 </body>
+
+<script th:inline="javascript">
+$(document).ready(function(){
+  board_list();
+})
+
+$(document).on('click','tr',function(){
+  var content = $(".table tbody tr").eq($(this).index()+1);
+  if(content.children().length > 1) return;
+  var box = content.children().first()
+  var box1 = content.children().first().children().first();
+  box.slideToggle(500);
+  box1.slideToggle(500);
+})
+
+function board_list(){
+  $.ajax({
+    url : "/board/list",
+    type : "get",
+    success : function(data){
+    console.log(data);
+      $(".table-list").html(data);
+    }
+  })}
+
+
+
+</script>
 
 </html>
