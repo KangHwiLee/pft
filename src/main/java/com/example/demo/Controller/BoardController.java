@@ -24,7 +24,7 @@ public class BoardController {
     }
     @GetMapping("/board/write")
     public String write(Model model){
-        model.addAttribute("BoardVO", new Board());
+        model.addAttribute("Board", new Board());
         return "board/write";
     }
 
@@ -43,6 +43,8 @@ public class BoardController {
         Page<Board> boards = board.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
         int startPage = Math.max(1,boards.getPageable().getPageNumber() - 4);
         int endPage = Math.min(boards.getTotalPages(), boards.getNumber() + 4);
+        System.out.println(startPage);
+        System.out.println(endPage);
         model.addAttribute("startPage", startPage);
         model.addAttribute("endPage", endPage);
         model.addAttribute("boards", boards);
