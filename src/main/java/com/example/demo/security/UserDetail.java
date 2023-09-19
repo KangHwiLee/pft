@@ -20,12 +20,12 @@ public class UserDetail implements UserDetailsService{
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 //		member member = memberRepository.findByusername(username).orElseThrow(() -> 
 //							new IllegalArgumentException("존재하지 않는 유저입니다."));
-		user member = memberRepository.findByusername(username).orElseThrow(() -> 
+		user user = memberRepository.findByusername(username).orElseThrow(() ->
 		new IllegalArgumentException("존재하지 않는 유저입니다."));
 		
 		//CustomUserDetails customUserDetails = new CustomUserDetails(member);
 		//	return customUserDetails;
-			return new User(member.getUsername(), member.getPassword(), Arrays.asList(new SimpleGrantedAuthority(member.getRole())));
+			return new User(user.getUsername(), user.getPassword(), Arrays.asList(new SimpleGrantedAuthority(user.getRole())));
 	}
 
 }

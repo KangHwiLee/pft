@@ -22,9 +22,8 @@ public class MainController {
     @Autowired
     MemberRepository memberRepository;
 
-    @GetMapping("/user")
+    @GetMapping("/")
     public String home(){
-        System.out.println("test1");
         return "index";
     }
 
@@ -32,6 +31,7 @@ public class MainController {
     public String test(){
         return "login";
     }
+
 
 //    @GetMapping("/")
 //    public String home(){

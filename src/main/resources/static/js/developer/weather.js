@@ -1,4 +1,9 @@
+var header = $("meta[name='_csrf_header']").attr('content');
+var token = $("meta[name='_csrf']").attr('content');
 $(function(){
+
+
+
     town_weather()
 
 })
@@ -6,9 +11,13 @@ $(function(){
 var t_date;
 
 function town_weather(){
+console.log(header)
     $.ajax({
         url : "/town_weather",
         type : "post",
+        beforeSend: function(xhr){
+                xhr.setRequestHeader(header, token);
+            },
         success : function(data){
             t_date = data[1].data[0]
 
@@ -44,6 +53,9 @@ var date = new Date()
     $.ajax({
         url : "/now_weather",
         type : "post",
+        beforeSend: function(xhr){
+                xhr.setRequestHeader(header, token);
+            },
         success : function(data){
                 $(".w-today h6").text(date.getHours() + "시")
                 var view = "";

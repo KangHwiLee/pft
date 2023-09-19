@@ -1,3 +1,5 @@
+var header = $("meta[name='_csrf_header']").attr('content');
+var token = $("meta[name='_csrf']").attr('content');
 var ctx1 = document.getElementById('myChart1');
 var ctx2 = document.getElementById('myChart2');
 var label1 = [100]
@@ -105,6 +107,9 @@ function dataLoad(){
         $.ajax({
             url : "/chart_data",
             type : "post",
+            beforeSend: function(xhr){
+                            xhr.setRequestHeader(header, token);
+                        },
             success : function(data){
                 addData(data.chart1, mychart1)
                 addData(data.chart2, mychart2)
