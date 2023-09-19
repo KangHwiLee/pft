@@ -23,8 +23,8 @@ public class UserDetail implements UserDetailsService{
 		user member = memberRepository.findByusername(username).orElseThrow(() -> 
 		new IllegalArgumentException("존재하지 않는 유저입니다."));
 		
-//		CustomUserDetails customUserDetails = new CustomUserDetails();
-//			return customUserDetails;
+		//CustomUserDetails customUserDetails = new CustomUserDetails(member);
+		//	return customUserDetails;
 			return new User(member.getUsername(), member.getPassword(), Arrays.asList(new SimpleGrantedAuthority(member.getRole())));
 	}
 

@@ -22,7 +22,7 @@ public class MainController {
     @Autowired
     MemberRepository memberRepository;
 
-    @GetMapping("/")
+    @GetMapping("/user")
     public String home(){
         System.out.println("test1");
         return "index";

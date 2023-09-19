@@ -17,11 +17,12 @@ public class SecurityConfiguration {
                 .authorizeRequests()
                 .antMatchers("/css/**", "/img/**","/js/**","/scss/**","/vendor/**","/register").permitAll()
                 .antMatchers("/admin").hasRole("ADMIN")            //권한별 접속 가능 페이지
+                .antMatchers("/user").hasRole("USER")            //권한별 접속 가능 페이지
                 .anyRequest().authenticated()			//나머지 접속
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/user")
                 .permitAll()
                 .and()
                 .logout()

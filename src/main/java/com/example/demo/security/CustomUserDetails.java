@@ -9,26 +9,27 @@ import org.springframework.security.core.userdetails.UserDetails;
 @SuppressWarnings("serial")
 public class CustomUserDetails implements UserDetails {
 
-	private String user_id;
-    private String password;
-    private boolean enabled;
-    private String role;
-	
-    @Override
+	private user member;
+
+	public CustomUserDetails(user member) {
+		this.member = member;
+	}
+
+	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
         ArrayList<GrantedAuthority> auth = new ArrayList<GrantedAuthority>();
-        auth.add(new SimpleGrantedAuthority(role));
+        auth.add(new SimpleGrantedAuthority(member.getRole()));
         return auth;
 	}
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return password;
+		return member.getPassword();
 	}
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return user_id;
+		return member.getUsername();
 	}
 	@Override
 	public boolean isAccountNonExpired() {
@@ -48,7 +49,7 @@ public class CustomUserDetails implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return enabled;
+		return member.isEnabled();
 	}
 	
 	
