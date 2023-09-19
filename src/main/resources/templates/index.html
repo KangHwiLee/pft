@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="fragments/fragment::head">
   <script th:src="@{/js/developer/weather.js}"></script>
   <meta charset="UTF-8">
@@ -64,7 +64,9 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                      <p th:text="${#authentication}"></p>
+                      Tasks
                     </div>
                     <div class="row no-gutters align-items-center">
                       <div class="col-auto">
@@ -81,6 +83,7 @@
                   </div>
                   <div class="col-auto">
                     <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    <p th:text="${#authentication}"></p>
                   </div>
                 </div>
               </div>
@@ -390,14 +393,14 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+  <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
 
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script th:src="@{/js/sb-admin-2.min.js}"></script>
 
 <!-- Page level plugins
 <script src="vendor/chart.js/Chart.min.js"></script>

@@ -1,6 +1,10 @@
 package com.example.demo.Controller;
 
+import com.example.demo.security.MemberRepository;
+import com.example.demo.security.user;
 import com.sun.management.OperatingSystemMXBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,10 +16,21 @@ import java.util.HashMap;
 @Controller
 public class MainController {
 
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
+    @Autowired
+    MemberRepository memberRepository;
+
     @GetMapping("/")
     public String home(){
         System.out.println("test1");
         return "index";
+    }
+
+    @GetMapping("/login")
+    public String test(){
+        return "login";
     }
 
 //    @GetMapping("/")
@@ -37,6 +52,18 @@ public class MainController {
         return map;
     }
 
-
+    @GetMapping("/register")
+    public String register(){
+        return "register";
+    }
+    @PostMapping("/register")
+    public String register(user user){
+        String encodePassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodePassword);
+        user.setEnabled(true);
+        user.setRole("user");
+        memberRepository.save(user);
+        return "redirect:/";
+    }
 
 }

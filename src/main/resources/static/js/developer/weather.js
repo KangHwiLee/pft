@@ -33,9 +33,10 @@ function town_weather(){
                 view += "</div>"
                 $(".town-weather").append(view)
             })
+            now_weather()
         }
     })
-    now_weather()
+
 }
 
 function now_weather(){
