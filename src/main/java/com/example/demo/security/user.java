@@ -1,4 +1,4 @@
-/*
+
 package com.example.demo.security;
 
 import javax.persistence.Entity;
@@ -26,4 +26,4 @@ public class user {
 	private boolean enabled;
 
 }
-*/
+

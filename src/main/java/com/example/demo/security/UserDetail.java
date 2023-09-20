@@ -1,4 +1,4 @@
-/*
+
 package com.example.demo.security;
 
 import java.util.Arrays;
@@ -29,4 +29,4 @@ public class UserDetail implements UserDetailsService{
 			return new User(user.getUsername(), user.getPassword(), Arrays.asList(new SimpleGrantedAuthority(user.getRole())));
 	}
 
-}*/
+}
