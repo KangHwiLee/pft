@@ -1,3 +1,4 @@
+/*
 package com.example.demo.security;
 
 import javax.persistence.Entity;
@@ -18,10 +19,11 @@ public class user {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String username;
-	private String password; 
+	private String password;
 	private String role;
 	private boolean enabled;
-	
+
 }
+*/
