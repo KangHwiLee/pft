@@ -1,7 +1,7 @@
 package com.example.demo.Controller;
 
-import com.example.demo.security.MemberRepository;
-import com.example.demo.security.user;
+import com.example.demo.repository.MemberRepository;
+import com.example.demo.entity.user;
 import com.sun.management.OperatingSystemMXBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -58,6 +58,11 @@ public class MainController {
         user.setRole("user");
         memberRepository.save(user);
         return "redirect:/";
+    }
+
+    @GetMapping("/introduce")
+    public String introduce(){
+        return "introduce";
     }
 
 }

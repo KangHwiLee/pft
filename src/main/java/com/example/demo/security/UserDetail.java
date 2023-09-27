@@ -3,6 +3,8 @@ package com.example.demo.security;
 
 import java.util.Arrays;
 
+import com.example.demo.entity.user;
+import com.example.demo.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -15,7 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserDetail implements UserDetailsService{
 	
-	@Autowired MemberRepository memberRepository;
+	@Autowired
+	MemberRepository memberRepository;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

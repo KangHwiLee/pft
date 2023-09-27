@@ -1,8 +1,7 @@
 package com.example.demo.Controller;
 
-import com.example.demo.board.Board;
-import com.example.demo.board.BoardRepository;
-import com.example.demo.board.BoardService;
+import com.example.demo.entity.Board;
+import com.example.demo.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

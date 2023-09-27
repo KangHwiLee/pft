@@ -12,11 +12,12 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
+    private String[] permitAll = {"/css/**", "/img/**","/js/**","/scss/**","/vendor/**","/register"};
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/css/**", "/img/**","/js/**","/scss/**","/vendor/**","/register").permitAll()
+                .antMatchers(permitAll).permitAll()
                 .antMatchers("/admin").hasRole("ADMIN")            //권한별 접속 가능 페이지
                 .anyRequest().authenticated()			//나머지 접속
                 .and()

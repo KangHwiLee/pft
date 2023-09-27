@@ -11,5 +11,6 @@ $(document).ready(function(){
     }else{
     $("#accordionSidebar").addClass('toggled')
     }
+    console.log( window.innerWidth)
 })
 

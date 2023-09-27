@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:replace="fragments/fragment::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</header>
+<!--<jsp:include page="/WEB-INF/views/include/head.jsp"/>-->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul th:replace="fragments/fragment :: side-bar">
+        &lt;!&ndash; End of Sidebar &ndash;&gt;
+    </ul>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav th:replace="fragments/fragment::top">
+
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid e-h-80">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">자기소개</h1>
+                </div>
+
+                <!-- Content Row -->
+
+                <div class="row e-h-100">
+
+                    <!-- Area Chart -->
+                    <div class="full-board">
+                        <div class="card shadow mb-4 e-h-100">
+                            <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary" th:text="|CCTV 웹 스트리밍|"></h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                         aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-header">Dropdown Header:</div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="board">
+                                    <div style="display:flex;justify-content:space">
+                                        <div style="width:40%;padding:3%;" >
+                                            <h2>이 강 휘</h2>
+                                            <h4>Java Developer</h4>
+                                            <br>
+                                            <span style="color:black;">
+                                                개발자가 되어 새로운 것을 계속 배워 새로운 시도를 할 수 있는것이
+                                                즐거워 개발은 질릴 수 없는 것 같습니다.
+                                                선배님들은 저보다 더 많은 경험과 더 많은 기술을 가지고 있을 것이고
+                                                미래엔 그들과 어깨를 나란히 할 수 있는 개발자가 되도록 더 노력하겠습니다.
+
+                                            </span>
+                                        </div>
+                                        <div style="width:49%; height:100%;padding:3%;" >
+                                            <img th:src="@{/img/pft/snow1.png}" style="width:100%;">
+                                        </div>
+                                    </div>
+                                    <div style="padding:3%;">
+                                        <p>기술 스택</p>
+                                        <p>java, mysql, spring boot, spring mvc, aws, tomcat, TCP/IP, linux, jquery, kotlin</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+    <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script th:src="@{/js/sb-admin-2.min.js}"></script>
+    <!-- 차트 데이터 js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!--<script src="/resources/js/developer/chart.js"></script>-->
+</body>
+<script th:inline="javascript">
+    $('.slick').slick();
+
+</script>
+
+</html>

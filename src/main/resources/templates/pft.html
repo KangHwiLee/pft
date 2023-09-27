@@ -5,7 +5,8 @@
     <title>Title</title>
 </header>
 <!--<jsp:include page="/WEB-INF/views/include/head.jsp"/>-->
-
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <body id="page-top">
 
 <!-- Page Wrapper -->
@@ -41,7 +42,7 @@
 
                     <!-- Area Chart -->
                     <div class="full-board">
-                        <div class="card shadow mb-4 e-h-100" th:insert="pft/project::${pft}">
+                        <div class="card shadow mb-4 e-h-100" th:insert="fragments/project::${pft}">
                             <!-- Card Header - Dropdown -->
 
                         </div>
@@ -106,5 +107,8 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <!--<script src="/resources/js/developer/chart.js"></script>-->
 </body>
+<script th:inline="javascript">
+    $('.slick').slick();
+</script>
 
 </html>

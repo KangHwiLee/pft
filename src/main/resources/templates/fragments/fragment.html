@@ -270,33 +270,21 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
                 <a class="collapse-item" th:text="스노우멜트" th:href="@{/pft/snow}" th:classappend="${#strings.contains(#httpServletRequest.requestURI,'snow')} ? 'active' : '' ">Buttons</a>
-                <a class="collapse-item" th:text="CCTV" th:href="@{/pft/cctv}">Cards</a>
-                <a class="collapse-item" th:text="미세먼지" th:href="@{/pft/air}">Cards</a>
-                <a class="collapse-item" th:text="캘린더" th:href="@{/pft/calendar}">Cards</a>
-                <a class="collapse-item" th:text="안전점검일지" th:href="@{/pft/report}">Cards</a>
-                <a class="collapse-item" th:text="|마이홈계산기(모바일)|" th:href="@{/pft/m_myhome}">Cards</a>
-                <a class="collapse-item" th:text="|마이홈계산기(웹)|" th:href="@{/pft/w_myhome}">Cards</a>
+                <a class="collapse-item" th:text="CCTV" th:href="@{/pft/cctv}" th:classappend="${#strings.contains(#httpServletRequest.requestURI,'cctv')} ? 'active' : '' ">Cards</a>
+                <a class="collapse-item" th:text="미세먼지" th:href="@{/pft/air}" th:classappend="${#strings.contains(#httpServletRequest.requestURI,'air')} ? 'active' : '' ">Cards</a>
+                <a class="collapse-item" th:text="캘린더" th:href="@{/pft/calendar}" th:classappend="${#strings.contains(#httpServletRequest.requestURI,'calendar')} ? 'active' : '' ">Cards</a>
+                <a class="collapse-item" th:text="안전점검일지" th:href="@{/pft/report}" th:classappend="${#strings.contains(#httpServletRequest.requestURI,'report')} ? 'active' : '' ">Cards</a>
+                <a class="collapse-item" th:text="|마이홈계산기(모바일)|" th:href="@{/pft/m_myhome}" th:classappend="${#strings.contains(#httpServletRequest.requestURI,'m_myhome')} ? 'active' : '' ">Cards</a>
+                <a class="collapse-item" th:text="|마이홈계산기(웹)|" th:href="@{/pft/w_myhome}" th:classappend="${#strings.contains(#httpServletRequest.requestURI,'w_myhome')} ? 'active' : '' ">Cards</a>
             </div>
         </div>
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-           aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-             data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">Colors</a>
-                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                <a class="collapse-item" href="utilities-other.html">Other</a>
-            </div>
-        </div>
+    <li class="nav-item " th:classappend="${#httpServletRequest.requestURI} == '/introduce' ? 'active' : ''">
+        <a class="nav-link" th:href="@{/introduce}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>개발자 프로필</span></a>
     </li>
 
     <!-- Divider -->

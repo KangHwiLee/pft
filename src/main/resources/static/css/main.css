@@ -3,11 +3,9 @@
 .test{background-color  :black;width:100%;height:20%;padding:10% 10% 5% 10%}
 .text_center{text-align : center;}
 #now-weather{padding-top:3%;overflow:auto;justify-content:space}
-.town-weather{padding-top:3%;overflow-x:scroll;display:flex}
+.town-weather{padding-top:3%;overflow:auto;display:flex}
 .w-detail p{margin:0;}
 
-html
-body{height:100%;}
 
 
 .full-board{width:99%}
@@ -28,3 +26,9 @@ body{height:100%;}
 .board-table{text-align:center;}
 
 .board-button{float:right}
+
+.slick{height: 400px;width:50%;}
+.slick img{height:400px;}
+.slick-arrow{position: absolute;top: 50%;transform: translateY(-50%);z-index: 5}
+         .slick-prev{left: 0;}
+         .slick-next{right: 0;}
