@@ -1,29 +1,28 @@
+var latitude = 35.1378295;
+var longitude = 126.903827;
+
 var header = $("meta[name='_csrf_header']").attr('content');
 var token = $("meta[name='_csrf']").attr('content');
 $(function(){
-
-
-
-    town_weather()
-
+    town_weather(latitude, longitude)
 })
 
 var t_date;
 
-function town_weather(){
-console.log(header)
+function town_weather(lat, lon){
     $.ajax({
         url : "/town_weather",
         type : "post",
+        data : {"lat" : lat, "lon" : lon},
         beforeSend: function(xhr){
                 xhr.setRequestHeader(header, token);
             },
         success : function(data){
             t_date = data[1].data[0]
 
+            var view="";
             data[1].data.forEach(function(a){
             var img_ck = a.pty == 0 ? 'sky' + a.sky +".png" : 'pty' + a.pty + ".png"
-                var view="";
                 var sky = a.sky == 1 ? '맑음' : a.sky == 3 ? ' 구름많음' : '흐림'
                                 var pty = a.pty == 0 ? sky :
                                           a.pty == 1 ? '비' :
@@ -40,25 +39,27 @@ console.log(header)
                 view += "<p>"+a.temp+"℃</p>"
                 view += "<p>습도"+a.reh+"%</p>"
                 view += "</div>"
-                $(".town-weather").append(view)
             })
-            now_weather()
+                $(".town-weather").html(view)
+            now_weather(lat, lon)
         }
     })
 
 }
 
-function now_weather(){
+function now_weather(lat, lon){
 var date = new Date()
     $.ajax({
         url : "/now_weather",
         type : "post",
+        data : {"lat" : lat, "lon" : lon},
         beforeSend: function(xhr){
                 xhr.setRequestHeader(header, token);
             },
         success : function(data){
                 $(".w-today h6").text(date.getHours() + "시")
                 var view = "";
+            view += "<h1>"+t_date.temp+"℃</h1>"
             data.forEach(function(a){
                 if(a.category == 'PTY'){
                 var sky = t_date.sky == 1 ? '맑음' : t_date.sky == 3 ? ' 구름많음' : '흐림'
@@ -86,8 +87,8 @@ var date = new Date()
                     view+="<p>풍속 : "+a.obsrValue+"m/s</p>"
                 }
             })
-            $(".w-detail h1").text(t_date.temp+"℃")
-            $(".w-detail").append(view)
+//            $(".w-detail h1").text(t_date.temp+"℃")
+            $(".w-detail").html(view)
         }
     })
 }

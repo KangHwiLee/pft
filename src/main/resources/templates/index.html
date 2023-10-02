@@ -6,13 +6,14 @@
     <title>Title</title>
 </head>
 <!--<jsp:include page="/WEB-INF/views/include/head.jsp"/>-->
-<script th:src="@{/js/developer/weather.js}"></script>
+
 <style>
 .label {margin-bottom: 96px;}
 .label * {display: inline-block;vertical-align: top;}
 .label .left {background: url("https://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
 .label .center {background: url(https://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
 .label .right {background: url("https://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+
 
 </style>
 <body id="page-top">
@@ -123,7 +124,7 @@
                     <div class="row">
 
                         <!-- Area Chart -->
-                        <div class="col-xl-3 col-lg-7">
+                        <div class="col-xl-4 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -169,7 +170,7 @@
                         </div>
 
                         <!-- Pie Chart -->
-                        <div class="col-xl-9 col-lg-7">
+                        <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -200,44 +201,31 @@
                             </div>
                         </div>
                     </div>
-                        <!-- Content Row -->
-                        <div class="row">
+                    <!-- Content Row -->
+                    <div class="row">
 
-                            <!-- Content Column -->
-                            <div class="col-lg-6 mb-4">
+                        <!-- Content Column -->
+                        <div class="col-lg-6 mb-4">
 
-                                <!-- Project Card Example -->
-                                <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div style="display:flex;">
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                                </div>
+                                <div class="card-body">
+                                    <a class="btn btn-success btn-sm" id="btn-a">장소 등록</a>
+                                    <div style="display:flex;">
                                         <div style="width:50%;height:400px; overflow:auto;">
-                                        <ul style="font-size:20px;">
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                            <li>test</li>
-                                        </ul>
+                                            <ul style="font-size:20px;">
+                                            </ul>
                                         </div>
                                         <div style="width:50%;height:400px; overflow:auto;">
                                             <h3>경로탐색</h3>
                                             <div>
-                                                <input class="form-control bg-light border-0 small" style="margin-bottom:10px;" placeholder="출발지">
-                                                <input class="form-control bg-light border-0 small" style="margin-bottom:10px;" placeholder="도착지">
+                                                <input class="form-control bg-light border-0 small"
+                                                       style="margin-bottom:10px;" placeholder="출발지">
+                                                <input class="form-control bg-light border-0 small"
+                                                       style="margin-bottom:10px;" placeholder="도착지">
                                             </div>
                                             <div>
                                                 <button class="btn btn-primary" type="button" style="float:right;">
@@ -245,30 +233,30 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                                <!-- Color System -->
+                        </div>
+                        <!-- Color System -->
 
-                            <div class="col-lg-6 mb-4">
+                        <div class="col-lg-6 mb-4">
 
-                                <!-- Illustrations -->
-                                <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div id="map" style="width:100%;height:400px;"></div>
-
-
-                                    </div>
+                            <!-- Illustrations -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
                                 </div>
-                                <!-- Approach -->
+                                <div class="card-body">
+                                    <div id="map" style="width:100%;height:400px;"></div>
 
+
+                                </div>
                             </div>
+                            <!-- Approach -->
 
                         </div>
+
+                    </div>
 
                     <div class="row">
 
@@ -330,83 +318,85 @@
 
                     </div>
 
-                        </div>
-
-                    </div>
-                    <!-- /.container-fluid -->
-
                 </div>
-            </div>
-            <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <!-- End of Footer -->
+            </div>
+            <!-- /.container-fluid -->
 
         </div>
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Main Content -->
 
-    <!-- End of Page Wrapper -->
+    <!-- Footer -->
+    <!-- End of Footer -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+</div>
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2021</span>
+        </div>
+    </div>
+</footer>
+<!-- End of Content Wrapper -->
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
-    <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!-- Bootstrap core JavaScript-->
+<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+<!-- Core plugin JavaScript-->
+<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script th:src="@{/js/sb-admin-2.min.js}"></script>
+<!-- Custom scripts for all pages-->
+<script th:src="@{/js/sb-admin-2.min.js}"></script>
 
-    <!-- Page level plugins
-    <script src="vendor/chart.js/Chart.min.js"></script>
+<!-- Page level plugins
+<script src="vendor/chart.js/Chart.min.js"></script>
 
-    &lt;!&ndash; Page level custom scripts &ndash;&gt;
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>-->
+&lt;!&ndash; Page level custom scripts &ndash;&gt;
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>-->
 
-    <!-- 차트 데이터 js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script th:src="@{/js/developer/chart.js}"></script>
+<!-- 차트 데이터 js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script th:src="@{/js/developer/chart.js}"></script>
 
-    <!--
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4149bafdb9a5a5f288ffa60a0dbfbd37"></script>
-    <script th:src="@{/js/developer/kakaomap.js}">
-      -->
-    </script>
-    <script src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=k6XYZqE6ELXn6iKEBpTD5NnEvOR6rOw8Y1C8VPpa"></script>
-    <script th:src="@{/js/developer/tmap.js}"></script>
+<!--
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4149bafdb9a5a5f288ffa60a0dbfbd37"></script>
+<script th:src="@{/js/developer/kakaomap.js}">
+  -->
+</script>
+<script src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=k6XYZqE6ELXn6iKEBpTD5NnEvOR6rOw8Y1C8VPpa"></script>
+<script th:src="@{/js/developer/tmap.js}"></script>
+<script th:src="@{/js/developer/weather.js}"></script>
+<script th:src="@{/js/developer/index.js}"></script>
 </body>
 
 </html>

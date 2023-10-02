@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.entity.Field;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONException;
@@ -9,9 +10,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
@@ -40,15 +39,23 @@ public class WeatherController {
     }
     @ResponseBody
     @PostMapping("/now_weather")
-    public ArrayList<HashMap<String, Object>> now_weather() throws Exception {
+    public ArrayList<HashMap<String, Object>> now_weather(@RequestParam double lat,
+                                                          @RequestParam double lon) throws Exception {
         String url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?";
-        return now_weather(nowAPI(url, 55, 127));
+        HashMap<String, Object> map = convertToGrid(lat, lon);
+        System.out.println(lat);
+        System.out.println(lon);
+        System.out.println(map.get("nx"));
+        System.out.println(map.get("ny"));
+        return now_weather(nowAPI(url, (int) map.get("nx"), (int) map.get("ny")));
     }
 
     @ResponseBody
     @PostMapping("/town_weather")
-    public JSONObject[] town_weather() throws Exception{
-        return xml_list(weatherAPI(new StringBuilder("https://www.kma.go.kr/wid/queryDFS.jsp"), 55, 127));
+    public JSONObject[] town_weather(@RequestParam double lat,
+                                     @RequestParam double lon) throws Exception{
+        HashMap<String, Object> map = convertToGrid(lat, lon);
+        return xml_list(weatherAPI(new StringBuilder("https://www.kma.go.kr/wid/queryDFS.jsp"), (int) map.get("nx"), (int) map.get("ny")));
     }
 
     public JSONObject[] xml_list(String url) throws Exception {

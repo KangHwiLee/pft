@@ -11,16 +11,15 @@ setTimeout(() => getRP(), 5000);
 
 function nowGps(){
     navigator.geolocation.getCurrentPosition((position) => {
-    console.log(position);
     lat = position.coords.latitude
     lon = position.coords.longitude
+    console.log(lat, lon)
     });
 }
 
 var map;
 
 	function initTmap(lat, lon){
-	console.log(lat, lon)
 		// map 생성
 		// Tmapv3.Map을 이용하여, 지도가 들어갈 div, 넓이, 높이를 설정합니다.
 		map = new Tmapv3.Map("map", { // 지도가 생성될 div

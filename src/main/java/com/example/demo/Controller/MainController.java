@@ -65,4 +65,9 @@ public class MainController {
         return "introduce";
     }
 
+    @GetMapping("/field_add")
+    public String field_add(){
+        return "popup/field_add";
+    }
+
 }
