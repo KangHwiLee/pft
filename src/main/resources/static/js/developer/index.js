@@ -12,6 +12,10 @@ $(document).on('click', '#btn-a', function(){
     var lat = $(this).data('field_lat')
     var lon = $(this).data('field_lon')
     town_weather(lat, lon);
+    $('.card-body input:eq(1)').val($(this).text())
+    initTmap();
+    navigation(lat, lon);
+//    getRP(lat, lon);
 })
 
 function field_list(){
