@@ -14,8 +14,8 @@ $(document).on('click', '#btn-a', function(){
     town_weather(lat, lon);
     $('.card-body input:eq(1)').val($(this).text())
     initTmap();
-    navigation(lat, lon);
-//    getRP(lat, lon);
+    //navigation(lat, lon);
+    getRP(lat, lon);
 })
 
 function field_list(){
