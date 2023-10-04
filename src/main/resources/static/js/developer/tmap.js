@@ -1,3 +1,5 @@
+var header = $("meta[name='_csrf_header']").attr('content');
+var token = $("meta[name='_csrf']").attr('content');
 var lat = 35.1378295;
 var lon = 126.903827;
 const key = "k6XYZqE6ELXn6iKEBpTD5NnEvOR6rOw8Y1C8VPpa";
@@ -20,7 +22,6 @@ var map;
 
 	function initTmap(){
 	if(map != null){map.destroy();}
-	console.log(lat, lon)
 		// map 생성
 		// Tmapv3.Map을 이용하여, 지도가 들어갈 div, 넓이, 높이를 설정합니다.
 		map = new Tmapv3.Map("map", { // 지도가 생성될 div
@@ -36,9 +37,36 @@ var map;
 			setMarker(map);
 	}
 
+function addMarker(lati, longi){
+    var marker = new Tmapv3.Marker({
+        			position: new Tmapv3.LatLng(lati, longi),	//Marker의 중심좌표 설정.
+        			map: map	//Marker가 표시될 Map 설정..
+        		});
+}
+
 function setMarker(map){
 
-    var positions = setPosition();
+    //var positions = setPosition();
+
+    var positions = [];
+                $.ajax({
+                    url : "/field_list",
+                    type : "post",
+                    async : false,
+                    beforeSend: function(xhr){
+                                            xhr.setRequestHeader(header, token);
+                                        },
+                    success : function(data){
+                        data.forEach((a) => {
+                            positions.push({
+                                          'title' : a.field_name,
+                                          'lat' : a.field_lat,
+                                          'lon' : a.field_lon,
+                                          'content' : '<div class ="label"><span class="left"></span><span class="center">'+a.field_name+'</span><span class="right"></span></div>'
+                                          })
+                        })
+                    }
+                    })
 
     for(var i=0; i<positions.length; i++){
         var marker = new Tmapv3.Marker({
@@ -90,8 +118,6 @@ var e_latlng;
             var h_time = Math.floor(t_time/3600);
             var m_time = Math.floor(t_time%3600/60);
             var s_time = t_time%60;
-            console.log(t_time)
-            console.log(h_time, m_time)
             view = "<p>거리 : "+t_s_distance+"km</p>"
             view += "<p>예상 시간 : "+h_time+"시간 "+m_time+"분</p>"
             $("#naviInfo").html(view)
@@ -109,6 +135,9 @@ var e_latlng;
                 trafficType3Color:"#8E8111",  //정체
                 trafficType4Color:"#FF0000"  //정체
             };
+            console.log(map)
+            console.log(jsonForm)
+            console.log(trafficColors)
             jsonObject.drawRouteByTraffic(map, jsonForm, trafficColors);
             var center_lat = (s_latlng._lat+e_latlng._lat)/2;
             var center_lon = (s_latlng._lng+e_latlng._lng)/2;
@@ -123,7 +152,6 @@ var e_latlng;
             						var pointType = mData.properties.pointType;
             						if(type == "Point"){
             							var linePt = new Tmapv3.LatLng(mData.geometry.coordinates[1],mData.geometry.coordinates[0]);
-            							console.log(linePt);
             							PTbounds.extend(linePt);
             						}
             						else{
@@ -160,18 +188,34 @@ var e_latlng;
 
 	function setPosition(){
             var positions = [];
-                    positions.push({
-                    'title' : '우리집',
-                    'lat' : 35.1378295,
-                    'lon' : 126.903827,
-                    'content' : '<div class ="label"><span class="left"></span><span class="center">우리집</span><span class="right"></span></div>'
+            $.ajax({
+                url : "/field_list",
+                type : "post",
+                beforeSend: function(xhr){
+                                        xhr.setRequestHeader(header, token);
+                                    },
+                success : function(data){
+                    console.log(data);
+                    data.forEach((a) => {
+                        positions.push({
+                                      'title' : '우리집',
+                                      'lat' : 35.1378295,
+                                      'lon' : 126.903827,
+                                      'content' : '<div class ="label"><span class="left"></span><span class="center">우리집</span><span class="right"></span></div>'
+                                      })
+                                      positions.push({
+                                      'title' : '회사',
+                                      'lat' : 35.1342741,
+                                      'lon' : 126.9081547,
+                                      'content' : '<div class ="label"><span class="left"></span><span class="center">회사</span><span class="right"></span></div>'
+                                      })
                     })
-                    positions.push({
-                    'title' : '회사',
-                    'lat' : 35.1342741,
-                    'lon' : 126.9081547,
-                    'content' : '<div class ="label"><span class="left"></span><span class="center">회사</span><span class="right"></span></div>'
-                    })
+                    console.log(positions);
+                    return positions;
+                }
+
+            })
+
             return positions;
     }
 
