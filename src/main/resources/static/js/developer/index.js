@@ -13,10 +13,23 @@ $(document).on('click', '#btn-a', function(){
     var lon = $(this).data('field_lon')
     town_weather(lat, lon);
     $('.card-body input:eq(1)').val($(this).text())
-    initTmap();
+
+play(lat ,lon);
+//    initTmap();
     //navigation(lat, lon);
-    getRP(lat, lon);
+//    getRP(lat, lon);
+
 })
+
+async function play(lat, lon){
+    $("#naviInfo p").remove();
+    $("#naviInfo img").css('display','block');
+    $(".card-body img").css('display','block')
+    initTmap();
+    setTimeout(function(){
+    getRP(lat, lon)
+    }, 100)
+}
 
 function field_list(){
     $.ajax({

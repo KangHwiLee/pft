@@ -30,11 +30,13 @@ var map;
 			height : "400px",	// 지도의 높이
 			zoom : 14	// 지도 줌레벨
 		});
+
 		var marker = new Tmapv3.Marker({
                 			position: new Tmapv3.LatLng(lat, lon),	//Marker의 중심좌표 설정.
                 			map: map	//Marker가 표시될 Map 설정..
                 		});
 			setMarker(map);
+
 	}
 
 function addMarker(lati, longi){
@@ -120,7 +122,7 @@ var e_latlng;
             var s_time = t_time%60;
             view = "<p>거리 : "+t_s_distance+"km</p>"
             view += "<p>예상 시간 : "+h_time+"시간 "+m_time+"분</p>"
-            $("#naviInfo").html(view)
+            $("#naviInfo").append(view)
     		var jsonObject = new Tmapv3.extension.GeoJSON();
     		var jsonForm = jsonObject.rpTrafficRead(this._responseData);
 
@@ -162,6 +164,8 @@ var e_latlng;
             							}
             					}
             				}
+            				$("#naviInfo img").css('display','block');
+            				$(".card-body img").css('display','none')
             				map.fitBounds(PTbounds);
 
     	}
