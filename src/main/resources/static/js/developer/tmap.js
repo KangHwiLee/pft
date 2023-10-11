@@ -15,7 +15,12 @@ function nowGps(){
     navigator.geolocation.getCurrentPosition((position) => {
     lat = position.coords.latitude
     lon = position.coords.longitude
-    });
+    },
+     function(error) {
+        if (error.code == error.PERMISSION_DENIED)
+            $("#naviInfo").prepend("<span>위치 권한이 없습니다. 임의의 주소로 길안내 출발점을 설정하겠습니다!</span>")
+          //alert("위치 권한이 없습니다. 임의의 주소로 길안내 출발점을 설정하겠습니다!");
+      });
 }
 
 var map;
@@ -164,8 +169,7 @@ var e_latlng;
             							}
             					}
             				}
-            				$("#naviInfo img").css('display','block');
-            				$(".card-body img").css('display','none')
+            				$(".loading_gif").css('display','none')
             				map.fitBounds(PTbounds);
 
     	}

@@ -23,10 +23,11 @@ public class SecurityConfiguration {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/introduce", true)
                 .permitAll()
                 .and()
                 .logout()
+                .logoutUrl("/logout")
                 .permitAll();
         return http.build();
         // configure HTTP security...

@@ -23,8 +23,7 @@ play(lat ,lon);
 
 async function play(lat, lon){
     $("#naviInfo p").remove();
-    $("#naviInfo img").css('display','block');
-    $(".card-body img").css('display','block')
+    $(".loading_gif").css('display','block');
     initTmap();
     setTimeout(function(){
     getRP(lat, lon)
